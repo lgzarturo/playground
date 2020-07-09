@@ -1,6 +1,8 @@
 package com.alg.springweb.person.controller;
 
 import com.alg.springweb.person.domain.Person;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -44,7 +46,7 @@ public class PersonController {
 	}
 
 	@PutMapping("/{id}")
-	Person update(@PathVariable String id, @RequestBody Person person) {
+	ResponseEntity<Person> update(@PathVariable String id, @RequestBody Person person) {
 		int indexPerson = -1;
 		for (Person persistedPerson : people) {
 			if (persistedPerson.getId().equals(id)) {
@@ -52,7 +54,9 @@ public class PersonController {
 				people.set(indexPerson, person);
 			}
 		}
-		return (indexPerson == -1) ? create(person) : person;
+		return (indexPerson == -1)
+				? new ResponseEntity<>(create(person), HttpStatus.CREATED)
+				: new ResponseEntity<>(person, HttpStatus.OK);
 	}
 
 	@DeleteMapping("/{id}")
