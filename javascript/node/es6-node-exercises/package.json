@@ -1,0 +1,22 @@
+{
+    "name": "es6-node-exercises",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "ArturoLG <lgzarturo@gmail.com>",
+    "license": "ISC",
+    "dependencies": {
+        "colors": "^1.4.0",
+        "debug": "^4.1.1",
+        "nodemon": "^2.0.4",
+        "winston": "^3.2.1",
+        "yargs": "^15.3.1"
+    },
+    "devDependencies": {
+        "prettier-plugin-packagejson": "^2.2.5"
+    }
+}

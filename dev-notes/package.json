@@ -1,0 +1,20 @@
+{
+  "name": "devops_notes",
+  "version": "1.0.0",
+  "description": "Notas sobre DevOps, para la implementación de proyectos:",
+  "repository": "lgzarturo/devops_notes",
+  "private": false,
+  "keywords": [
+    "dev.to",
+    "blog",
+    "articles",
+    "devops",
+    "developer"
+  ],
+  "author": {
+    "name": "Arturo López",
+    "url": "https://webdeveloperhints.com"
+  },
+  "license": "GNU General Public License V3.0",
+  "homepage": "https://github.com/lgzarturo/devops_notes#readme"
+}
