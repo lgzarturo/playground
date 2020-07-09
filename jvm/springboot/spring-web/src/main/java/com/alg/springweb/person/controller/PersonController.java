@@ -2,28 +2,18 @@ package com.alg.springweb.person.controller;
 
 import com.alg.springweb.person.domain.Person;
 import com.alg.springweb.person.domain.PersonRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
+@AllArgsConstructor
 @RestController
 @RequestMapping("/people")
 public class PersonController {
 	private final PersonRepository personRepository;
-
-	public PersonController(PersonRepository personRepository) {
-		this.personRepository = personRepository;
-		this.personRepository.saveAll(List.of(
-				new Person("Arturo"),
-				new Person("Carlos"),
-				new Person("Maria"),
-				new Person("Alberto"),
-				new Person("Diana")
-		));
-	}
 
 	@GetMapping
 	Iterable<Person> getPeople() {
@@ -42,9 +32,9 @@ public class PersonController {
 
 	@PutMapping("/{id}")
 	ResponseEntity<Person> update(@PathVariable Long id, @RequestBody Person person) {
-		return (!personRepository.existsById(id))
-				? new ResponseEntity<>(personRepository.save(person), HttpStatus.CREATED)
-				: new ResponseEntity<>(personRepository.save(person), HttpStatus.OK);
+		return (personRepository.existsById(id))
+				? new ResponseEntity<>(personRepository.save(person), HttpStatus.OK)
+				: new ResponseEntity<>(personRepository.save(person), HttpStatus.CREATED);
 	}
 
 	@DeleteMapping("/{id}")
