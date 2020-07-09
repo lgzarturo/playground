@@ -4,6 +4,7 @@ Thumbs.db
 test-*.json
 *.log
 *.http
+temp/
 
 ### BUILD ###
 HELP.md
