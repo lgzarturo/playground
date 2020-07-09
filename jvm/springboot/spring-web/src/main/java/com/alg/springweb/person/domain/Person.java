@@ -1,15 +1,19 @@
 package com.alg.springweb.person.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.util.UUID;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@RequiredArgsConstructor
+@Entity
 public class Person {
-	private final String id = UUID.randomUUID().toString();
-	private String name;
+	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
+	@Setter(AccessLevel.NONE) private final Long id = null;
+	@NonNull private String name;
 }
