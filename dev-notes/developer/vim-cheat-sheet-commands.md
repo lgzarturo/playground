@@ -1,4 +1,4 @@
-# Comando de Vim
+# Comandos de Vim
 
 - **H** - Desplazamiento a la parte superior de la pantalla
 - **L** - Desplazamiento a la parte inferior de la pantalla
@@ -6,7 +6,7 @@
 - **w** - Desplazamiento una palabra a la derecha
 - **b** - Desplazamiento una palabra a la izquierda
 - **0** - Nos lleva hasta el inicio de la línea actual
-- **$** - Nos lleva hasta el final de la línea actual
+- **\$** - Nos lleva hasta el final de la línea actual
 - **Ctrl+B** - Función similar a Repag.
 - **Ctrl+F** - Función similar a Avpag.
 - **i** - Comienza a introducir texto en la posición actual del cursor
@@ -18,7 +18,7 @@
 - **x** - Borra el carácter de la actual posición del cursor
 - **X** - Borra el carácter siguiente a la actual posición del cursor
 - **dd** - Corta la línea actual (disponible en el portapapeles)
-- **D o d$** - Corta desde la posición actual del cursor hasta el final de la línea
+- **D o d\$** - Corta desde la posición actual del cursor hasta el final de la línea
 - **yy o Y** - Copia al completo la línea donde se encuentra el cursor
 - **yX** - Copia tantos caracteres desde la posición del cursor, como le pasemos sustituyendo X por un número que estimemos necesario.
 - **P** - Pega en la línea previa a la que nos encontremos el contenido del portapapeles
@@ -41,15 +41,15 @@
 
 ## Búsqueda y Sustitución
 
-Con Vi/Vim tenemos la posibilidad de llevar el cursor directamente a una ubicación en concreto, basándonos en la 
+Con Vi/Vim tenemos la posibilidad de llevar el cursor directamente a una ubicación en concreto, basándonos en la
 búsqueda dentro del texto, cosa que es perfecta si queremos sustituir cierto término por otro.
 
-Con el comando `:/` podremos buscar en todo el documento la palabra que escribamos tras el carácter de la barra (`/`) 
-y moveremos el cursor hasta el primer resultado que coincida. Si en un documento quisiéramos encontrar `polimorfia`, 
+Con el comando `:/` podremos buscar en todo el documento la palabra que escribamos tras el carácter de la barra (`/`)
+y moveremos el cursor hasta el primer resultado que coincida. Si en un documento quisiéramos encontrar `polimorfia`,
 escribiríamos `:/polimorfia` lo que nos llevaría a la primera aparición en el documento de dicha palabra.
 
-Conociendo esto, sustituir una palabra por otra, es tan fácil como seguir el formato `%s/sustituida/sustituta/`. 
-Como siempre, un ejemplo para esclarecer un poco más esto último. Si quisiéramos sustituir `Openwebinars` por 
+Conociendo esto, sustituir una palabra por otra, es tan fácil como seguir el formato `%s/sustituida/sustituta/`.
+Como siempre, un ejemplo para esclarecer un poco más esto último. Si quisiéramos sustituir `Openwebinars` por
 `Openwebinars.net`, esta sería la forma de expresarlo:
 
 `:%s/Openwebinars/Openwebinars.net/gc`

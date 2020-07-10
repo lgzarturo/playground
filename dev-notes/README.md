@@ -4,22 +4,22 @@ Notas sobre DevOps, para la implementación de proyectos:
 
 ## Entorno de desarrollo
 
-- [Herramientas para instalar](https://github.com/lgzarturo/devops_notes/blob/master/developer/environment-tools.md)
-- [Iniciar el entorno de desarrollo](https://github.com/lgzarturo/devops_notes/blob/master/developer/environment.md#entorno-de-desarrollo)
-- [Terminal environment tips](https://github.com/lgzarturo/devops_notes/blob/master/developer/environment-terminal-tips.md)
-- [Crear un proyecto con Rails](https://github.com/lgzarturo/devops_notes/blob/master/devops/rails-create-new-project.md#crear-nuevo-proyecto-con-rails-y-postgresql)
-- [Crear un proyecto con Django](https://github.com/lgzarturo/devops_notes/blob/master/devops/django-create-new-project.md#crear-un-nuevo-proyecto-con-django)
-- [Crear un proyecto con Nodejs](https://github.com/lgzarturo/devops_notes/blob/master/devops/nodejs-create-new-project.md#crear-un-proyecto-con-nodejs)
+- [Herramientas para instalar](https://github.com/lgzarturo/playground/blob/master/dev-notes/developer/envitonment-tools.md)
+- [Iniciar el entorno de desarrollo](https://github.com/lgzarturo/playground/blob/master/dev-notes/developer/environment.md)
+- [Terminal environment tips](https://github.com/lgzarturo/playground/blob/master/dev-notes/developer/environment-terminal-tips.md)
+- [Crear un proyecto con Rails](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/rails-create-new-project.md)
+- [Crear un proyecto con Django](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/django-create-new-project.md)
+- [Crear un proyecto con Nodejs](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/nodejs-create-new-project.md)
 
 ## Cheat-sheets
 
-- [Comando de Vim](https://github.com/lgzarturo/devops_notes/blob/master/developer/vim-cheat-sheet-commands.md#comando-de-vim)
+- [Comandos de Vim](https://github.com/lgzarturo/playground/blob/master/dev-notes/developer/vim-cheat-sheet-commands.md)
 
 ## Administración de sistemas
 
-- [Configuración de Certbot](https://github.com/lgzarturo/devops_notes/blob/master/devops/certbot-configuration.md#configuración-de-certbot)
-- [Actualizar la versión de Ubuntu](https://github.com/lgzarturo/devops_notes/blob/master/devops/upgrade-ubuntu-version.md#actualizar-ubuntu)
-- [Herramientas para seguridad en Windows](https://github.com/lgzarturo/devops_notes/blob/master/devops/windows-virus-removal-tools.md#enlaces-para-eliminar-virus-y-malware) 
+- [Configuración de Certbot](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/certbot-configuration.md)
+- [Actualizar la versión de Ubuntu](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/upgrade-ubuntu-version.md)
+- [Herramientas para seguridad en Windows](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/windows-virus-removal-tools.md)
 
 ## Gist
 
@@ -53,10 +53,15 @@ Notas sobre DevOps, para la implementación de proyectos:
 - [Crear base de datos en MySQL con soporte UTF-8](https://gist.github.com/lgzarturo/2eca8abf7229d5e554c39ccc39c705b0)
 - [Crear base de datos en PostgreSQL con soporte UTF-8](https://gist.github.com/lgzarturo/c1b15e8f424caa987692ababe70bdd5c)
 
+### Terminal
+
+- [Herramientas útiles instaladas con brew](https://gist.github.com/lgzarturo/dde692177f3ca1321dacb28ea84901ac)
+- [Instalar dotfiles con git bare repository](https://gist.github.com/lgzarturo/db1522f4ae051d8b6cc16bf5e8defae0)
+
 ---
 
 ## Más
 
-- [Enlaces interesantes sobre Frameworks](https://github.com/lgzarturo/devops_notes/blob/master/profile/links.md#enlaces-interesantes)
-- [Curiosidades de Duck Duck Go](https://github.com/lgzarturo/devops_notes/blob/master/devops/duck-duck-go.md#duck-duck-go)
-- [Mi perfil profesional](https://github.com/lgzarturo/devops_notes/blob/master/profile/lgzarturo-cv.md#sobre-m%C3%AD)
+- [Enlaces interesantes sobre Frameworks](https://github.com/lgzarturo/playground/blob/master/dev-notes/profile/links.md)
+- [Curiosidades de Duck Duck Go](https://github.com/lgzarturo/playground/blob/master/dev-notes/devops/duck-duck-go.md)
+- [Mi perfil profesional](https://github.com/lgzarturo/playground/blob/master/dev-notes/profile/lgzarturo-cv.md)
