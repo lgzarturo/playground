@@ -6,7 +6,7 @@ Generar un respaldo de una base de datos en formato tar
 
 `$ pg_dump -U db_user -W -F t db_name > /path/to/your/file/dump_name.tar`
 
-### Argumentos
+### Argumentos de pg_dump
 
 - **-U**: to specify which user will connect to the PostgreSQL database server.
 - **-W**: or --password will force pg_dump to prompt for a password before connecting to the server.
@@ -24,7 +24,8 @@ Generar un respaldo de una base de datos en formato tar
 
 `$ pg_restore -d db_name /path/to/your/file/dump_name.tar -c -U db_user`
 
-### Argumentos
+### Argumentos de pg_restore
+
 - **-c**: to drop database objects before recreating them,
 - **-C**: to create a database before restoring into it,
 - **-e**: exit if an error has encountered,
@@ -32,4 +33,4 @@ Generar un respaldo de una base de datos en formato tar
 
 ## Links
 
-- https://axiomq.com/blog/backup-and-restore-a-postgresql-database/
+- [Backup and restore database](https://axiomq.com/blog/backup-and-restore-a-postgresql-database/)

@@ -23,4 +23,3 @@ Restaurar un respaldo de la base de datos
 ```mysql
 UPDATE {database}.{table} SET {field} = REPLACE({field}, '{text_search}', '{text_to_replace}');
 ```
-

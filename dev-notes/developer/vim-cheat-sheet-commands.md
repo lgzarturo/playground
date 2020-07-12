@@ -66,4 +66,4 @@ A la hora de solicitar confirmación, Vi/Vim nos ofrecerá una serie de opciones
 
 ## Enlaces
 
-- https://openwebinars.net/blog/vim-manual-de-uso-basico/
+- [Manual de Vim](https://openwebinars.net/blog/vim-manual-de-uso-basico/)

@@ -7,8 +7,9 @@ list.flatten()
 
 Resultado:
 
-`['foo', 'bar', 'inner_foo', 'inner_bar']`
-	
+```bash
+['foo', 'bar', 'inner_foo', 'inner_bar']
+```
 
 ## Microbenchmark
 

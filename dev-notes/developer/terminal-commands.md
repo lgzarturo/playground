@@ -33,4 +33,3 @@ $ for offset in $(history | awk '/backup-files/ {print $1}' | tac); do :; histor
 $ history | grep 'backup-files' | grep -oP '^ \d+' | head -1
 $ history | tail -n 1 | grep 'backup-files' | grep -oP '^ \d+'
 ```
-
