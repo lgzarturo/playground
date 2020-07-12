@@ -23,7 +23,6 @@ Se deben crear 3 servicios: app, servidor web y base de datos
 ```dockerfile
 version: '3'
 services:
- 
   #PHP
   app:
     build:
@@ -42,7 +41,7 @@ services:
       - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
- 
+
   #Nginx
   webserver:
     image: nginx:alpine
@@ -57,7 +56,7 @@ services:
       - ./nginx/conf.d/:/etc/nginx/conf.d/
     networks:
       - app-network
- 
+
   #MySQL
   db:
     image: mysql:5.7.22
@@ -76,7 +75,7 @@ services:
       - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - app-network
- 
+
 #Redes
 networks:
   app-network:
@@ -89,7 +88,7 @@ volumes:
 
 Crear un archivo .env para la configuración del docker-compose y de laravel
 
-```
+```bash
 MYSQL_DATABASE=laravel
 MYSQL_ROOT_PASSWORD=el_password_root
 SERVICE_TAGS=dev

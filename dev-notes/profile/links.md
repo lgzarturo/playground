@@ -25,11 +25,13 @@
   - https://grails-plugins.github.io/grails-spring-security-core/4.0.x/index.html#requestmapClass
 
 ## JVM
+
 - [Spring data jest](https://github.com/VanRoy/spring-data-jest)
 
 ## Diseño
 
 - Media Queries CSS: Responsive
+
   - https://responsivedesign.is/develop/browser-feature-support/media-queries-for-common-device-breakpoints/
   - https://gist.github.com/gokulkrishh/242e68d1ee94ad05f488
 

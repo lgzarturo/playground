@@ -107,10 +107,7 @@ config config status.showUntrackedFiles no
 
 ## Referencia
 
-- https://www.atlassian.com/git/tutorials/dotfiles
-
-- https://www.youtube.com/watch?v=tBoLDpTWVOM
-
-- https://github.com/memoriasIT/Dotfiles-WIP
-
-- https://github.com/agilesteel/.dotfiles/tree/master/gnome-terminal
+- [Dotfiles](https://www.atlassian.com/git/tutorials/dotfiles)
+- [Configure dotfiles with git bare](https://www.youtube.com/watch?v=tBoLDpTWVOM)
+- [Dotfiles-WIP](https://github.com/memoriasIT/Dotfiles-WIP)
+- [Gnome-terminal](https://github.com/agilesteel/.dotfiles/tree/master/gnome-terminal)

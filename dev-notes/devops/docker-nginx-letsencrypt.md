@@ -27,7 +27,7 @@ services:
 
 Crear la configuracion de nginx en la carpeta **data/nginx**
 
-```
+```bash
 server {
     listen 80;
     server_name example.org;
@@ -36,7 +36,7 @@ server {
 		}
     location / {
         return 301 https://$host$request_uri;
-    }    
+    }
 }
 server {
     listen 443 ssl;
@@ -55,7 +55,7 @@ Enlazando a nginx y certbot
 
 ```bash
 $ curl -L https://raw.githubusercontent.com/wmnnd/nginx-certbot/master/init-letsencrypt.sh > init-letsencrypt.sh
-$ chmod +x init-letsencrypt.sh  
+$ chmod +x init-letsencrypt.sh
 $ sudo ./init-letsencrypt.sh
 ```
 
@@ -67,6 +67,6 @@ $ docker-compose up
 
 Referencia:
 
-- https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71
-- https://github.com/wmnnd/nginx-certbot
-- https://raw.githubusercontent.com/wmnnd/nginx-certbot/master/init-letsencrypt.sh
+- [Nginx and Lets Encrypt](https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71)
+- [Nginx Certbot](https://github.com/wmnnd/nginx-certbot)
+- [Init Lets Encrypt](https://raw.githubusercontent.com/wmnnd/nginx-certbot/master/init-letsencrypt.sh)

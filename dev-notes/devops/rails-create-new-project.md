@@ -10,7 +10,7 @@ Instalar el soporte de PostgreSQL para Ruby on Rails
 
 Crear la aplicación con Rails
 
-```
+```bash
 $ rails new rails_{name} -T --database=postgresql
 $ cd rails_{name}
 ```

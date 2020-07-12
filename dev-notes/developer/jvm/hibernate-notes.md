@@ -104,8 +104,8 @@ p = em.find(PersonEntity.class, 1L);
   - [Tips to boots hibernate performance](https://thoughts-on-java.org/tips-to-boost-your-hibernate-performance/)
   - [Hibernate performance tuning](https://dzone.com/articles/hibernate-performance-tuning)
   - [Common performance problems](https://www.baeldung.com/hibernate-common-performance-problems-in-logs)
-  - https://mrhaki.blogspot.com/2012/06/groovy-goodness-revisited-getting-sum.html
-  - https://reflectoring.io/spring-boot-web-controller-test/
+  - [Groovy goodness](https://mrhaki.blogspot.com/2012/06/groovy-goodness-revisited-getting-sum.html)
+  - [Spring boot test](https://reflectoring.io/spring-boot-web-controller-test/)
 
 - Evitar el uso de `BigInteger & BigDecimal`: Utilice tipos de datos primitivos (_int, float_)
 

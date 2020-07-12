@@ -1,6 +1,6 @@
 # Configuración de Certbot
 
-### Instalar el repositorio de Certbot
+## Instalar el repositorio de Certbot
 
 El objetivo es gestionar certificados de seguridad con Let's Encrypt, con Certbot se puede automatizar la instalacion y la renovación de certificados de seguridad con nginx.
 
@@ -32,7 +32,7 @@ Editar la configuración de Nginx con los dominios que se requieren proteger
 
 ### Verificar la configuración del firewall
 
-```
+```bash
 $ sudo ufw status
 $ sudo ufw allow 'Nginx Full'
 $ sudo ufw delete allow 'Nginx HTTP'

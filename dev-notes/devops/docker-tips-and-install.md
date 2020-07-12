@@ -4,17 +4,17 @@ Lo primero es necesario actualizar el repositorio de paquetes de Ubuntu
 
 `$ sudo apt update && sudo apt upgrade`
 
-> Si falla la conexión con el servidor antes de que se actualicen los paquetes, el servicio de paquetes apt mostrará el 
-> siguiente error: `Could not get lock /var/lib/dpkg/lock`, para corregirlo debemos cerrar los procesos de apt. Primero 
-> es necesario ejecutar el siguiente comando `$ ps aux | grep -i apt` y matar el proceso con la siguiente instrucción 
-> `$ sudo kill -9 {id del proceso}` o simplemente ejecuta `$ sudo killall apt apt-get`, por último es necesario realizar 
+> Si falla la conexión con el servidor antes de que se actualicen los paquetes, el servicio de paquetes apt mostrará el
+> siguiente error: `Could not get lock /var/lib/dpkg/lock`, para corregirlo debemos cerrar los procesos de apt. Primero
+> es necesario ejecutar el siguiente comando `$ ps aux | grep -i apt` y matar el proceso con la siguiente instrucción
+> `$ sudo kill -9 {id del proceso}` o simplemente ejecuta `$ sudo killall apt apt-get`, por último es necesario realizar
 > una limpieza de la instalación fallida con el siguiente comando `$ sudo dpkg --configure -a`
 
 Una vez actualizada la versión de ubuntu lo recomendable es limpiar el espacio de los paquetes que ya no son necesarios:
 
 `$ sudo apt-get autoclean && sudo apt-get clean && sudo apt-get autoremove`
 
-Para la instalación de Docker, es necesario de eliminar posibles instalaciones anteriores 
+Para la instalación de Docker, es necesario de eliminar posibles instalaciones anteriores
 
 `$ sudo apt remove docker docker-engine docker.io`
 
@@ -34,13 +34,13 @@ Agregar el repositorio
 
 `$ sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"`
 
-> En el caso de docker-ce se puede presentar un error donde el paquete de instalación stable no este disponible, 
-> si este fuera el caso solo es necesario usar una version de tipo edge o test: 
+> En el caso de docker-ce se puede presentar un error donde el paquete de instalación stable no este disponible,
+> si este fuera el caso solo es necesario usar una version de tipo edge o test:
 > `sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable edge test"`
 
 Después, es necesario actualizar los paquetes
 
-```
+```bash
 $ sudo apt update
 $ apt-cache policy docker-ce
 $ sudo apt install -y docker-ce
@@ -68,7 +68,7 @@ Verificar la instalación de docker
 
 Iniciar y habilitar Docker
 
-```
+```bash
 $ systemctl status docker
 $ systemctl start docker
 $ systemctl enable docker
@@ -90,27 +90,27 @@ Verificar la instalación
 
 ## Activar funciones experimentales
 
-```
+```bash
 $ sudo vim /etc/docker/daemon.json
 ```
 
-Agregar el siguiente contenido al archivo *daemon.json*
+Agregar el siguiente contenido al archivo _daemon.json_
 
 ```json
-{ 
-    "experimental": true 
-} 
+{
+  "experimental": true
+}
 ```
 
 Reiniciar el servicio de docker
 
-```
+```bash
 $ sudo service docker restart
 ```
 
 Verificar la activación de las funciones experimentales
 
-```
+```bash
 $ docker version
 ```
 
@@ -118,7 +118,7 @@ Se debe ver lo siguiente `Experimental: true`
 
 ## Descargar archivos de un repositorio privado
 
-> Se necesita crear un Token para acceder a los repositorios privados 
+> Se necesita crear un Token para acceder a los repositorios privados
 >
 > Tambien se requiere la aplicacion jq, para extraer la informacion del API de GitHub
 
@@ -129,7 +129,7 @@ set -e
 GITHUB_TOKEN=<my_token>
 REPO="lgzarturo/demo"
 FILE="release.tar.gz"
-VERSION="v0.0.1"                    
+VERSION="v0.0.1"
 
 wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
 	https://$GITHUB_TOKEN:@api.github.com/repos/$REPO/releases/assets/`curl -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/vnd.github.v3.raw"  -s https://api.github.com/repos/$REPO/releases | jq ". | map(select(.tag_name == \"$VERSION\"))[0].assets | map(select(.name == \"$FILE\"))[0].id"` \
@@ -140,7 +140,7 @@ wget -q --auth-no-challenge --header='Accept:application/octet-stream' \
 
 ### Via Token para GitHub
 
-> Para crear un token solo hay que acceder a este enlace: https://github.com/settings/tokens
+> [Enlace para crear un token](https://github.com/settings/tokens)
 
 ```do
 FROM ubuntu as intermediate
@@ -236,16 +236,9 @@ Reiniciar una imagen en background de un servicio
 
 `$ docker container logs <container_name>`
 
-
-
-https://devopswithdocker.com/part3/
-
-https://medium.com/better-programming/how-does-docker-port-binding-work-b089f23ca4c8
-
-https://www.digitalocean.com/community/tutorials/docker-explained-how-to-containerize-and-use-nginx-as-a-proxy
-
-http://tomcat.apache.org/tomcat-8.5-doc/config/ajp.html
-
-https://github.com/Unidata/tomcat-docker/blob/master/server.xml
-
-https://github.com/APSL/docker-tomcat/blob/master/j5t5/conf/server.xml.tpl
+- [Docker](https://devopswithdocker.com/part3/)
+- [How does docker port binding work](https://medium.com/better-programming/how-does-docker-port-binding-work-b089f23ca4c8)
+- [Docker tutorial with Nginx](https://www.digitalocean.com/community/tutorials/docker-explained-how-to-containerize-and-use-nginx-as-a-proxy)
+- [Tomcat 8.5 AJP](http://tomcat.apache.org/tomcat-8.5-doc/config/ajp.html)
+- [Tomcat Docker](https://github.com/Unidata/tomcat-docker/blob/master/server.xml)
+- [APSL Docker Tomcat](https://github.com/APSL/docker-tomcat/blob/master/j5t5/conf/server.xml.tpl)

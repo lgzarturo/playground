@@ -2,29 +2,26 @@
 
 ## Docker
 
-La mejor opción para instalar Docker en MacOS es descargar el paquete '.dmg' desde la página oficial: *https://www.docker.com/get-started*
+La mejor opción para [instalar Docker en MacOS es descargar el paquete '.dmg' desde la página oficial](https://www.docker.com/get-started)
 
-La última versión de Docker se encuentra en el siguiente enlace: 
+La última versión de Docker se encuentra en el [siguiente enlace](https://download.docker.com/mac/stable/Docker.dmg)
 
-https://download.docker.com/mac/stable/Docker.dmg
-
-> Si el **docker-compose** se pone lento, aplicar la siguiente configuración en el archivo *"/etc/hosts"*: `$ sudo -H vim /etc/hosts`, agregar la siguiente línea:
+> Si el **docker-compose** se pone lento, aplicar la siguiente configuración en el archivo _"/etc/hosts"_: `$ sudo -H vim /etc/hosts`, agregar la siguiente línea:
 > `127.0.0.1 localhost localunixsocket`
-
 > Si es necesario autenticarse descargar imágenes de docker usar el siguiente comando:
 > `$ docker login --username {USERNAME}`
 
 ## Instalar Homebrew
 
-El sitio de Homebrew es https://brew.sh, solo hay que ejecutar el siguiente script:
+El [sitio de Homebrew](https://brew.sh) es, solo hay que ejecutar el siguiente script:
 
-> Probar primero la instalación con ruby: 
-> `$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`, 
-> si no funciona primero hay que instalar Git: https://git-scm.com/download/mac 
+> Probar primero la instalación con ruby:
+> `$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`,
+> si no funciona primero hay que [instalar Git](https://git-scm.com/download/mac)
 
 `$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"`
 
-> Para instalar Homebrew se requiere Xcode, verificar si está instalado con el comando: 
+> Para instalar Homebrew se requiere Xcode, verificar si está instalado con el comando:
 > `$ xcode-select --install`
 
 Al finalizar es necesario instalar los paquetes para el entorno
@@ -53,8 +50,8 @@ El sistema tiene 3 capas denominadas local, global y de sistema, las configuraci
 
 Primero configuramos la capa global con los datos del desarrollador
 
-- Nombre: `$ git config --global user.name "{NAME}"`    
-- Correo: `$ git config --global user.email "{EMAIL}"`    
+- Nombre: `$ git config --global user.name "{NAME}"`
+- Correo: `$ git config --global user.email "{EMAIL}"`
 
 Ahora modificamos los datos del editor **Visual Code Studio**:
 
@@ -68,7 +65,7 @@ Editamos el archivo de configuración:
 
 Agregar la configuración:
 
-```
+```vim
 [diff]
   tool = vscode-diff
 [difftool]
@@ -80,63 +77,63 @@ Agregar la configuración:
 [mergetool]
   KeppBackup = false
 [mergetool "vscode-merge"]
-  cmd = code --wait $MERGED 
+  cmd = code --wait $MERGED
 ```
 
 Para probar DiffTool y MergeTool, es necesario tener un repositorio con cambios en staging y ejecutamos los siguientes comandos respectivamente:
 
-```
+```bash
 $ git difftool
 $ git mergetool
 ```
 
 ### Git Aliases
 
-Comandos de Git más fáciles de recordar: 
+Comandos de Git más fáciles de recordar:
 
-git status: *'git st'*
+git status: _'git st'_
 
 `$ git config --global alias.st status`
 
-git status --short: *'git ss'*
+git status --short: _'git ss'_
 
 `$ git config --global alias.ss 'st --short'`
 
-git config --global -e: *'git egc'*
+git config --global -e: _'git egc'_
 
 `$ git config --global alias.egc 'config --global -e'`
 
-git config --local -e: *'git elc'*
+git config --local -e: _'git elc'_
 
 `$ git config --global alias.elc 'config --local -e'`
 
-git config --system -e: *'git esc'*
+git config --system -e: _'git esc'_
 
 `$ git config --global alias.esc 'config --system -e'`
 
-git checkout: *'git co'* 
+git checkout: _'git co'_
 
 `$ git config --global alias.co 'checkout'`
 
-git branch: *'git br'* 
+git branch: _'git br'_
 
 `$ git config --global alias.br 'branch'`
 
-git commit: *'git co'* 
+git commit: _'git co'_
 
 `$ git config --global alias.ci 'commit'`
 
-git commit --amend: *'git amend'* 
+git commit --amend: _'git amend'_
 
-`$ git config --global alias.amend 'co -a --amend'` 
+`$ git config --global alias.amend 'co -a --amend'`
 
-git push --set-upstream origin develop: *'git pdev'*
+git push --set-upstream origin develop: _'git pdev'_
 
 `$ git config --global alias.pdev 'push --set-upstream origin develop'`
 
-git push --set-upstream origin master: *'git pmaster'*
+git push --set-upstream origin master: _'git pmaster'_
 
-`$ git config --global alias.pmaster 'push --set-upstream origin master'`                 
+`$ git config --global alias.pmaster 'push --set-upstream origin master'`
 
 ## Instalar otras herramientas
 
@@ -148,7 +145,7 @@ Instalar java con Homebrew:
 
 `$ brew install java`
 
-> Esta forma más simple de instalar java, pero es recomendable instalar los JDK's con **SDKMan**: https://sdkman.io
+> Esta forma más simple de instalar java, pero es recomendable [instalar los JDK's con **SDKMan**](https://sdkman.io)
 
 ### Java con SDKMan
 
@@ -162,7 +159,7 @@ Actualizamos la terminal para que se inicialice la herramienta
 
 Instalamos la ultima versión de Java, Grails, Groovy, Micronaut, SpringBoot y VisualVM
 
-```
+```bash
 $ sdk install java
 $ sdk install grails
 $ sdk install micronaut
@@ -178,11 +175,11 @@ Para configurar el entorno de runtime de Grails:
 
 #### Configuración de VisualVM
 
-Para hacer ejecutable el comando de *'$ visualvm'*:
+Para hacer ejecutable el comando de _'\$ visualvm'_:
 
 `$ echo 'export PATH="$PATH:$VISUALVM_HOME/bin"' >> .zshrc`
 
-> Para matar todos los procesos que este ejecutando la JVM: $ killall java
+> Para matar todos los procesos que este ejecutando la JVM: \$ killall java
 
 #### Python 2
 
@@ -192,12 +189,12 @@ Configuración de Python 2, para compatibilidad con otras herramientas:
 
 Arreglando la configuración de Python 2 para que funcione junto con Python 3 sin problemas
 
-```
+```bash
 $ brew install ansible
 $ sudo -H easy_install pip
 $ sudo -H /usr/bin/python -m pip install boto3 --ignore-installed six
 $ brew unlink python
-$ brew link --override python 
+$ brew link --override python
 ```
 
 #### AWS SDK
@@ -206,13 +203,13 @@ Instalar boto3, el sdk de python para AWS
 
 `$ brew install boto3 netaddr tree`
 
-## Mejorar las conexiones SSH 
+## Mejorar las conexiones SSH
 
-Prevenir el error *“Write failed: broken pipe”* en la connexion SSH
+Prevenir el error _“Write failed: broken pipe”_ en la connexion SSH
 
-Editar el archivo de configuración de SSH: `$ vim ~/.ssh/config` 
+Editar el archivo de configuración de SSH: `$ vim ~/.ssh/config`
 
-```
+```vim
 Host *
 ServerAliveInterval 120
 TCPKeepAlive no
@@ -220,12 +217,12 @@ TCPKeepAlive no
 
 Reiniciar servicio de SSH
 
-```
+```bash
 $ sudo launchctl stop com.openssh.sshd
 $ sudo launchctl start com.openssh.sshd
 
 o
-     
+
 $ sudo launchctl unload /System/Library/LaunchDaemons/ssh.plist
 $ sudo launchctl load -w /System/Library/LaunchDaemons/ssh.plist
 ```
@@ -234,11 +231,11 @@ Proteger el archivo: `$ chmod 644 ~/.ssh/config`
 
 ## Terminal
 
-> La mejor aplicación para la terminal en MacOS es iTerm2, solo es necesario descargar el paquete DMG y realizar la instalación: https://iterm2.com/downloads.html
+> La mejor aplicación para la [terminal en MacOS es iTerm2](https://iterm2.com/downloads.html), solo es necesario descargar el paquete DMG y realizar la instalación.
 
 ### Instalar Zsh
 
-> Documentación sobre Zsh y Oh my Zsh: https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default
+> Documentación sobre [Zsh y Oh my Zsh](https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH#install-and-set-up-zsh-as-default).
 
 `$ brew install zsh`
 
@@ -246,11 +243,11 @@ Definir ZSH como Bash por default
 
 `$ sudo chsh -s /bin/zsh`
 
-ó buscando el comando *'zsh'*
+ó buscando el comando _'zsh'_
 
 `$ sudo chsh -s $(which zsh)`
 
-> Un complemento perfecto para Zsh es el proyecto Oh My Zsh! https://ohmyz.sh/#install
+> Un complemento perfecto para Zsh es el [proyecto Oh My Zsh!](https://ohmyz.sh/#install)
 
 Agregar la ruta de comandos disponibles al path
 
@@ -265,14 +262,13 @@ Agregar la ruta de comandos disponibles al path
 `$ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"`
 
 > Una vez instalado ohmyz.sh ejecutar los siguientes comandos
-> `$ zshconfig` 
-> `$ bash -c "clear && /bin/zsh"`
+> `$ zshconfig` > `$ bash -c "clear && /bin/zsh"`
 
 ### Instalar fuentes especiales para desarrolladores
 
-> Más información sobre el proyecto Nerd Fonts: https://github.com/ryanoasis/nerd-fonts#font-installation
+> Más información sobre el [proyecto Nerd Fonts](https://github.com/ryanoasis/nerd-fonts#font-installation)
 
-```
+```bash
 $ brew tap homebrew/cask-fonts
 $ brew cask install font-hack-nerd-font
 ```
@@ -281,12 +277,12 @@ $ brew cask install font-hack-nerd-font
 
 Instalar el complemento Powerlevel9k
 
-```
+```bash
 $ brew tap sambadevi/powerlevel9k
 $ brew install powerlevel9k
 ```
 
-> Powerlevel9k también se puede instalar con Git: 
+> Powerlevel9k también se puede instalar con Git:
 > `$ git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k`
 
 Aplicar la configuración al Shell
@@ -309,7 +305,7 @@ Completions
 
 Syntax Highlighting
 
-```
+```bash
 $ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 
 $ echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
@@ -331,7 +327,7 @@ Utilidades e integraciones para iTerm2
 
 Fzf: [Auto completado de comandos para la terminal](https://github.com/junegunn/fzf)
 
-```
+```bash
 $ brew install fzf
 $ $(brew --prefix)/opt/fzf/install
 ```
@@ -344,20 +340,19 @@ ZPresto: [Herramienta para configurar Zsh](https://github.com/Solisol/zpresto)
 
 `$ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"`
 
-```
+```bash
 $ setopt EXTENDED_GLOB \
-  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do \ 
-  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}" \ 
+  for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do \
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}" \
   done
 ```
 
-Aplicar el tema de nombre *'sorin'* para el bash Zsh
+Aplicar el tema de nombre _'sorin'_ para el bash Zsh
 
 `$ zstyle ':prezto:module:prompt' theme 'sorin'`
 
-> Verificar el archivo de configuración de ZSH '~/.zshrc', en el enlace hay un ejemplo de la configuración de las variables de entorno y del tema de la terminal: https://gist.github.com/lgzarturo/c55340f5d53720917b90c72c2b7e1786
-
-> Ideas para hacer de la terminal un lugar más productivo: 
+> Verificar el archivo de configuración de ZSH '~/.zshrc', [en el enlace hay un ejemplo de la configuración de las variables de entorno y del tema de la terminal](https://gist.github.com/lgzarturo/c55340f5d53720917b90c72c2b7e1786)
+> Ideas para hacer de la terminal un lugar más productivo:
 > [Terminal environment tips](https://github.com/lgzarturo/devops_notes/blob/master/developer/environment-terminal-tips.md)
 
 ## Desarrollo con Node
@@ -398,15 +393,15 @@ Instalar el administrador de paquetes Yarn:
 
 Mejorar el soporte para [instalar dependencias de Nodejs](https://github.com/nathanhleung/install-peerdeps#readme)
 
-##### Para NPM
+#### Para NPM
 
 `npm install -g install-peerdeps`
 
-##### Para Yarn
+#### Para Yarn
 
 `yarn global add install-peerdeps`
 
-### Instalar paquetes indispensables de Nodejs 
+### Instalar paquetes indispensables de Nodejs
 
 Grunt Cli
 
@@ -420,7 +415,7 @@ Eslint
 
 `$ npm install -g eslint eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node`
 
-> Inicializar el linter con Eslint: `$ eslint --init` 
+> Inicializar el linter con Eslint: `$ eslint --init`
 
 Express
 
@@ -452,13 +447,13 @@ Copiar la llave SSH
 
 `$ pbcopy < ~/.ssh/id_rsa.pub`
 
-## Instalar PHP 
+## Instalar PHP
 
 `$ brew install php@7.3 phplint phpunit`
 
 Configurar las variables de entorno para PHP
 
-```
+```bash
 $ echo 'export PATH="/usr/local/opt/apr/bin:$PATH"' >> ~/.zshrc
 $ echo 'export PATH="/usr/local/opt/apr-util/bin:$PATH"' >> ~/.zshrc
 $ echo 'export PATH="/usr/local/opt/php@7.3/bin:$PATH"' >> ~/.zshrc
@@ -471,16 +466,16 @@ Verificar la instalación
 
 ### Instalar Composer
 
-```
-$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"\ 
-  php -r "if (hash_file('sha384', 'composer-setup.php') === 'c5b9b6d368201a9db6f74e2611495f369991b72d9c8cbd3ffbc63edff210eb73d46ffbfce88669ad33695ef77dc76976') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"\ 
-  php composer-setup.php\ 
+```bash
+$ php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"\
+  php -r "if (hash_file('sha384', 'composer-setup.php') === 'c5b9b6d368201a9db6f74e2611495f369991b72d9c8cbd3ffbc63edff210eb73d46ffbfce88669ad33695ef77dc76976') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"\
+  php composer-setup.php\
   php -r "unlink('composer-setup.php');"
 ```
 
 Hace composer ejecutable
 
-```
+```bash
 $ mv composer.phar /usr/local/bin/composer
 $ sudo chmod a+x /usr/local/bin/composer
 ```
@@ -499,7 +494,7 @@ Crear un proyecto con laravel
 
 Ejecutar el proyecto
 
-```
+```bash
 $ cd {PROJECT_NAME}
 $ php artisan serve
 ```
@@ -514,7 +509,7 @@ Inicializar el proyecto de valet
 
 Poner en ejecución un proyecto con valet
 
-```
+```bash
 $ cd {PROJECT_NAME}
 $ valet park
 ```
@@ -525,14 +520,14 @@ $ valet park
 
 Crear un sitio con Hugo
 
-```
+```bash
 $ hugo new site {SITE_NAME}
 $ cd {SITE_NAME}
 ```
 
 Agrear un tema de hugo al sitio
 
-```
+```bash
 $ git submodule add https://github.com/cowboysmall-tools/hugo-devresume-theme.git themes/devresume
 $ echo 'theme = "devresume"' >> config.toml
 ```
@@ -549,11 +544,9 @@ Ejecutar el sitio web
 
 Esta es una [herramienta](https://www.sonarqube.org/downloads/) para medir la calidad del código fuente
 
-> Con Docker se puede instalar la sonarqube: `$ docker run -d --name sonarqube -p 9000:9000 sonarqube` las credenciales de acceso del sistema son *(login=admin, password=admin)*.
+> Con Docker se puede instalar la sonarqube: `$ docker run -d --name sonarqube -p 9000:9000 sonarqube` las credenciales de acceso del sistema son _(login=admin, password=admin)_.
 
-Descargar el proyecto del siguiente enlace: 
-
-https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.3.0.34182.zip
+[Descargar el proyecto](https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.3.0.34182.zip)
 
 Descomprimir el archivo y acceder a la carpeta:
 
@@ -561,7 +554,7 @@ Descomprimir el archivo y acceder a la carpeta:
 
 Configurar la variable de entorno y reiniciar ZSH
 
-```
+```bash
 $ echo 'export PATH="$PATH:/Users/arturolopez/runtime/sonarqube-8.1.0.31237/bin"' >> .zshrc
 $ source .zshrc
 ```
@@ -571,7 +564,8 @@ Ejecutar la herramienta
 `$ sonar.sh start`
 
 Comandos para trabajar con sonarqube
-```
+
+```bash
 $ sonar.sh restart
 $ sonar.sh status
 $ sonar.sh stop
@@ -583,14 +577,11 @@ $ sonar.sh console
 
 Para analizar el código fuente se usa [sonar scanner](https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/)
 
-> Con Docker se puede analizar el directorio del proyecto con el siguiente comando: 
-> `docker run -e SONAR_HOST_URL=http://localhost:9000 -it -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli` 
-> se pueden usar los parámetros *'SONAR_TOKEN, SONAR_LOGIN y SONAR_PASSWORD'* para más información: 
-> https://github.com/sonarsource/sonar-scanner-cli-docker/
+> Con Docker se puede analizar el directorio del proyecto con el siguiente comando:
+> `docker run -e SONAR_HOST_URL=http://localhost:9000 -it -v "$(pwd):/usr/src" sonarsource/sonar-scanner-cli`
+> se pueden usar los parámetros _'SONAR_TOKEN, SONAR_LOGIN y SONAR_PASSWORD'_ para más información el [cliente sonnar scanner cli docker](https://github.com/sonarsource/sonar-scanner-cli-docker/)
 
-Descarga el scanner del siguiente enlace:
-
-https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.3.0.2102-macosx.zip
+[Descarga el scanner](https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.3.0.2102-macosx.zip)
 
 Descomprimir el archivo y acceder a la carpeta:
 
@@ -598,7 +589,7 @@ Descomprimir el archivo y acceder a la carpeta:
 
 Ejecutar el comando sonar-scanner
 
-```
+```bash
 $ sonar-scanner \
   -Dsonar.projectKey={PROJECT_NAME} \
   -Dsonar.sources=. \
@@ -610,16 +601,16 @@ $ sonar-scanner \
 
 Herramienta para [analizar y entender código fuente](https://docs.sourcegraph.com/)
 
-```
-$ docker run --publish 7080:7080 \ 
-  --publish 127.0.0.1:3370:3370 --rm \ 
-  --volume ~/.sourcegraph/config:/etc/sourcegraph \ 
+```bash
+$ docker run --publish 7080:7080 \
+  --publish 127.0.0.1:3370:3370 --rm \
+  --volume ~/.sourcegraph/config:/etc/sourcegraph \
   --volume ~/.sourcegraph/data:/var/opt/sourcegraph sourcegraph/server:3.15.1
 ```
 
 ## Instalar KDiff
 
-```
+```bash
 $ brew cask install kdiff3
 $ sudo xcode-select --switch /Library/Developer/CommandLineTools
 ```
@@ -684,26 +675,18 @@ Iniciar el contenedor de nginx
 
 ## Instalar Kibana
 
-`$ docker pull docker.elastic.co/kibana/kibana:7.4.2`  
+`$ docker pull docker.elastic.co/kibana/kibana:7.4.2`
 
 ## Más fuentes para desarrollo
 
-**Adobe fonts**
+- [**Adobe fonts**](https://github.com/adobe-fonts/source-code-pro)
+- [**SourceCode fonts**](https://github.com/powerline/fonts/tree/master/SourceCodePro)
+- [**Awesome terminal fonts**](https://github.com/gabrielelana/awesome-terminal-fonts)
 
-https://github.com/adobe-fonts/source-code-pro
+### Enlaces
 
-**SourceCode fonts**
-
-https://github.com/powerline/fonts/tree/master/SourceCodePro
-
-**Awesome terminal fonts**
-
-https://github.com/gabrielelana/awesome-terminal-fonts
-
-# Enlaces
-
-- https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-Your-Config
-- https://hackernoon.com/how-to-trick-out-terminal-287c0e93fce0
-- https://github.com/Powerlevel9k/powerlevel9k#available-prompt-segments
-- https://github.com/hnarayanan/shpotify
-- https://github.com/johnelse/spotify-cli
+- [Powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k/wiki/Show-Off-Your-Config)
+- [How to trick out terminal](https://hackernoon.com/how-to-trick-out-terminal-287c0e93fce0)
+- [Powerlevel9k prompt](https://github.com/Powerlevel9k/powerlevel9k#available-prompt-segments)
+- [Shpotify](https://github.com/hnarayanan/shpotify)
+- [Spotify-cli](https://github.com/johnelse/spotify-cli)

@@ -162,10 +162,10 @@ type of Object you expect, and you need to cast.
 
 Configuración de swagger con Spring Boot y aceptando parametros de autenticación y headers adicionales.
 
-- https://stackoverflow.com/questions/50545286/spring-boot-swagger-ui-set-jwt-token
-- https://github.com/springfox/springfox/issues/2194
-- https://github.com/swagger-api/swagger-ui/issues/1566
-- https://stackoverflow.com/questions/26742521/sending-dynamic-custom-headers-in-swagger-ui-try-outs
+- [Spring Boot Swagger JWT Token](https://stackoverflow.com/questions/50545286/spring-boot-swagger-ui-set-jwt-token)
+- [Springfox](https://github.com/springfox/springfox/issues/2194)
+- [Swagger UI](https://github.com/swagger-api/swagger-ui/issues/1566)
+- [Sending Dynamic Headers in Swagger](https://stackoverflow.com/questions/26742521/sending-dynamic-custom-headers-in-swagger-ui-try-outs)
 
 ## Links
 

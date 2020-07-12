@@ -2,7 +2,7 @@
 
 1. Xcode
 
-   Instalar Xcode para las librerias de desarrollo 
+   Instalar Xcode para las librerias de desarrollo
 
    ```bash
    $ xcode-select --install
@@ -18,13 +18,13 @@
 
 4. ZSH con oh my zsh!: [Aquí estan los pasos para la instalación del shell Zsh](https://github.com/lgzarturo/devops_notes/blob/master/developer/environment.md#instalar-zsh)
 
-5. OSX Productivity 
+5. OSX Productivity
 
-   - Window Management con 
+   - Window Management
    - Quick Launcher con Alfred 4: Instalar alfred con brew `$ brew cask install alfred`
    - Tab swich app con [Hyperswitch](https://bahoom.com/hyperswitch)
 
-6. OSX Settings 
+6. OSX Settings
 
    - Dock: Ocultar el dock, eliminar enlaces innecesarios, alinearlo a la izquierda y ajustar el tamaño al mínimo.
    - Finder: Mostrar extensiones de los archivos
@@ -97,7 +97,7 @@
 - [advanced-new-file](https://marketplace.visualstudio.com/items?itemName=patbenatar.advanced-new-file): Sirve para crear archivos en cualquier parte del area de trabajo con shortcuts `cmd+alt+n (Mac), ctrl+alt+n (Win, Linux)`
 - [Auto Close Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-close-tag): Cierra de manera automatica los tags de html y xml
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag): Sirve para renombrar los tags de html y xml
-- [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes): Alternar el uso de comillas simples o dobles con un shortcut `cmd '` (`ctrl '` on win/linux) 
+- [Toggle Quotes](https://marketplace.visualstudio.com/items?itemName=BriteSnow.vscode-toggle-quotes): Alternar el uso de comillas simples o dobles con un shortcut `cmd '` (`ctrl '` on win/linux)
 
 ### Auto completado
 
@@ -110,4 +110,3 @@
 
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify), [Prettier - Code Formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
-

@@ -4,7 +4,7 @@ Para actualizar la versión de Ubuntu se recomiendan los siguientes pasos:
 
 > Estos pasos son para pasar de Ubuntu 16.04 a 18.04
 
-Reemplazar el nombre clave de la versión de Ubuntu 
+Reemplazar el nombre clave de la versión de Ubuntu
 
 ```bash
 $ sudo sed -i 's/yakkety/bionic/g' /etc/apt/sources.list
@@ -20,7 +20,7 @@ $ sudo apt update
 
 Aplicar las actualizaciones disponibles
 
-```
+```bash
 $ sudo apt upgrade
 ```
 

@@ -1,4 +1,5 @@
 # Juegos por comprar en iOS
+
 - [x] [Castlevania: SotN](https://apps.apple.com/mx/app/castlevania-sotn/id1435456830)
 - [x] [Alien: Blackout](https://apps.apple.com/mx/app/alien-blackout/id1401510106)
 - [ ] [Castlevania Grimoire of Souls](https://apps.apple.com/ca/app/castlevania-grimoire-of-souls/id1234489268#?platform=iphone)
@@ -10,39 +11,41 @@
 - [ ] [Transistor](https://apps.apple.com/mx/app/transistor/id948857526)
 - [ ] [Alto's](https://apps.apple.com/mx/app/altos-odyssey/id1182456409)
 - [ ] [Goblin Sword](https://apps.apple.com/mx/app/goblin-sword/id905488045)
-- [ ] [Anomaly defenders](https://apps.apple.com/mx/app/anomaly-defenders/id878087328?mt=12) 
-- [ ] [Exception;](https://apps.apple.com/mx/app/exception/id1439153819) 
-- [ ] [Stardew valley](https://apps.apple.com/mx/app/stardew-valley/id1406710800) 
-- [ ] [Jelly defense](https://apps.apple.com/mx/app/jelly-defense/id436134867) 
+- [ ] [Anomaly defenders](https://apps.apple.com/mx/app/anomaly-defenders/id878087328?mt=12)
+- [ ] [Exception;](https://apps.apple.com/mx/app/exception/id1439153819)
+- [ ] [Stardew valley](https://apps.apple.com/mx/app/stardew-valley/id1406710800)
+- [ ] [Jelly defense](https://apps.apple.com/mx/app/jelly-defense/id436134867)
 - [ ] [Vvvvvv](https://apps.apple.com/mx/app/vvvvvv/id880645949)
 - [ ] [Minit](https://apps.apple.com/mx/app/minit/id1403550875)
-- [ ] [Fez](https://apps.apple.com/mx/app/fez-pocket-edition/id1209489068) 
-- [ ] [Bastion](https://apps.apple.com/mx/app/bastion/id1467063160) 
-- [ ] [To the moon](https://apps.apple.com/mx/app/to-the-moon/id1159700098) 
+- [ ] [Fez](https://apps.apple.com/mx/app/fez-pocket-edition/id1209489068)
+- [ ] [Bastion](https://apps.apple.com/mx/app/bastion/id1467063160)
+- [ ] [To the moon](https://apps.apple.com/mx/app/to-the-moon/id1159700098)
 - [ ] [Rogue legacy](https://apps.apple.com/mx/app/rogue-legacy/id1453189467)
-- [ ] [First Strike](https://apps.apple.com/mx/app/first-strike-final-hour/id783636913) 
+- [ ] [First Strike](https://apps.apple.com/mx/app/first-strike-final-hour/id783636913)
 - [ ] [Oddmar](https://apps.apple.com/mx/app/oddmar/id1247397901)
 - [ ] [GC Wasteland](https://apps.apple.com/mx/app/gc-wasteland/id1367234839)
-- [ ] [Pocket Build](https://apps.apple.com/mx/app/pocket-build/id1293681293) 
+- [ ] [Pocket Build](https://apps.apple.com/mx/app/pocket-build/id1293681293)
 - [ ] [Limbo](https://apps.apple.com/mx/app/limbo/id656951157)
 - [ ] [Kingdom rush origins](https://apps.apple.com/mx/app/kingdom-rush-origins/id904737816)
 - [ ] [Monument valley](https://apps.apple.com/mx/app/monument-valley/id728293409)
 - [ ] [Brothers: A tale of two sons](https://apps.apple.com/mx/app/brothers-a-tale-of-two-sons/id1029588869)
-- [ ] [Warbits](https://apps.apple.com/mx/app/warbits/id584927317) 
-- [ ] [The gardens between](https://apps.apple.com/mx/app/the-gardens-between/id1371965583) 
+- [ ] [Warbits](https://apps.apple.com/mx/app/warbits/id584927317)
+- [ ] [The gardens between](https://apps.apple.com/mx/app/the-gardens-between/id1371965583)
 - [ ] [Retro city rampage dx](https://apps.apple.com/mx/app/retro-city-rampage-dx/id1088540036)
 - [ ] [Downwell](https://apps.apple.com/mx/app/downwell/id1032708262)
-- [ ] [Steamworld heist](https://apps.apple.com/mx/app/steamworld-heist/id1093396572) 
+- [ ] [Steamworld heist](https://apps.apple.com/mx/app/steamworld-heist/id1093396572)
 - [ ] [Titan Quest HD, hack-and-slash](https://apps.apple.com/mx/app/titan-quest-hd/id1424977227)
 - [ ] [Warhammer Quest 2](https://apps.apple.com/mx/app/warhammer-quest-2/id1216686234)
 - [ ] [The Infinity Collection \(Bauldur's Gate I y II, Icewind Dale, Planetscape y Siege of dragonspear)](https://apps.apple.com/mx/app-bundle/the-infinity-collection/id1376284772)
 
 # Comprar CDKeys
+
 - [Instant Digi](https://instantdigi.com/)
 - [CDKeyoffers](https://www.cdkeyoffers.com/)
 
 # Juegos gratis y divertidos
-- [El clásico juego de serpiente de los celulares viejos, renovado con colores neon](http://powerline.io) 
+
+- [El clásico juego de serpiente de los celulares viejos, renovado con colores neon](http://powerline.io)
 - [Página con cientos de juegos gratis para el navegador](https://www.miniclip.com/games/es/)
 - [Una version muy divertida de Bomberman](https://blastarena.io)
 - [Spelunky - juego independiente muy divertido](https://tinysubversions.com/game/spelunky/)
@@ -54,4 +57,5 @@
 - [Un FPS en el Navegador, muy bueno](https://krunker.io)
 
 # Otros
+
 - [Ver historial de compras en Apple Store](https://support.apple.com/es-mx/HT204088)

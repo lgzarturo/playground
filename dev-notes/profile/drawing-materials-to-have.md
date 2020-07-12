@@ -9,7 +9,7 @@
 - [ ] Lápiz Bruynzeel
 - [ ] Lápiz Sandford col-erase Prismacolor
 - [ ] Gomas de borrar Faber-Castell dust-free
-- [ ] Rotrings Pigma Micron Sakura 0.2, .0.4, 0.8 
+- [ ] Rotrings Pigma Micron Sakura 0.2, .0.4, 0.8
 - [ ] Entintador Uni 0.2, .0.4, 0.8
 - [ ] Entintador Pentel recargable
 - [ ] Entintador Staedtler pigment liner 0.05
@@ -22,18 +22,19 @@
 - [ ] Pentel recargable pelo sintético
 - [ ] Sketch book Hojas gruesas satinadas
 - [ ] Sketch book Art Creator
-- [ ] Software Easy Paint Tool Sai 
+- [ ] Software Easy Paint Tool Sai
 
-## Instagram 
+## Instagram
 
 https://www.instagram.com/lgzarturo
 
 > Artistas que influyen en mi estilo de dibujo:
-> - Steve McNiven 
-> - Oliver Coipel 
-> - David Marquez 
-> - Carlos Pacheco 
-> - Greg Capullo 
-> - Todd McFarlane 
-> - Jim Lee 
+>
+> - Steve McNiven
+> - Oliver Coipel
+> - David Marquez
+> - Carlos Pacheco
+> - Greg Capullo
+> - Todd McFarlane
+> - Jim Lee
 > - Alex Ross

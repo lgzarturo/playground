@@ -22,7 +22,7 @@ El sistema nos solicita los datos que te autentican como usuario.
 - S3 endpoint
 - DNS style
 - Password
-- GPG 
+- GPG
 - Http connectivity
 - Proxy server
 

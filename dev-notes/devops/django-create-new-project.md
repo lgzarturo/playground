@@ -25,15 +25,16 @@ Iniciar el entorno del entorno virtual para instalar las dependencias del archiv
 $ cd {PROJECT_NAME}
 $ virtualenv -p python3 .venv
 ```
+
 ## Paso 4
 
-Activar el entorno de desarrollo 
+Activar el entorno de desarrollo
 
 `$ source .venv/bin/activate`
 
 ## Paso 5
 
-Activar el entorno de desarrollo 
+Activar el entorno de desarrollo
 
 ```bash
 $ pip install django

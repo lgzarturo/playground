@@ -10,7 +10,7 @@
 - [ ] Guía de hábitos inteligentes - I.C. Robledo
 - [ ] El Efecto Checklist - Atul Gawande
 - [ ] Complicaciones - Atul Gawande
-- [ ] Mejor - Atul Gawande 
+- [ ] Mejor - Atul Gawande
 - [x] Pequeño cerdo capitalista - Sofía Macías
 - [x] Rework - Jason Fried
 - [x] Remote - Jason Fried
@@ -21,8 +21,8 @@
 - [ ] La guerra de los dioses - Pablo Andrés
 - [ ] Intergaláctica - Pablo Andrés
 - [x] La biblia de los caídos - Fernando Trujillo Sanz
-- [ ] La guerra de los cielos - Fernando Trujillo Sanz 
-- [ ] La senda de los heroes - Morgan Rice 
+- [ ] La guerra de los cielos - Fernando Trujillo Sanz
+- [ ] La senda de los heroes - Morgan Rice
 
 ### Señor de los anillos
 

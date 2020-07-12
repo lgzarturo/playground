@@ -35,14 +35,14 @@ RUN bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && \
     rm -rf $HOME/.sdkman/archives/* && \
     rm -rf $HOME/.sdkman/tmp/*"
 
-# ENTRYPOINT bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && $0 $@" 
+# ENTRYPOINT bash -c "source $HOME/.sdkman/bin/sdkman-init.sh && $0 $@"
 
-ENV MAVEN_HOME="/home/jenkins/.sdkman/candidates/maven/current" 
-ENV JAVA_HOME="/home/jenkins/.sdkman/candidates/java/current" 
-ENV PATH="$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH" 
+ENV MAVEN_HOME="/home/jenkins/.sdkman/candidates/maven/current"
+ENV JAVA_HOME="/home/jenkins/.sdkman/candidates/java/current"
+ENV PATH="$MAVEN_HOME/bin:$JAVA_HOME/bin:$PATH"
 ```
 
-Ejecutar 
+Ejecutar
 
 `$ docker build --build-arg JAVA_VERSION=8.0.232-amzn …`
 
@@ -56,14 +56,14 @@ Jenkinsfile
 pipeline {
     agent {
         docker {
-            image "sdkman:local" 
+            image "sdkman:local"
         }
     }
     stages {
         stage("Build") {
             steps {
-                sh "java -version" 
-                sh "mvn -version" 
+                sh "java -version"
+                sh "mvn -version"
             }
         }
     }
@@ -99,4 +99,3 @@ Java version: 13.0.1, vendor: Azul Systems, Inc., runtime: /home/jenkins/.sdkman
 Default locale: en_US, platform encoding: ANSI_X3.4-1968
 OS name: "linux", version: "5.3.8-200.fc30.x86_64", arch: "amd64", family: "unix"
 ```
-
