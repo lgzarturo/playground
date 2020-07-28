@@ -5,6 +5,7 @@ import com.alg.springwebreactive.reservation.domain.ReservationRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.reactive.TransactionalOperator;
 import org.springframework.util.Assert;
 import reactor.core.publisher.Flux;
 
@@ -13,13 +14,16 @@ import reactor.core.publisher.Flux;
 @Transactional
 public class ReservationService {
 	private final ReservationRepository reservationRepository;
+	private final TransactionalOperator transactionalOperator;
 
 	public Flux<Reservation> saveAll(String ... names) {
-		return Flux
+		Flux<Reservation> reservations = Flux
 				.fromArray(names)
 				.map(name -> new Reservation(null, name))
 				.flatMap(this.reservationRepository::save)
 				.doOnNext(this::assertValid);
+
+		return this.transactionalOperator.transactional(reservations);
 	}
 
 	private void assertValid(Reservation reservation) {
