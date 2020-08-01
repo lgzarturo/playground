@@ -1,6 +1,7 @@
 const debug = require('debug')('app')
 const colors = require('colors')
 const { listTable, createMultiplyTable } = require('./app/multiply')
+const { address, weather, getWeather } = require('./app/weather')
 
 const logger = require('./config/logger')
 const vargs = require('./config/yargs').vargs
@@ -27,6 +28,12 @@ switch (command) {
     break
   case 'complete':
     logger.info('Completar una tarea')
+    break
+  case 'weather':
+    logger.info('Clima de la ciudad')
+    getWeather(vargs.city)
+      .then((res) => logger.success(`Datos`, {data:res}))
+      .catch((err) => logger.error(err))
     break
   default:
     logger.error('El comando no es valido')
