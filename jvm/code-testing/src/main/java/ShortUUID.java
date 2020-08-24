@@ -38,6 +38,12 @@ public class ShortUUID {
 		customUUID();
 	}
 
+	/**
+	 * Implementación de NanoId https://github.com/ai/nanoid#readme
+	 * Port para java https://github.com/aventrix/jnanoid
+	 * Require la librería
+	 * 		- compile 'com.aventrix.jnanoid:jnanoid:2.0.0'
+	 */
 	public static void nanoId() {
 		Random random = new Random();
 		int size = 12;
@@ -45,6 +51,11 @@ public class ShortUUID {
 		System.out.println("nanoId:" + id + ", size: "+ id.length());
 	}
 
+	/**
+	 * Implementación de https://hashids.org/
+	 * Require la librería
+	 * 		- compile group: 'org.hashids', name: 'hashids', version: '1.0.3'
+	 */
 	public static void hashId() {
 		Hashids hashids = new Hashids(uuid.toString());
 		Long hotelId = 1L;
@@ -58,6 +69,11 @@ public class ShortUUID {
 		stream.forEach(System.out::println);
 	}
 
+	/**
+	 * Implementación de https://hashids.org/
+	 * Require la librería
+	 * 		- compile group: 'org.hashids', name: 'hashids', version: '1.0.3'
+	 */
 	public static void hashIdFromHexa() {
 		String data = "accountCode";
 		String hexa = String.valueOf(Hex.encodeHex(data.getBytes(StandardCharsets.UTF_8)));
@@ -70,6 +86,9 @@ public class ShortUUID {
 		System.out.println("standardUUID:" + uuid.toString() + ", size: "+ uuid.toString().length());
 	}
 
+	/**
+	 * Convierte la cadena en un long y después el long se representa en base 36, por default un long se puede representar con toString en base 10
+	 */
 	public static void shortUUID() {
 		long longValue = ByteBuffer.wrap(uuid.toString().getBytes(), 0, uuid.toString().length()).getLong();
 		//long longValue = ByteBuffer.wrap(uuid.toString().getBytes()).getLong();
@@ -78,18 +97,27 @@ public class ShortUUID {
 		System.out.println("shortUUID:" + id + ", size: "+ id.length());
 	}
 
+	/**
+	 *  Convierte la cadena en un long y después el long se representa en Hexa
+	 */
 	public static void shortUUIDFromUUIDToHexa() {
 		long longValue = ByteBuffer.wrap(uuid.toString().getBytes()).getLong();
 		String id = Long.toHexString(longValue);
 		System.out.println("shortUUIDFromUUIDToHexa:" + id + ", size: "+ id.length());
 	}
 
+	/**
+	 *  Convierte el valor incremental de un timestamp en long y después el long se representa en Hexa
+	 */
 	public static void shortUUIDFromFromTimestampToHexa() {
 		long longValue = DateTime.now().getMillis() / 1000L;
 		String id = Long.toHexString(longValue);
 		System.out.println("shortUUIDFromFromTimestampToHexa:" + id + ", size: "+ id.length());
 	}
 
+	/**
+	 * Genera un valor aleatorio y la representa el resultado en base64 del buffer de 16 bytes
+	 */
 	public static void secureRandomString() {
 		final SecureRandom random = new SecureRandom();
 		final Base64.Encoder encoder = Base64.getUrlEncoder().withoutPadding();
@@ -99,21 +127,27 @@ public class ShortUUID {
 		System.out.println("secureRandomString:" + id + ", size: "+ id.length());
 	}
 
+	/**
+	 * Genera un valor aleatorio y el resultado de la operación bit a bit lo convierte en la representación hexa del long
+	 */
 	public static void secureRandomStringWithHexa() {
 		SecureRandom random = new SecureRandom();
 		String id = Long.toHexString(Long.MIN_VALUE | random.nextLong());
-		System.out.println("secureRandomStringWithHexa MIN_VALUE:" + id + ", size: "+ id.length());
+		System.out.println("secureRandomStringWithHexa:" + id + ", size: "+ id.length());
 	}
 
+	/**
+	 * Divide el uuid y codifica el array en base64
+	 */
 	public static void customUUID() {
 		ByteBuffer byteBuffer = ByteBuffer.allocate(16);
 		byteBuffer.putLong(uuid.getMostSignificantBits());
 		byteBuffer.putLong(uuid.getLeastSignificantBits());
 
-		String id = Base64.getEncoder()
+		String id = Base64.getUrlEncoder()
 				.withoutPadding()
-				.encodeToString(byteBuffer.array())
-				.replaceAll("[+/]", "-");
+				.encodeToString(byteBuffer.array());
+				//.replaceAll("[+/]", "-"); <- Sirve solo para getEncoder
 
 		System.out.println("customUUID:" + id + ", size: "+ id.length());
 	}
