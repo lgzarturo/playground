@@ -34,7 +34,12 @@ dependencies {
     compile group: 'org.apache.xmlbeans', name: 'xmlbeans', version: '3.1.0'
     // https://mvnrepository.com/artifact/org.apache.commons/commons-lang3
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.10'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+	// https://mvnrepository.com/artifact/org.hashids/hashids
+	compile group: 'org.hashids', name: 'hashids', version: '1.0.3'
+	// https://mvnrepository.com/artifact/org.webjars.npm/nanoid
+	compile 'com.aventrix.jnanoid:jnanoid:2.0.0'
+
+	implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
 }
 compileKotlin {
     kotlinOptions {
