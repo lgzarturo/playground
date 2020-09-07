@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desarrollo Web: ArthuroLG</title>
+    <title>Próximamente</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" type="text/css" href="css/jquery.realperson.css">
@@ -24,7 +24,7 @@
             </div>
 
             <h2>
-                PROXIMAMENTE<br />
+                PRÓXIMAMENTE<br />
                 <span>Este sitio web está en desarrollo.</span>
             </h2>
         </div>
@@ -99,7 +99,7 @@
             // get the last 32 bits
             $binary = substr($binary, strlen($binary) - 32);
             // if it's a positive number return it
-            // otherwise return the 2's complement
+            // otherwise return the second complement
             return ($binary{
             0} == "0" ? bindec($binary) : -(pow(2, 31) - bindec(substr($binary, 1))));
         }
@@ -131,9 +131,9 @@
             if ($email == '') {
                 $hasError = true;
                 $errormessage .= '<p>- El campo <strong>Correo</strong> está vacío.</p>';
-            } else if (!preg_match("/^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) {
+            } else if (!preg_match("/^[_.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$/i", $email)) {
                 $hasError = true;
-                $errormessage .= '<p>- El campo <strong>Correo</strong> no es una dirección de correo válida.</p>';
+                $errormessage .= '<p>- El campo <strong>Correo</strong> no es una dirección de válida.</p>';
             }
 
             if ($subject == '') {
@@ -156,36 +156,40 @@
                 include("phpmailer/class.phpmailer.php");
                 include("phpmailer/class.smtp.php");
                 $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-                $email_sent = "arthurolg@gmail.com";
-                $mail = new PHPMailer();
-                $mail->IsSMTP();
-                //$mail->SMTPDebug = 1;
-                $mail->SMTPAuth = true;
-                $mail->CharSet = "UTF-8";
-                $mail->SMTPSecure = "ssl";
-                $mail->Host = "smtp.gmail.com";
-                $mail->Port = 465;
-                $mail->Username = $email_sent;
-                $mail->Password = "sykftdfnkkwruees";
-                $mail->Priority = 1;
+                $email_sent = "{GMAIL_ACCOUNT}";
+
 
                 $body = "Nombre: $name \n\nCorreo: $email \n\nAsunto: $subject \n\nMensaje:\n $message \n\nEnviado desde el formulario de contacto de $actual_link";
 
-                $mail->Subject = $subject;
-                $mail->AltBody = $body;
-                $mail->MsgHTML(str_replace("\n", "<br />", $body));
-                $mail->AddAddress($email_sent, "ArthuroLG");
-                $mail->SetFrom($email, $name);
-                $mail->AddReplyTo($email, $name);
-                $mail->WordWrap = 80;
-                $mail->IsHTML(true);
+				try {
+					$mail = new PHPMailer();
+					$mail->IsSMTP();
+					//$mail->SMTPDebug = 1;
+					$mail->SMTPAuth = true;
+					$mail->CharSet = "UTF-8";
+					$mail->SMTPSecure = "ssl";
+					$mail->Host = "smtp.gmail.com";
+					$mail->Port = 465;
+					$mail->Username = $email_sent;
+					$mail->Password = "{GMAIL_PASSWORD}";
+					$mail->Priority = 1;
+					$mail->Subject = $subject;
+					$mail->AltBody = $body;
+					$mail->MsgHTML(str_replace("\n", "<br />", $body));
+					$mail->AddAddress($email_sent, "{ACCOUNT_EMAIL}");
+					$mail->SetFrom($email, $name);
+					$mail->AddReplyTo($email, $name);
+					$mail->WordWrap = 80;
+					$mail->IsHTML(true);
+					$emailSent = $mail->Send();
 
-                $emailSent = $mail->Send();
-
-                if (!$emailSent) {
-                    $mail_error = "Error: No se pudo efectuar el envio, intente más tarde.";
-                    //echo $mail->ErrorInfo;
-                }
+					if (!$emailSent) {
+						$mail_error = "Error: No se pudo efectuar el envío, intente más tarde.";
+						//echo $mail->ErrorInfo;
+					}
+				} catch (phpmailerException $e) {
+					$mail_error = "Error: No se pudo efectuar el envío, intente más tarde.";
+				}
             }
         }
         ?>
@@ -207,7 +211,7 @@
                                 <div class="callout panel" id="success">
                                     <h6>Correo enviado!</h6>
                                     <p><strong><?php echo $name; ?></strong>, Gracias por enviar su información</p>
-                                    <p>A la brevedad posible atendere su solicitud.</p>
+                                    <p>A la brevedad posible atenderé su solicitud.</p>
                                 </div>
                             </div>
                         </div>
@@ -220,7 +224,7 @@
                         <div class="row">
                             <div class="large-12 columns">
                                 <div class="callout panel" id="error">
-                                    <h6>Error en el envio!</h6>
+                                    <h6>Error en el envío!</h6>
                                     <p><?php echo $mail_error; ?></p>
                                 </div>
                             </div>
@@ -308,7 +312,7 @@
     <script type="text/javascript">
         jQuery(function () {
             jQuery('#tweets').tweetable({
-                username: 'lgzarturo',
+                username: '{TWEET_ACCOUNT}',
                 time: true,
                 rotate: false,
                 speed: 4000,
@@ -318,14 +322,14 @@
                 failed: "Por el momento no se pudo establecer conexión con Twitter.",
                 loading: "...",
                 html5: true,
-                onComplete: function ($ul) {
+                onComplete: function () {
                     $('time').timeago();
                 }
             });
 
             $("label").click(function () {
-                var target = $(this).attr('for');
-                $("#" + target).focus();
+                const target = $(this).attr('for');
+                $(`#${target}`).focus();
             });
 
             $("#captcha-content").realperson({
