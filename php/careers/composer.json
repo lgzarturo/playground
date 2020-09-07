@@ -16,7 +16,8 @@
         "laravel/scout": "^8.0",
         "laravel/socialite": "^4.4",
         "laravel/telescope": "^3.5",
-        "laravel/tinker": "^2.0"
+        "laravel/tinker": "^2.0",
+        "laravel/ui": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

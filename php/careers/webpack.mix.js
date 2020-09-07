@@ -18,6 +18,6 @@ if (mix.inProduction()) {
     mix.version();
 } else {
   mix.browserSync({
-    proxy: 'php_careers.test'
+    proxy: 'careers.test'
   });
 }
