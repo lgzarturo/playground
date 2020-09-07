@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if IE 9]>
+<html class="lt-ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Web: ArthuroLG</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/foundation.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.realperson.css">
+
+    <link rel="stylesheet" href="tools/style.css">
+
+    <script src="js/modernizr.js"></script>
+
+</head>
+<body>
+
+<div class="row">
+    <div class="large-12 columns">
+        <div class="logo">
+            <h1>ALG</h1>
+            <span>arthuro.l.g</span>
+        </div>
+
+        <h2>
+            PROXIMAMENTE <br />
+            <span>Sitio web de Arturo López. <i>'Perfil curricular, Portafolio, Blog'</i></span>
+        </h2>
+    </div>
+</div>
+
+<div id="social" class="row">
+    <div class="large-12 columns">
+        <ul class="social" id="jquery">
+            <li class="google">
+                <a href="https://plus.google.com/+ArturoL%C3%B3pezG%C3%B3mez/posts" target="_blank">
+                    <strong>Google+</strong>
+                </a>
+            </li>
+            <li class="facebook">
+                <a href="https://www.facebook.com/WebDeveloperArthuroLG" target="_blank">
+                    <strong>Facebook</strong>
+                </a>
+            </li>
+            <li class="twitter">
+                <a href="http://twitter.com/arthurolg" target="_blank">
+                    <strong>Twitter</strong>
+                </a>
+            </li>
+            <!-- More services -->
+        </ul>
+    </div>
+</div>
+
+<div id="tweets" class="row">
+    <div class="large-12 columns">
+        <div id="tweets"></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-12 medium-12 columns">
+        <div class="panel" id="contact">
+            <h5>Contacto</h5>
+            <hr />
+            <form id="contact-action">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="name">Nombre <strong>*</strong></label>
+                        <input name="name" id="name" type="text" placeholder="Con quien tengo el gusto" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="email">Correo Electronico <strong>*</strong></label>
+                        <input name="email" id="email" type="text" placeholder="Como te contacto" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="subject">Asunto</label>
+                        <input name="subject" id="subject" type="text" placeholder="De que tema hablaremos" />
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-12 columns">
+                        <label for="message">Mensaje <strong>*</strong></label>
+                        <textarea name="message" id="message" placeholder="Explica tu idea"></textarea>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="large-10 columns">
+                        <label for="defaultReal">Captcha <strong>*</strong></label>
+                        <div class="small-3 columns">
+                            <div id="captcha-content"></div>
+                        </div>
+                        <div class="small-9 columns" id="resolution">
+                            <input type="text" id="defaultReal" name="defaultReal" placeholder="Resuelve el captcha" />
+                        </div>
+                    </div>
+                    <div class="large-2 columns" style="text-align: right; padding-top: 18px;">
+                        <input type="submit" value="Enviar" class="small button no-margin" />
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <hr />
+
+        <p>
+            &copy; 2014
+            <a href="mailto:arthurolg@gmail.com">Arturo López</a>, Cancún Q.Roo, México. Todos los derechos reservados.<br />
+            Diseño y programación: Arturo López Gómez.
+        </p>
+    </div>
+</div>
+
+<!-- libraries -->
+
+<script src="tools/jquery-3.5.1.min.js"></script>
+<script src="js/foundation.min.js"></script>
+<!--[if IE]>
+<script src="js/script.js"></script><![endif]-->
+<script>
+    $(document).foundation();
+</script>
+
+<script src="js/tweetable.jquery.min.js"></script>
+<script src="js/jquery.timeago.js"></script>
+<script src="js/jquery.realperson.min.js"></script>
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery('#tweets').tweetable({
+            username: 'arthurolg',
+            time: true,
+            rotate: false,
+            speed: 4000,
+            limit: 5,
+            replies: false,
+            position: 'append',
+            failed: "Por el momento no se pudo establecer conexión con Twitter.",
+            loading: "Cargando tweets...",
+            html5: true,
+            onComplete: function ($ul) {
+                $('time').timeago();
+            }
+        });
+
+        $("label").click(function () {
+            var target = $(this).attr('for');
+            $("#" + target).focus();
+        });
+        $("#captcha-content").realperson({length: 6});
+        /*revisar http://keith-wood.name/realPerson.html */
+    });
+</script>
+<!--script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42486999-1', 'arthurolg.com');
+  ga('send', 'pageview');
+</script-->
+</body>
+</html>

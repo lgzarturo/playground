@@ -1,0 +1,210 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff url(../images/subtle-bg.jpg) top center repeat-x;
+    font-family: Helvetica Neue, Helvetica, Arial;
+}
+
+body #top-element {
+    background: transparent url(https://source.unsplash.com/random/1600x548) top center repeat-x;
+}
+
+.logo {
+    margin: 80px auto 80px auto;
+    width: 160px;
+    text-align: center;
+}
+
+.logo h1 {
+    width: 110px;
+    height: 110px;
+    margin: 44px auto 5px auto;
+    border-radius: 50%;
+    background: #fff;
+    color: #ce5252;
+    text-align: center;
+    padding-top: 20px;
+    font-size: 3em;
+    text-shadow: 2px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.logo span {
+    font-size: 1.8em;
+    text-align: center;
+    margin: 0 auto;
+    color: white;
+    text-shadow: 1px 2px 0 rgba(206, 82, 82, 0.3);
+}
+
+h2 {
+    font-size: 3em;
+    color: white;
+    text-align: center;
+    text-shadow: 2px 2px 0 rgba(206, 82, 82, 0.3);
+}
+
+h2 span {
+    font-size: 0.7em;
+}
+
+#social {
+    margin-top: 160px;
+}
+
+.social {
+    list-style: none;
+    width: 284px;
+    margin: auto;
+}
+
+.social li {
+    display: inline;
+    float: left;
+    margin-right: 30px;
+}
+
+.social li:last-child {
+    margin-right: 0;
+}
+
+.social li a {
+    display: block;
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
+
+.social li a strong {
+    position: absolute;
+    left: 20px;
+    top: -1px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 3px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 3px 6px;
+    color: white;
+}
+
+li.google {
+    background-image: url("../images/google.png");
+}
+
+li.facebook {
+    background-image: url("../images/facebook.png");
+}
+
+li.twitter {
+    background-image: url("../images/twitter.png");
+}
+
+li.linkedin {
+    background-image: url("../images/linkedin.png");
+}
+
+li.github {
+    background-image: url("../images/github.png");
+}
+
+.social:hover li {
+    opacity: 0.2;
+}
+
+.social li {
+    transition-property: opacity;
+    transition-duration: 500ms;
+}
+
+.social li a strong {
+    opacity: 0;
+    transition-property: opacity, top;
+    transition-duration: 300ms;
+}
+
+.social li:hover {
+    opacity: 1;
+}
+
+.social li:hover a strong {
+    opacity: 1;
+    top: -10px;
+}
+
+#tweets {
+    margin-top: 30px;
+}
+
+.tweetList {
+    list-style: none;
+}
+
+#message {
+    height: 100px;
+}
+
+label strong {
+    color: red;
+}
+
+.no-margin {
+    margin: 0;
+}
+
+h5 span {
+    font-size: 0.7em;
+    color: red;
+}
+
+#errors p,
+#success p {
+    margin-bottom: 10px;
+    font-size: 0.8em;
+}
+
+#errors p,
+#errors h6 {
+    color: red;
+}
+
+#errors p:last-child,
+#success p:last-child {
+    margin: 0;
+}
+
+#success h6 {
+    color: green;
+}
+
+h6 {
+    font-size: 0.9em;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+@media only screen and (max-width: 40em) {
+    h2 {
+        font-size: 1.8em;
+        text-shadow: 1px 1px 0 rgba(206, 82, 82, 0.3);
+    }
+
+    #social {
+        margin-top: 100px;
+    }
+
+    .social li {
+        margin-top: 26px;
+        margin-right: 26px;
+    }
+
+    .social li a strong {
+        left: 0px;
+    }
+
+    #resolution {
+        margin-top: 10px;
+        width: 100%;
+    }
+}
