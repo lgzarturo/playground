@@ -1,0 +1,178 @@
+/*Estilos genericos*/
+body {
+  background-color: #eee;
+  background: #eee url("img/background_pattern.gif") repeat top left;
+}
+/*Header*/
+#header h1 a, #header h1 a:hover {
+	cursor: pointer;
+}
+/*Footer*/
+#footer_menu li > a, #footer_menu li > .pipe_space { color: gray; }
+
+/*Contenido*/
+#page {
+  background-color: transparent;
+}
+
+#side_left {
+  background-color: white;  
+}
+
+#side_left {
+  background: url(img/shadow_out.png) no-repeat bottom right !important; 
+  background: url(img/shadow_out.gif) no-repeat bottom right; 	
+}
+
+.in {	  
+  background: url(img/shadow_in.png) repeat-y top right !important; 
+  background: url(img/shadow_in.gif) repeat-y top right;  	
+}
+
+/*Contenido*/
+.title_section h2 {
+	border-bottom: 1px solid #000;
+}
+.title_section a, .title_section a:active, .title_section a:visited {
+	color: red;
+}
+.title_section a:hover {
+	background-color: red;
+	color: white;
+}
+.list_items {
+	border-left: 5px solid #d7d7d7;
+}
+
+.file_attr {
+	color: gray;
+}
+/*Articulos*/
+.article_content {
+	background-color: #ffffcf; /*#fdfd9b o #fdfd9c*/
+}
+.lbl_date {
+	background-color: #ffcf00;
+	color: black;
+}
+.article_title {
+	border-bottom: 1px solid #000;
+}
+.article_poster {
+	color: #5f5f5f;
+}
+.username {color: black;}
+.action_post, .action_post:link { color: #5b7f00; }
+.action_edit, .action_edit:link { color: #005e7f; }
+.action_delete,  .action_delete:link { color: #7f002d; }
+.username:hover, .action_post:hover, .action_edit:hover, .action_delete:hover { text-decoration: none; }
+.username:active, .action_post:active, .action_edit:active, .action_delete:active { text-decoration: none; color: yellow; }
+/*Comments*/
+#comments_container {
+	color: #9f978f;
+}
+.posted_by {
+	background: #fff url("img/show_comment.png") no-repeat scroll 6px top;
+}
+.new_comment .posted_by {
+	background: #fff url("img/add_comment.png") no-repeat scroll 6px top;
+}
+.icon_delete {
+	background: transparent url("img/action_trash.png") no-repeat;
+}
+.comment p {
+	color: #6f6f6f;
+}
+.gravatar {
+	border: 1px solid gray;
+}
+.new_comment textarea {
+	border:1px solid #d7d7d7;
+	color:black;
+}
+.comment_footer {	
+	border-top: 3px solid #d7d7d7;
+}
+/*Message colors*/
+#message.success {
+	border-color: #9fcf9f;
+	background-color: #dff7df;
+	color: #006f3f;	
+}
+#message.error {
+	border-color: #c9b280;
+	background-color: #ffefdf;
+	color: #bd130b;
+}
+#message.alert {
+	border-color: #cf9797;
+	background-color: #ffe4df;
+	color: #6f1f00;
+}
+#message.warning {
+	border-color: #ead76d;
+	background-color: #fffddf;
+	color: #bd780b;
+}
+#message.info {
+	border-color: #97cecf;
+	background-color: #dfeef7;
+	color: #00446f;
+}
+#message p {
+	background-position: top left;
+	background-repeat: no-repeat;	
+}
+.success p {
+	background-image: url("img/success.png");
+}
+.error p {
+	background-image: url("img/error.png");
+}
+.alert p {
+	background-image: url("img/alert.png");
+}
+.warning p {
+	background-image: url("img/warning.png");
+}
+.info p {
+	background-image: url("img/info.png");
+}
+/*Menus del side_right*/
+#side_menu > li > a:hover {
+	background-color: #fff;	
+}
+/*Tipos de Archivo*/
+.pdf  {
+	background-image: url("img/pdf.png");
+}
+.gif {
+	background-image: url("img/gif.png");
+}
+.png {
+	background-image: url("img/png.png");
+}
+.jpg {
+	background-image: url("img/jpg.png");
+}
+.doc {
+	background-image: url("img/doc.png");
+}
+.xml {
+	background-image: url("img/xml.png");
+}
+.xls {
+	background-image: url("img/xls.png");
+}
+.ppt {
+	background-image: url("img/ppt.png");
+}
+.zip {
+	background-image: url("img/zip.png");
+}
+.txt {
+	background-image: url("img/txt.png");
+}
+.file {
+	background-image: url("img/file.png");
+}

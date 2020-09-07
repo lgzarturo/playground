@@ -1,0 +1,305 @@
+/*Estilos genericos*/
+body {
+  /*font: 1.1em/.9em Helvetica, Lucida Sans Unicode, Lucida Grande, sans-serif;*/
+  font: 1.1em/0.9em Helvetica,'Lucida Grande','Lucida Sans Unicode',Verdana,freesans,clean,sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/*Titulo de la Pagina*/
+#header h1 {
+  font-size: 1.5em;
+  padding: 16px 0;  
+  clear: both;
+}
+#slogan {
+  font-size: 68%;
+}
+
+/*Secciones*/
+#header, #content, #footer {
+  clear: both;
+  min-width: 760px;
+  padding: 0 30px;
+}
+#content {
+  padding-top: 20px;
+}
+
+.txt_menu li, .block_menu li {
+  display: inline;
+}
+
+/*Menu de texto*/
+.pipe_space {
+  margin-left: 5px;
+}
+
+.txt_menu {
+  font-size: .65em;
+}
+
+.txt_menu li > a {
+  text-decoration: none;
+}
+
+.txt_menu li > a:hover {
+  text-decoration: underline;
+}
+
+/*Menu de bloques*/
+.block_menu {
+  font-size: .80em;
+}
+
+.block_menu li > a {
+  text-decoration: none;
+  font-weight: bold;  
+  padding: 5px 6px;
+  margin: 0;
+  display: inline-block;
+}
+
+#block_active:hover {
+  text-decoration: underline;
+}
+
+/*Footer*/
+#footer_menu li > a, #footer_menu li > .pipe_space { font-size: 1.09em;}
+#footer {
+	margin-bottom: 16px;	
+}
+/*Formato de la pagina*/
+#page {
+  position: relative;
+  clear: both;
+}
+
+#side_left, #side_right {
+  min-height: 500px;  
+  margin-bottom: 16px;
+}
+
+#side_left {
+  width: 77%;
+}
+
+#side_right {
+  font-size:76%;
+  left:78%;
+  position:absolute;
+  top:0;
+  width:20%;
+}
+.narrow {
+	height: 10px;
+}
+.in {	
+  min-height: 490px;
+  padding: 20px 30px 20px 20px;
+}
+
+/*Titulos side_right*/
+#side_right h5 {
+  border-bottom: 1px solid black;
+  line-height: 1.5em;
+  font-size: 1.1em;	
+}
+
+.link_h5 {
+	float: right;
+	font-size: 0.80em;
+	letter-spacing: 0.05em;
+}
+
+#side_right h6 {	
+  	line-height: 1.5em;  		
+}
+
+/*Contenido*/
+.title_section {
+	text-align: center;	
+}
+.title_section h2 {
+	border-bottom: 1px solid;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	font-weight: normal;
+	margin-bottom: 4px;
+}
+.title_section a, .title_section a:active, .title_section a:visited {
+	font-size: 12px;
+	line-height: 1.2em;
+	padding: 3px;	
+}
+.title_section a:hover {
+	text-decoration: none;
+}
+.list_items {
+	margin: 10px 10px 10px 25px;
+	padding-left: 6px;
+	font-size: 0.9em;
+}
+
+.file_attr {
+	font-size: 76%;
+	font-weight: lighter;
+	margin-left: 24px;
+}
+/*Articulos*/
+.article_content {
+	margin:3px 15px 16px;
+	padding: 4px 4px 20px 4px;
+}
+.article_content p, .article_content > * {
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+.article_content h3 {
+	font-size: 1.1em;
+	line-height: 1.6em;		
+}
+.lbl_date {
+	font-size: 9px;
+	padding: 1px;
+	text-transform: uppercase;
+	font-weight: bolder;	
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+.article_title {
+	margin-top: 30px;
+	padding-bottom: 3px;
+}
+.article_poster {
+	font-size: 0.6em;
+	font-weight: lighter;	
+}
+.username, .action_post, .action_edit, .action_delete { text-decoration: underline; font-weight: bold; }
+.username { padding-right: 5px; }
+.action_post, .action_edit, .action_delete { padding: 0 5px; }
+/*Comments*/
+#comments_container {
+	font-size: 0.9em;
+}
+.comment {
+	margin: 10px 0;	
+	clear: left;
+}
+.comment p {
+	clear: right;
+	margin: 10px 10px 20px 0;
+	font-size: 0.9em;
+	word-spacing:1px;
+}
+.attach_files {
+	clear: left;
+	margin-left: 26px;	
+}
+.attach_files h4 {
+	font-size: 0.7em;
+}
+.gravatar {
+	padding: 1px;
+	float: left;
+	width: 48px;
+	height: 48px;
+	margin: 10px;
+}
+.posted_by {
+	position: relative;
+	font-size: 0.8em;
+	text-indent: 26px;
+}
+.icon_delete {
+	display:block;
+	height:16px;
+	position:absolute;
+	right:6px;
+	text-indent:-99999px;
+	top:0;
+	width:16px;
+	/* for IE */
+	filter:alpha(opacity=50);
+	/* CSS3 standard */
+	opacity:0.5;
+}
+a.icon_delete:hover {
+	filter:alpha(opacity=100);
+	/* CSS3 standard */
+	opacity:1;
+}
+.new_comment {
+	clear: left;
+	padding-top: 10px;
+}
+.new_comment textarea {
+	font-size:1.2em;
+	line-height:1.5em;
+	margin:10px;
+	min-height:150px;
+	width:86%;
+	word-spacing:1px;
+}
+.comment_buttons {
+	margin: 20px 0 16px 0;
+	font-size: 0.8em;
+	padding: 0 24px;
+}
+.comment_footer {	
+	padding-top: 3px;
+	font-size: 0.8em;
+}
+/*Mensajes de Error*/
+#message {
+	margin-bottom: 16px;
+	border: 1px solid;
+	overflow: hidden;
+	padding: 5px;
+	font-size: 0.8em;
+	font-weight: bold;
+	letter-spacing: 1px;
+}
+
+#message p {
+	padding: 3px 0px;
+	text-indent: 30px;
+}
+/*Menu del Side*/
+#side_menu, #simple_menu {
+	margin: 10px 0 30px 0;
+}
+#side_menu > li > a{
+	padding: 5px 0;
+	text-indent: 10px;
+	font-weight: bold;
+	display: block;		
+}
+#side_menu > li > a:hover, #simple_menu > li > a:hover {
+	text-decoration: none;
+	color: #000;
+}
+#simple_menu > li {
+	padding: 0 10px;	
+}
+.list_persons li {
+	margin-bottom: 16px;
+}
+.list_persons b {
+	display: block;	
+}
+.list_persons a {	
+	font-size: 0.9em;
+	letter-spacing: -0.06em;
+}
+/*Iconos de Archivos*/
+.pdf, .gif, .png, .jpg, .doc, .xml, .xls, .ppt, .zip, .txt, .file {
+	text-indent: 24px;	
+	display: block;
+	background-repeat: no-repeat;
+	background-position: top left;
+	margin-top: 3px;
+	padding:2px 0;
+	font-size: 0.85em;
+}

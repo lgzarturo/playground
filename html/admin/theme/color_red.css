@@ -1,0 +1,44 @@
+/*Titulo de la Pagina*/
+#header h1, #header h1 a, #header h1 a:visited, #header h1 a:active, #header h1 a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/*Secciones*/
+#header {
+  background-color: maroon;
+  color: white;
+}
+
+#content, #footer {
+  color: #333;
+}
+
+/*Menu de texto*/
+.txt_menu {
+  color: #a80000;
+}
+
+.txt_menu li > a {
+  color: #fff;
+}
+
+.txt_menu li > a:hover {
+  color: red;
+}
+
+/*Menu de bloques*/
+.block_menu li > a {
+  color: white;  
+  background: #a80000 url("img/bkg_pattern_all.png") !important;
+  background-image: none;
+}
+
+.block_menu li > a:hover {
+  color: #ffff70;
+  background-color: #b80000 !important;
+}
+
+#block_active {
+  color: maroon;
+  background: #fff url("img/menu_block_bkg.gif") repeat-x bottom left !important;
+}

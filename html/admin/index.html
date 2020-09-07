@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Administracion</title>
+    <link rel="stylesheet" type="text/css" charset="utf-8" href="reset.css" media="screen" />		      
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="style.css" media="screen" />
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="theme/color_blue.css" media="screen" />
+	<link rel="stylesheet" type="text/css" charset="utf-8" href="theme/colors_general.css" media="screen" />
+  </head>
+  <body>
+    
+    <div id="header">
+      <ul id="user_menu" class="txt_menu" style="float:right;">
+        <li><a href="#">Settings</a><span class="pipe_space">|</span></li>
+        <li><a href="#">Permissions</a><span class="pipe_space">|</span></li>
+        <li><a href="#">Help</a><span class="pipe_space">|</span></li>
+        <li><a href="#">My account</a><span class="pipe_space">|</span></li>
+        <li><a href="#">Log-out</a></li>                                                                                                
+      </ul>
+      <ul id="admin_menu" class="txt_menu">
+        <li><a href="#">Dashboard</a><span class="pipe_space">|</span></li>
+        <li><a href="#">Create a project</a></li>        
+      </ul>      	
+      
+      <h1><a href="#">Administrator</a> <span id="slogan">admin</span></h1> 
+      
+      <ul id="tools_menu" class="block_menu" style="float:right;">
+        <li><a href="#">People</a></li>  
+        <li><a href="#">Search</a></li>
+      </ul>
+      <ul id="modules_menu" class="block_menu">
+        <li><a href="#" id="block_active">Overview</a></li>  
+        <li><a href="#">Messages</a></li>
+        <li><a href="#">Files</a></li>
+        <li><a href="#">Chat</a></li>
+        <li><a href="#">Milestones</a></li>
+      </ul>
+      
+    </div>
+    
+    <div id="content">
+      <div id="message" class="success">
+      	<p>An email notification was send succesfully!!</p>
+      </div>
+      <div id="page">
+      <div id="side_left" class="out">
+        <div class="in ltin tpin">
+          <div class="title_section">
+          	<h2>This is a first <b>Section</b></h2>
+			<a href="#">Post a new message</a>
+          </div>
+		  <div id="articles_container">
+		  	<div class="article_title">
+		  		<span class="lbl_date">today</span>	
+		  	</div>
+			<div class="article_content">
+				<h3>Titulo del Articulo</h3>
+				<p>
+					Stylus Studio® 2011 XML Enterprise Suite raises the bar for productivity in XML development tools. 
+					Millions of XML developers and data integration specialists turn to Stylus Studio's comprehensive 
+					and intuitive XML toolset to tackle today's advanced XML data transformation and aggregation challenges.
+					stylus 	
+					<ul>
+				    <li>* XML Pipeline Editor, Debugger and Code Generator </li>
+				    <li>* DataDirect XML Converters </li>
+				    <li>* XQuery Mapper, Editor, Debugger, and Profiler </li>
+				    <li>* XSLT Mapper, Editor, Debugger, Designer, and Profiler </li>
+				    <li>* Java and C# for .Net Code Generation </li>
+				    <li>* XML Schema Designer With Documentation Generator </li>
+				    <li>* XML Editor With Full XPath Integration </li>
+					</ul>
+					<ul class="list_items">
+						<li><span class="xml"><a href="#">Document.xml</a></span><span class="file_attr">(Document XML, 200K) - REST Service Requet</span></li>
+						<li><span class="gif"><a href="#">Image.gif</a></span><span class="file_attr">(GIF, 50K)</span></li>
+					</ul>
+					
+				</p>
+				<span class="article_poster">Posted by <a href="#" class="username">alopezg</a> | 
+					<a href="#" class="action_edit">Edit</a> | 
+					<a href="#" class="action_post">Post a comment</a> |  
+					<a href="#" class="action_delete">Delete</a>
+				</span>
+			</div>
+		  	<div id="comments_container">
+		  		<ul>
+		  			<li class="comment">
+		  				<div class="posted_by">
+		  					11 Noviembre del 2010 | <b>Arthuro Lopez dice...</b> 
+		  					<a href="#" class="icon_delete">Delete</a>
+		  				</div>
+						<img src="" class="gravatar" />
+						<p>								
+							Nice idea Ryan. I'll mock up the changes and see what i think. I'll post it there for you to review 
+							by tomorrow morning.
+						</p>						
+		  			</li>
+					<li class="comment">
+		  				<div class="posted_by">
+		  					11 Noviembre del 2010 | <b>Arthuro Lopez dice...</b> 
+		  					<a href="#" class="icon_delete">Delete</a>
+		  				</div>
+						<img src="" class="gravatar" />
+						<p>								
+							Esto es una prueba 
+						</p>
+						<div class="attach_files">
+							<h4>Attached Files...</h4>	
+							<ul class="list_items">
+								<li><span class="xml"><a href="#">Document.xml</a></span><span class="file_attr">(Document XML, 200K) - REST Service Requet</span></li>
+								<li><span class="gif"><a href="#">Image.gif</a></span><span class="file_attr">(GIF, 50K)</span></li>
+							</ul>
+						</div>						
+		  			</li>		
+		  		</ul> 									  		
+				<div class="new_comment">
+					<div class="posted_by">
+						<b>Arthuro Lopez dice...</b>
+					</div>
+					<form>
+						<textarea></textarea>					
+						<div class="attach_files">
+							<h4>Attach Files...</h4>
+							<ul class="list_items">
+								<li><a href="#">Attach file to this comment...</a></li>
+							</ul>
+						</div>
+						<div class="comment_buttons">
+						<button>Preview</button> or <button>Post this comment</button>
+						</div>
+					</form>
+					<p class="comment_footer">
+						Use formatting codes to make words bold and italic, created bulleted list, insert images, and more.
+						See the <a href="#">formatting guide</a> to learn how.			
+					</p>
+				</div>
+		  	</div>
+		  </div>	
+	
+        </div>
+		<div class="narrow"></div>		
+      </div>
+      <div id="side_right">
+      	<h5>Category <a href="#" class="link_h5">Edit</a></h5>		
+		<ul id="side_menu">
+			<li><a href="#">All messages</a></li>
+			<li><a href="#">Assest</a></li>
+			<li><a href="#">Code</a></li>
+			<li><a href="#">Design</a></li>
+			<li><a href="#">Other</a></li>
+			<li><a href="#">Copyright</a></li>
+		</ul>
+		<h6>All files in assest</h6>
+		<ul id="simple_menu">
+			<li><a href="#" class="pdf">File.pdf</a></li>
+			<li><a href="#" class="gif">Image.gif</a></li>
+			<li><a href="#" class="jpg">Image.jpg</a></li>
+			<li><a href="#" class="png">Image.png</a></li>
+			<li><a href="#" class="doc">Image.doc</a></li>
+			<li><a href="#" class="xml">Document.xml</a></li>
+			<li><a href="#" class="xls">File.xls</a></li>
+			<li><a href="#" class="ppt">Presentation.ppt</a></li>
+			<li><a href="#" class="zip">Container.zip</a></li>
+			<li><a href="#" class="txt">Text.txt</a></li>
+			<li><a href="#" class="file">File.x</a></li>
+		</ul>
+		<h5>Who's talking in this thread?</h5>
+		<ul id="simple_menu" class="list_persons">
+			<li><b>Arthuro Lopez</b><a href="#">lgzarturo@gmail.com</a></li>
+			<li><b>Arthuro Lopez</b><a href="#">lgzarturo@gmail.com</a></li>
+			<li><b>Arthuro Lopez</b><a href="#">lgzarturo@gmail.com</a></li>
+			<li><b>Arthuro Lopez</b><a href="#">lgzarturo@gmail.com</a></li>
+		</ul>
+      </div>
+      </div>
+    </div>
+    
+    <div id="footer">
+      <ul id="footer_menu" class="txt_menu">
+        <li><a href="#">Privacy Policy</a><span class="pipe_space">|</span></li>  
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+    
+  </body>
+</html>

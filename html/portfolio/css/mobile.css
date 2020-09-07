@@ -1,0 +1,35 @@
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 768px) {  
+	
+	#nav-title {
+		width: 100%;
+		text-align: center;
+		float: none;
+		margin: .8em 0;
+	}
+	
+	#nav-title li a {		
+		display: block;
+	}
+
+	#nav-title li a:hover {
+		color: white;
+		transition: background-color .7s ease-out;
+		background-color: green;
+		border none;
+	}
+	
+	#button-search {
+		float: none !important;		
+	}
+	
+	#button-search i:after {
+		content: ' Buscar en el sitio web.';
+	}
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (max-width: 992px) {  }
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {  }
