@@ -12,6 +12,6 @@
 pyvenv.cfg
 .venv
 pip-selfcheck.json
-activities.json
+*.json
 *.db
 chromedriver*
