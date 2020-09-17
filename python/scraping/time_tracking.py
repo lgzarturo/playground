@@ -26,7 +26,7 @@ osascript = '/usr/bin/osascript'
 #https://gist.github.com/dongyuwei/a1c9d67e4af6bbbd999c
 chrome = 'tell app "Google Chrome" to get the url of the active tab of window 1'
 safari = 'tell app "Safari" to return URL of front document'
-firefox = 'tell application "Firefox" to activate tell application "System Events" keystroke "l" using command down keystroke "c" using command down end tell'
+firefox = 'tell app "Firefox" to get name of front window'
 
 
 def get_window_name():
@@ -40,20 +40,24 @@ def get_activity_name(window_name):
 	elif active_window_name == 'Safari':
 		command = f'{osascript} -e \'{safari}\''
 	elif active_window_name == 'Firefox':
-		command = f'{osascript} -e \'{safari}\''
+		command = f'{osascript} -e \'{firefox}\''
 	else:
 		return window_name
 
 	command_pipe = Popen(command, shell=True, stdout=PIPE).stdout
-	action_name = command_pipe.readlines()[0].decode('utf-8')\
+	lines = command_pipe.readlines()
+	action_name = lines[0].decode('utf-8')\
 		.__str__().replace('\r', '').replace('\n', '')
 	sys.stdout.flush()
-	print(action_name)
 
 	if action_name == '':
 		return window_name
 
+	if active_window_name == 'Firefox':
+		return f'{window_name} - {action_name}'
+
 	domain = tldextract.extract(f'{action_name}').registered_domain
+
 	return f'{window_name} - {domain}'
 
 

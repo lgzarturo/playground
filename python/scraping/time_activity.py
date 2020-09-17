@@ -87,8 +87,8 @@ class TimeEntry:
 	def initialize(self):
 		self.days = self.total_time.days
 		self.seconds = self.total_time.seconds
-		self.hours = 0 if self.days == 0 else self.days * 24 + self.seconds
-		self.minutes = self.seconds % 3600
+		self.hours = 0 if self.days == 0 else self.days * 24 + self.seconds // 3600
+		self.minutes = (self.seconds % 3600) // 60
 		self.seconds = self.seconds % 60
 
 	def serialize(self):
