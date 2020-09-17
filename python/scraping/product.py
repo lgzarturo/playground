@@ -1,3 +1,7 @@
+from re import sub
+from decimal import Decimal
+
+
 class Product:
 	def __init__(self, name, current_price, old_price, link):
 		self.name = name
@@ -21,12 +25,4 @@ class Product:
 
 
 def convert_price_to_number(price):
-	price_data = price.split("$")[1]
-	try:
-		price_data = price.split("\n")[0] + '.' + price.split("\n")[1]
-	except Exception:
-		try:
-			price_data = price.split(",")[0] + price.split(",")[1]
-		except Exception:
-			return float(0.0)
-	return float(price_data)
+	return float(Decimal(sub(r'[^\d.]', '', price)))

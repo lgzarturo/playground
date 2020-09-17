@@ -2,12 +2,13 @@ import json
 import sys
 import time
 import tldextract
-import inspect
 import datetime
 from time_activity import ActivityList, TimeEntry, Activity
 from subprocess import Popen, PIPE
 
 from os import path
+
+# Time tracking util
 
 try:
 	from AppKit import NSWorkspace
@@ -23,7 +24,7 @@ first_time = True
 activity_list = ActivityList([])
 output_filename = 'activities.json'
 osascript = '/usr/bin/osascript'
-#https://gist.github.com/dongyuwei/a1c9d67e4af6bbbd999c
+# https://gist.github.com/dongyuwei/a1c9d67e4af6bbbd999c
 chrome = 'tell app "Google Chrome" to get the url of the active tab of window 1'
 safari = 'tell app "Safari" to return URL of front document'
 firefox = 'tell app "Firefox" to get name of front window'

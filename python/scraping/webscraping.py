@@ -6,8 +6,8 @@ from selenium.webdriver.common.keys import Keys
 
 # Revisando precios en Amazon
 URL = "https://www.amazon.com.mx"
-NUMBER_OF_PAGES_TO_REVIEW = 2
-search_term = str(input('Que producto buscas?\n>')).split(" ")
+NUMBER_OF_PAGES_TO_REVIEW = 1
+search_term = str(input('Que producto buscas?\n> ')).split(" ")
 
 best_discount = 0.0
 best_price = 0.0
@@ -40,32 +40,40 @@ while True:
 		except Exception:
 			break
 
-	for index_result in driver.find_elements_by_xpath('//*[@id="search"]/div[1]/div[2]/div/span[4]/div[1]'):
-		counter = 0
-		for element in index_result.find_elements_by_xpath('//div/div/div[2]/div[2]/div/div[2]/div[1]/div/div[1]/div/div/a'):
-			should_add = True
-			name = ""
-			price = ""
-			old_price = ""
-			link = ""
+	for index_result in driver.find_elements_by_class_name('s-result-item s-asin'):
+		should_add = True
+		name = ""
+		price = ""
+		old_price = ""
+		link = ""
+		try:
+			name = index_result.find_element_by_tag_name('h2').text
+			print('Name: ' + name)
+			link = index_result\
+				.find_element_by_tag_name('a').get_attribute('href')
+			print('Link: ' + link)
+			product_price = index_result\
+				.find_element_by_class_name('a-price').text
+			print('Product Price: ' + product_price)
+			price = convert_price_to_number(product_price)
+			print('Price: ' + price)
 			try:
-				name = index_result.find_element_by_tag_name('h2')[counter].text
-				product_price = element.find_element_by_class_name('a-price').text
-				price = convert_price_to_number(product_price)
-				link = index_result.find_element_by_xpath()[counter].get_attribute('href')
-				try:
-					product_price = element.find_element_by_class_name(
-						'a-text-price').text
-					old_price = convert_price_to_number(product_price)
-				except Exception:
-					old_price = price
+				product_price = index_result\
+					.find_element_by_class_name('a-text-price').text
+				print('Discount Price:' + product_price)
+				old_price = convert_price_to_number(product_price)
+				print('Old Price:' + old_price)
 			except Exception:
-				should_add = False
-				continue
-			product = Product(name, price, old_price, link)
-			if should_add:
-				products.append(product)
-			counter = counter + 1
+				old_price = price
+			print('*' * 100)
+		except Exception:
+			should_add = False
+			continue
+		product = Product(name, price, old_price, link)
+		if should_add:
+			products.append(product)
+		counter = counter + 1
+
 	page = page - 1
 	if page == 0:
 		break
