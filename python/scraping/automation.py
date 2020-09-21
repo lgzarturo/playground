@@ -18,11 +18,14 @@ def add_extension_path(path: Path, extension):
 def move_file(filename):
   index = 0
   name, extension = os.path.splitext(filename)
-  folder_path = f'{folder_destination}'
 
   if extension in extension_paths:
     folder_path = add_extension_path(
       destination_path, extension_paths[extension]
+    )
+  else:
+    folder_path = add_extension_path(
+      destination_path, 'other/uncategorized'
     )
 
   new_name = f'{name}{extension}'
@@ -43,11 +46,14 @@ def move_file(filename):
 def move_folder(folder):
   print(f'folder:{folder}')
   src = f'{folder_to_track}/{folder}'
-  new_destination = f'{folder_destination}/{folder}'
+  folder_path = add_extension_path(
+    destination_path, 'folders'
+  )
+  new_destination = f'{folder_path}/{folder}'
   try:
     os.rename(src, new_destination)
   except Exception:
-    os.rename(src, f'{new_destination}-{uuid.uuid4()}')
+    os.rename(src, f'{folder_path}-{uuid.uuid4()}')
 
 
 class CustomHandler(FileSystemEventHandler):
@@ -91,8 +97,8 @@ def main():
   observer.join()
 
 
-track_path = Path.home() / 'Downloads' / 'test'
-destination_path = Path.home() / 'Downloads' / 'testAutomation'
+track_path = Path.home() / 'Downloads'
+destination_path = Path.home() / 'Desktop' / 'ArturoLG'
 folder_to_track = f'{track_path}'
 folder_destination = f'{destination_path}'
 
@@ -154,6 +160,7 @@ extension_paths = {
   '.tiff': 'media/images',
   '.cr2': 'media/images',
   # internet
+  '.ics': 'other/calendar',
   '.asp': 'other/internet',
   '.aspx': 'other/internet',
   '.cer': 'other/internet',
