@@ -11,11 +11,11 @@ from os import path
 # Time tracking util
 
 try:
-	from AppKit import NSWorkspace
-	from Foundation import *
+  from AppKit import NSWorkspace
+  from Foundation import *
 except ImportError:
-	print("No se puede importar AppKit")
-	sys.exit(1)
+  print("No se puede importar AppKit")
+  sys.exit(1)
 
 active_window_name = None
 activity_name = ""
@@ -31,72 +31,71 @@ firefox = 'tell app "Firefox" to get name of front window'
 
 
 def get_window_name():
-	name = (NSWorkspace.sharedWorkspace().activeApplication()['NSApplicationName'])
-	return name
+  name = (
+  NSWorkspace.sharedWorkspace().activeApplication()['NSApplicationName'])
+  return name
 
 
 def get_activity_name(window_name):
-	if active_window_name == 'Google Chrome':
-		command = f'{osascript} -e \'{chrome}\''
-	elif active_window_name == 'Safari':
-		command = f'{osascript} -e \'{safari}\''
-	elif active_window_name == 'Firefox':
-		command = f'{osascript} -e \'{firefox}\''
-	else:
-		return window_name
+  if active_window_name == 'Google Chrome':
+    command = f'{osascript} -e \'{chrome}\''
+  elif active_window_name == 'Safari':
+    command = f'{osascript} -e \'{safari}\''
+  elif active_window_name == 'Firefox':
+    command = f'{osascript} -e \'{firefox}\''
+  else:
+    return window_name
 
-	command_pipe = Popen(command, shell=True, stdout=PIPE).stdout
-	lines = command_pipe.readlines()
-	action_name = lines[0].decode('utf-8')\
-		.__str__().replace('\r', '').replace('\n', '')
-	sys.stdout.flush()
+  command_pipe = Popen(command, shell=True, stdout=PIPE).stdout
+  lines = command_pipe.readlines()
+  action_name = lines[0].decode('utf-8') \
+    .__str__().replace('\r', '').replace('\n', '')
+  sys.stdout.flush()
 
-	if action_name == '':
-		return window_name
+  if action_name == '':
+    return window_name
 
-	if active_window_name == 'Firefox':
-		return f'{window_name} - {action_name}'
+  if active_window_name == 'Firefox':
+    return f'{window_name} - {action_name}'
 
-	domain = tldextract.extract(f'{action_name}').registered_domain
+  domain = tldextract.extract(f'{action_name}').registered_domain
 
-	return f'{window_name} - {domain}'
+  return f'{window_name} - {domain}'
 
 
 def save_activity_list(data):
-	with open(output_filename, 'w') as file:
-		json.dump(data, file, indent=2, sort_keys=True)
+  with open(output_filename, 'w') as file:
+    json.dump(data, file, indent=2, sort_keys=True)
 
 
 try:
-	while True:
-		new_window_name = get_window_name()
+  while True:
+    new_window_name = get_window_name()
 
-		if active_window_name != new_window_name:
-			activity_name = get_activity_name(active_window_name)
-			print(activity_name)
+    if active_window_name != new_window_name:
+      activity_name = get_activity_name(active_window_name)
+      print(activity_name)
 
-			if not first_time:
-				exists = False
-				end_time = datetime.datetime.now()
-				time_entry = TimeEntry(start_time, end_time, 0, 0, 0, 0)
-				for activity in activity_list.activities:
-					if activity.name == activity_name:
-						exists = True
-						activity.time_entries.append(time_entry)
-						break
+      if not first_time:
+        exists = False
+        end_time = datetime.datetime.now()
+        time_entry = TimeEntry(start_time, end_time, 0, 0, 0, 0)
+        for activity in activity_list.activities:
+          if activity.name == activity_name:
+            exists = True
+            activity.time_entries.append(time_entry)
+            break
 
-				if not exists:
-					activity = Activity(activity_name, [time_entry])
-					activity_list.activities.append(activity)
+        if not exists:
+          activity = Activity(activity_name, [time_entry])
+          activity_list.activities.append(activity)
 
-				save_activity_list(activity_list.serialize())
-				start_time = datetime.datetime.now()
-			first_time = False
-			active_window_name = new_window_name
+        save_activity_list(activity_list.serialize())
+        start_time = datetime.datetime.now()
+      first_time = False
+      active_window_name = new_window_name
 
-		time.sleep(1)
+    time.sleep(1)
 except KeyboardInterrupt:
-	save_activity_list(activity_list.serialize())
-	sys.exit(0)
-
-
+  save_activity_list(activity_list.serialize())
+  sys.exit(0)
