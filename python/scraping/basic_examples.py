@@ -12,13 +12,34 @@ def custom_greeting(name, age):
     print('Eres menor de edad, no puedes entrar a las Discotecas')
 
 
+class Man(object):
+  def __init__(self, radius):
+    self.radius = radius
+
+  @classmethod
+  def greeting(cls, name):
+    print(f'Hola super {name}')
+
+  @staticmethod
+  def static_greeting():
+    print("Welcome")
+
+  @property
+  def area(self):
+    return 3.1416 * (self.radius**2)
+
+
 class Car(object):
-  def __init__(self):
+  def __init__(self, m):
     self.wheels = 4
     self.color = 'Azul'
     self.brand = 'Ford'
     self.model = 'Figo'
     self.doors = '4'
+    self.m = m
+
+  def traffic(self):
+    return "Acelerar" if self.m else "Frenar"
 
 
 def add(value1, value2):
@@ -38,11 +59,40 @@ def multiply(value1, value2):
 
 
 def main():
+  man = Man()
+  man.static_greeting()
+  print(man.area(5))
+  Man.greeting("Gustavo")
   greeting()
   greeting('Arturo')
-  car = Car()
-  print(f'El carro {car.brand} {car.model}, tiene {car.doors} puertas')
-  print(f'y tiene {car.wheels} llantas y es de color {car.color}')
+  while True:
+    print('=' * 32)
+    print('Recorrido del carro')
+    print('=' * 32)
+    print('1. Acelerar')
+    print('2. Frenar')
+    print('3. Detener')
+    option = int(input("Opción => "))
+
+    if option == 3:
+      break
+
+    if option == 0 or option > 3:
+      print(f'La opción {option} no esta soportada')
+      continue
+
+    if option == 1:
+      car = Car(m=True)
+    else:
+      car = Car(m=False)
+
+    message = f"""{car.traffic()} =>
+      El carro {car.brand} {car.model}, tiene {car.doors} puertas
+      y tiene {car.wheels} llantas y es de color {car.color}
+    """
+    print(message)
+
+  print("*"*64)
   name = input('Cual es tu nombre? => ')
   age = int(input('Cual es tu edad? => '))
   custom_greeting(name, age)
