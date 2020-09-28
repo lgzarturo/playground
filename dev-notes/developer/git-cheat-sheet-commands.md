@@ -1,5 +1,35 @@
 # Comandos útiles en Git
 
+Comparar archivos entre el working area y el index (stage)
+```bash
+$ git diff 
+```
+
+Compara archivos entre el index (stage) y el repositorio 
+```bash
+$ git diff --cached
+```
+
+Comparar las diferencias entre ramas
+```bash
+$ git diff {branch1|develop} {branch2|master}
+```
+
+Eliminar archivos de stage
+```bash
+$ git rm --cached {filename}
+```
+
+Eliminar archivos de working área, index y repositorio 
+```bash
+$ git rm -f {filename}
+```
+
+Mover archivos
+```bash
+$ git mv {filename.txt} {filename.md}
+```
+
 Listado de branchs:
 `$ git branch -l`
 
