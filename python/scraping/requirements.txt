@@ -138,6 +138,7 @@ pyobjc-framework-Vision==6.2.2
 pyobjc-framework-WebKit==6.2.2
 python-dateutil==2.8.1
 python-decouple==3.3
+python-nmap==0.6.1
 pytz==2020.1
 requests==2.24.0
 requests-file==1.5.1
