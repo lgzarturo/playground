@@ -13,6 +13,7 @@ def main():
   cipher.breaking_caesar(data_encrypted)
   text = cipher.caesar_encrypt(data)
   print(text+" | "+cipher.caesar_decrypt(text))
+  cipher.transposition()
 
 
 if __name__ == '__main__':

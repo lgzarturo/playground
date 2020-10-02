@@ -1,4 +1,6 @@
 import math
+import random
+import sys
 
 symbols = ' !"#$%&/\\()=\'¡?¿`*´{}[]-.,_<>@|~^'
 numbers = "1234567890"
@@ -81,3 +83,26 @@ def breaking_caesar(message):
       else:
         translated = translated + symbol
     print(f'{key}.- Translated: {translated}')
+
+
+def random_string():
+  message = letters * random.randint(4, 40)
+  message = list(message)
+  random.shuffle(message)
+  message = ''.join(message)
+  return message
+
+
+def transposition(seed=42):
+  random.seed(seed)
+  for index in range(20):
+    message = random_string()
+    print(f'Test #{index}: "{message[:50]}..."')
+    for key in range(1, len(message)):
+      encrypted = caesar_encrypt(message, key)
+      decrypted = caesar_decrypt(encrypted, key)
+      if message != decrypted:
+        print(f'Error con la llave {key} y el mensaje {message}')
+        print(decrypted)
+        sys.exit()
+  print('Se han pasado las pruebas del cifrado')
