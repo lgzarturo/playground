@@ -43,3 +43,5 @@ out/
 ## Node JS ###
 node_modules/
 
+## Custom ##
+/jvm/code-testing/src/main/.DS_Store
