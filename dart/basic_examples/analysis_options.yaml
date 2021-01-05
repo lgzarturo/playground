@@ -9,7 +9,6 @@ include: package:effective_dart/analysis_options.yaml
 # linter:
 linter:
   rules:
-    always_specify_types: true
     omit_local_variable_types: false
 
 analyzer:
