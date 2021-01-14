@@ -231,4 +231,13 @@ var settings = Settings.build('yellow', 'logo.png');
 console.log(settings);
 var settings_copy = Settings.build('green', 'logo2.png');
 console.log(settings_copy);
+var bird = {
+    color: 'Blue',
+    size: 2,
+    type: 'Blue bird',
+    action: function () {
+        return this.type + " is flying";
+    }
+};
+console.log(bird.action());
 cycle();

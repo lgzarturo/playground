@@ -240,4 +240,22 @@ console.log(settings)
 let settings_copy = Settings.build('green', 'logo2.png')
 console.log(settings_copy)
 
+interface Birds {
+    color: string
+    size: number
+    type: string
+    action(): string
+}
+
+let bird:Birds = {
+    color: 'Blue',
+    size: 2,
+    type: 'Blue bird',
+    action() {
+        return `${this.type} is flying`
+    }
+}
+
+console.log(bird.action())
+
 cycle()
