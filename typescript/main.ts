@@ -120,11 +120,19 @@ personName = 'Xavier'
 console.log(typeof personName)
 
 class Car {
+    static type:string = 'Automovil'
+    static sayType() {
+        console.log(Car.type)
+    }
     name: string
     year: number
     model: string
     color: string
     doors: number
+    private serialNumber: string
+    public saySerialNumber() {
+        console.log(this.serialNumber)
+    }
 
     constructor(name: string, year: number, model: string, color: string, doors: number) {
         console.log('Creando la nueva instancia de la clase Car')
@@ -133,16 +141,41 @@ class Car {
         this.model = model
         this.color = color
         this.doors = doors
+        this.serialNumber = `UUID-${year}-${model}`
     }
 }
 
 let myCar = new Car('Figo', 2020, 'TM', 'Blue', 5)
 console.log(myCar)
+console.log(myCar.name)
+myCar.saySerialNumber()
+Car.sayType()
 
 function cycle():never {
     console.log('cycle')
     throw new Error('Existe un error')
     console.log('hello')
 }
+
+class Vehicle {
+    private alertAboutType() {
+        console.log(`From alert about type ${this.type}`)
+    }
+    protected getType() {
+        console.log(`From getType ${this.type}`)
+        return this.type
+    }
+    constructor(public type:string) {}
+}
+
+class Motorcycle extends Vehicle {
+    constructor(type:string, public cc:number) {
+        super(type)
+        console.log(super.getType())
+    }
+}
+
+let yamaha = new Motorcycle('Class yamaha', 150)
+console.log(yamaha)
 
 cycle()

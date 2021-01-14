@@ -1,4 +1,17 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var greetings = 'Pruebas de Typescript';
 var firstName = 'Arturo';
 var lastName = 'López';
@@ -97,14 +110,50 @@ var Car = /** @class */ (function () {
         this.model = model;
         this.color = color;
         this.doors = doors;
+        this.serialNumber = "UUID-" + year + "-" + model;
     }
+    Car.sayType = function () {
+        console.log(Car.type);
+    };
+    Car.prototype.saySerialNumber = function () {
+        console.log(this.serialNumber);
+    };
+    Car.type = 'Automovil';
     return Car;
 }());
 var myCar = new Car('Figo', 2020, 'TM', 'Blue', 5);
 console.log(myCar);
+console.log(myCar.name);
+myCar.saySerialNumber();
+Car.sayType();
 function cycle() {
     console.log('cycle');
     throw new Error('Existe un error');
     console.log('hello');
 }
+var Vehicle = /** @class */ (function () {
+    function Vehicle(type) {
+        this.type = type;
+    }
+    Vehicle.prototype.alertAboutType = function () {
+        console.log("From alert about type " + this.type);
+    };
+    Vehicle.prototype.getType = function () {
+        console.log("From getType " + this.type);
+        return this.type;
+    };
+    return Vehicle;
+}());
+var Motorcycle = /** @class */ (function (_super) {
+    __extends(Motorcycle, _super);
+    function Motorcycle(type, cc) {
+        var _this = _super.call(this, type) || this;
+        _this.cc = cc;
+        console.log(_super.prototype.getType.call(_this));
+        return _this;
+    }
+    return Motorcycle;
+}(Vehicle));
+var yamaha = new Motorcycle('Class yamaha', 150);
+console.log(yamaha);
 cycle();
