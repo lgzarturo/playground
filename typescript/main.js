@@ -154,6 +154,64 @@ var Motorcycle = /** @class */ (function (_super) {
     }
     return Motorcycle;
 }(Vehicle));
+var TypeProduct = /** @class */ (function () {
+    function TypeProduct(_type) {
+        this._type = _type;
+    }
+    Object.defineProperty(TypeProduct.prototype, "type", {
+        get: function () {
+            return this._type;
+        },
+        set: function (new_type) {
+            this._type = new_type;
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return TypeProduct;
+}());
+var Product = /** @class */ (function (_super) {
+    __extends(Product, _super);
+    function Product(_price) {
+        var _this = _super.call(this, 'Celphone') || this;
+        _this._price = _price;
+        return _this;
+    }
+    Object.defineProperty(Product.prototype, "price", {
+        get: function () {
+            return this._price;
+        },
+        set: function (new_price) {
+            if (new_price > this.price) {
+                this._price = new_price;
+            }
+            else {
+                return;
+            }
+        },
+        enumerable: false,
+        configurable: true
+    });
+    return Product;
+}(TypeProduct));
+var Tablet = /** @class */ (function (_super) {
+    __extends(Tablet, _super);
+    function Tablet(brand, model, type) {
+        var _this = _super.call(this, type) || this;
+        _this.brand = brand;
+        _this.model = model;
+        return _this;
+    }
+    return Tablet;
+}(TypeProduct));
+var iphone = new Product(25000);
+console.log(iphone.price);
+iphone.price = 30000;
+console.log(iphone.price);
+iphone.price = 25000;
+console.log(iphone.price);
+var tablet = new Tablet('Samsung', 'Galaxy Tab S7', 'Tablet');
+console.log(tablet);
 var yamaha = new Motorcycle('Class yamaha', 150);
 console.log(yamaha);
 cycle();

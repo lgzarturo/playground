@@ -175,6 +175,52 @@ class Motorcycle extends Vehicle {
     }
 }
 
+abstract class TypeProduct {
+    constructor(private _type:string){}
+    get type():string {
+        return this._type
+    }
+    set type(new_type:string) {
+        this._type = new_type
+    }
+}
+
+class Product extends TypeProduct {
+    constructor(private _price:number) {
+        super('Celphone')
+    }
+    get price():number {
+        return this._price
+    }
+    set price(new_price:number) {
+        if (new_price > this.price) {
+            this._price = new_price
+        } else {
+            return
+        }
+    }
+}
+
+class Tablet extends TypeProduct {
+    brand:string
+    model:string
+    constructor(brand:string, model:string, type:string) {
+        super(type)
+        this.brand = brand
+        this.model = model
+    }
+}
+
+let iphone = new Product(25000)
+console.log(iphone.price)
+iphone.price = 30000
+console.log(iphone.price)
+iphone.price = 25000
+console.log(iphone.price)
+
+let tablet = new Tablet('Samsung', 'Galaxy Tab S7', 'Tablet')
+console.log(tablet)
+
 let yamaha = new Motorcycle('Class yamaha', 150)
 console.log(yamaha)
 
