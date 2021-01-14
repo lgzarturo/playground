@@ -242,7 +242,7 @@ console.log(settings_copy)
 
 interface Birds {
     color: string
-    size: number
+    size?: number
     type: string
     action(): string
 }
@@ -257,5 +257,16 @@ let bird:Birds = {
 }
 
 console.log(bird.action())
+
+class BlueBird implements Birds {
+    constructor(public color:string, public type:string) {}
+    action(): string {
+        return `${this.type} is flying`
+    }
+}
+
+let cyanBird = new BlueBird('Cyan', 'CyanBird')
+
+console.log(cyanBird.action())
 
 cycle()

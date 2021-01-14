@@ -240,4 +240,16 @@ var bird = {
     }
 };
 console.log(bird.action());
+var BlueBird = /** @class */ (function () {
+    function BlueBird(color, type) {
+        this.color = color;
+        this.type = type;
+    }
+    BlueBird.prototype.action = function () {
+        return this.type + " is flying";
+    };
+    return BlueBird;
+}());
+var cyanBird = new BlueBird('Cyan', 'CyanBird');
+console.log(cyanBird.action());
 cycle();
