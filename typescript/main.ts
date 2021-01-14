@@ -224,4 +224,20 @@ console.log(tablet)
 let yamaha = new Motorcycle('Class yamaha', 150)
 console.log(yamaha)
 
+class Settings {
+    static instance:Settings
+    private constructor(public color:string, public logo:string) {}
+    static build(color:string, logo:string) {
+        if (!Settings.instance) {
+            Settings.instance = new Settings(color, logo)
+        }
+        return Settings.instance
+    }
+}
+
+let settings = Settings.build('yellow', 'logo.png')
+console.log(settings)
+let settings_copy = Settings.build('green', 'logo2.png')
+console.log(settings_copy)
+
 cycle()

@@ -214,4 +214,21 @@ var tablet = new Tablet('Samsung', 'Galaxy Tab S7', 'Tablet');
 console.log(tablet);
 var yamaha = new Motorcycle('Class yamaha', 150);
 console.log(yamaha);
+var Settings = /** @class */ (function () {
+    function Settings(color, logo) {
+        this.color = color;
+        this.logo = logo;
+    }
+    Settings.build = function (color, logo) {
+        if (!Settings.instance) {
+            Settings.instance = new Settings(color, logo);
+        }
+        return Settings.instance;
+    };
+    return Settings;
+}());
+var settings = Settings.build('yellow', 'logo.png');
+console.log(settings);
+var settings_copy = Settings.build('green', 'logo2.png');
+console.log(settings_copy);
 cycle();
