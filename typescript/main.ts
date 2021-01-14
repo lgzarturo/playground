@@ -1,3 +1,5 @@
+/// <reference path="ts/greetings.ts" />
+
 let greetings = 'Pruebas de Typescript'
 let firstName:string = 'Arturo'
 let lastName:string = 'López'
@@ -154,7 +156,6 @@ Car.sayType()
 function cycle():never {
     console.log('cycle')
     throw new Error('Existe un error')
-    console.log('hello')
 }
 
 class Vehicle {
@@ -268,5 +269,7 @@ class BlueBird implements Birds {
 let cyanBird = new BlueBird('Cyan', 'CyanBird')
 
 console.log(cyanBird.action())
+
+Greetings.greeting()
 
 cycle()
