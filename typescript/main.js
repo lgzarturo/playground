@@ -89,6 +89,19 @@ personName = undefined;
 console.log(typeof personName);
 personName = 'Xavier';
 console.log(typeof personName);
+var Car = /** @class */ (function () {
+    function Car(name, year, model, color, doors) {
+        console.log('Creando la nueva instancia de la clase Car');
+        this.name = name;
+        this.year = year;
+        this.model = model;
+        this.color = color;
+        this.doors = doors;
+    }
+    return Car;
+}());
+var myCar = new Car('Figo', 2020, 'TM', 'Blue', 5);
+console.log(myCar);
 function cycle() {
     console.log('cycle');
     throw new Error('Existe un error');
