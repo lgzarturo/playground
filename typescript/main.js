@@ -1,3 +1,5 @@
+"use strict";
+/// <reference path="ts/greetings.ts" />
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -11,14 +13,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var Greetings;
-(function (Greetings) {
-    function greeting() {
-        console.log('Hola mundo desde un namespace');
-    }
-    Greetings.greeting = greeting;
-})(Greetings || (Greetings = {}));
-/// <reference path="ts/greetings.ts" />
 var greetings = 'Pruebas de Typescript';
 var firstName = 'Arturo';
 var lastName = 'López';
