@@ -1,5 +1,5 @@
-import {Automovile, Bus} from './ts/includes/cars'
-import * as Greetings from './ts/greetings'
+import {Automovile, Bus} from './includes/cars'
+import * as Greetings from './greetings'
 
 let greetings = 'Pruebas de Typescript'
 let firstName:string = 'Arturo'

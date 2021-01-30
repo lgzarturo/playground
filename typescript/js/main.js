@@ -32,8 +32,8 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var cars_1 = require("./ts/includes/cars");
-var Greetings = __importStar(require("./ts/greetings"));
+var cars_1 = require("./includes/cars");
+var Greetings = __importStar(require("./greetings"));
 var greetings = 'Pruebas de Typescript';
 var firstName = 'Arturo';
 var lastName = 'López';
