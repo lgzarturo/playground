@@ -40,6 +40,7 @@ var Greetings = __importStar(require("./greetings"));
 var users_1 = require("./includes/users");
 var login_1 = __importDefault(require("./includes/login"));
 require("jquery");
+var loggedIn_1 = __importDefault(require("./includes/loggedIn"));
 var greetings = 'Pruebas de Typescript';
 var firstName = 'Arturo';
 var lastName = 'López';
@@ -289,6 +290,7 @@ bus.doors = function () {
 };
 bus.doors();
 console.log(users_1.getUsers());
+loggedIn_1.default();
 document.getElementById('loginButton').addEventListener('click', function (e) {
     e.preventDefault();
     var username = document.getElementById('username').value;

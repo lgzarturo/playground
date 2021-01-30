@@ -3,6 +3,7 @@ import * as Greetings from './greetings'
 import { getUsers } from './includes/users'
 import login from './includes/login'
 import 'jquery'
+import loggedIn from './includes/loggedIn'
 
 // Esto es un comentario
 
@@ -293,6 +294,9 @@ bus.doors = function () {
 bus.doors()
 
 console.log(getUsers())
+
+// Revisar si se ha hecho login
+loggedIn()
 
 document.getElementById('loginButton')!.addEventListener('click', (e) => {
     e.preventDefault()
