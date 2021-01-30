@@ -273,3 +273,5 @@ console.log(cyanBird.action())
 Greetings.greeting()
 
 cycle()
+
+alert("Hello world")

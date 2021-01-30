@@ -254,3 +254,4 @@ var cyanBird = new BlueBird('Cyan', 'CyanBird');
 console.log(cyanBird.action());
 Greetings.greeting();
 cycle();
+alert("Hello world");
