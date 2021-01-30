@@ -1,5 +1,7 @@
 import {Automovile, Bus} from './includes/cars'
 import * as Greetings from './greetings'
+import { getUsers } from './includes/users'
+import login from './includes/login'
 
 let greetings = 'Pruebas de Typescript'
 let firstName:string = 'Arturo'
@@ -273,8 +275,6 @@ console.log(cyanBird.action())
 
 Greetings.greeting()
 
-alert("Hello world")
-
 let automovile = new Automovile()
 
 console.log(automovile)
@@ -288,5 +288,14 @@ bus.doors = function () {
 }
 
 bus.doors()
+
+console.log(getUsers())
+
+document.getElementById('loginButton')!.addEventListener('click', (e) => {
+    e.preventDefault()
+    let username = (<HTMLInputElement>document.getElementById('username')).value;
+    let password = (<HTMLInputElement>document.getElementById('password')).value;
+    login(getUsers()[0], {username, password})
+})
 
 cycle()

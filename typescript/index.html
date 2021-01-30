@@ -29,7 +29,7 @@
               </ul>
 
               <div class="login">
-                <a href="#" class="btn btn-outline-primary">Login</a>
+                <a href="#loginModal" class="btn btn-outline-primary" data-toggle="modal">Login</a>
               </div>
             </div>
           </div>
@@ -161,6 +161,30 @@
         &copy; lgzarturo - Todos los derechos reservados.
       </p>
     </footer>
+
+    <div class="modal fade portfolio-modal" id="loginModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Iniciar Sesión</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <input type="text" name="username" id="username" placeholder="Usuario" />
+              </div>
+              <div class="form-group">
+                <input type="password" name="password" id="password" placeholder="Contraseña" />
+              </div>
+              <button type="button" id="loginButton" data-dismiss="modal" class="btn btn-primary btn-block">Ingresar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

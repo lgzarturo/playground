@@ -31,9 +31,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var cars_1 = require("./includes/cars");
 var Greetings = __importStar(require("./greetings"));
+var users_1 = require("./includes/users");
+var login_1 = __importDefault(require("./includes/login"));
 var greetings = 'Pruebas de Typescript';
 var firstName = 'Arturo';
 var lastName = 'López';
@@ -274,7 +279,6 @@ var BlueBird = /** @class */ (function () {
 var cyanBird = new BlueBird('Cyan', 'CyanBird');
 console.log(cyanBird.action());
 Greetings.greeting();
-alert("Hello world");
 var automovile = new cars_1.Automovile();
 console.log(automovile);
 var bus = new cars_1.Bus();
@@ -283,4 +287,11 @@ bus.doors = function () {
     console.log('El autobus tiene 2 puertas dobles');
 };
 bus.doors();
+console.log(users_1.getUsers());
+document.getElementById('loginButton').addEventListener('click', function (e) {
+    e.preventDefault();
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+    login_1.default(users_1.getUsers()[0], { username: username, password: password });
+});
 cycle();
