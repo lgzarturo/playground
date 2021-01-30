@@ -2,6 +2,7 @@ import {Automovile, Bus} from './includes/cars'
 import * as Greetings from './greetings'
 import { getUsers } from './includes/users'
 import login from './includes/login'
+import 'jquery'
 
 // Esto es un comentario
 
@@ -299,5 +300,7 @@ document.getElementById('loginButton')!.addEventListener('click', (e) => {
     let password = (<HTMLInputElement>document.getElementById('password')).value;
     login(getUsers()[0], {username, password})
 })
+
+console.log($('#loginButton'))
 
 cycle()

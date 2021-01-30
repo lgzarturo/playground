@@ -210,6 +210,9 @@
       SystemJS.config({
         baseURL: "/",
         defaultJSExtensions: true,
+        map: {
+          'jquery': 'node_modules/jquery/dist/jquery.js'
+        }
       });
       SystemJS.import("js/main.js");
     </script>

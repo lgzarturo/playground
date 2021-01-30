@@ -39,6 +39,7 @@ var cars_1 = require("./includes/cars");
 var Greetings = __importStar(require("./greetings"));
 var users_1 = require("./includes/users");
 var login_1 = __importDefault(require("./includes/login"));
+require("jquery");
 var greetings = 'Pruebas de Typescript';
 var firstName = 'Arturo';
 var lastName = 'López';
@@ -294,4 +295,5 @@ document.getElementById('loginButton').addEventListener('click', function (e) {
     var password = document.getElementById('password').value;
     login_1.default(users_1.getUsers()[0], { username: username, password: password });
 });
+console.log($('#loginButton'));
 cycle();
