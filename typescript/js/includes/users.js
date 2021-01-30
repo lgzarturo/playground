@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getUsers = exports.User = void 0;
-var User = /** @class */ (function () {
+var User = (function () {
     function User(_username, _password) {
         this._username = _username;
         this._password = _password;

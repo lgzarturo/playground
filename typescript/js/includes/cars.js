@@ -31,7 +31,7 @@ function execute_constructor(isExecutable) {
         return null;
     }
 }
-var Automovile = /** @class */ (function () {
+var Automovile = (function () {
     function Automovile() {
         console.log("Hola estas en carro");
     }
@@ -41,7 +41,7 @@ var Automovile = /** @class */ (function () {
     return Automovile;
 }());
 exports.Automovile = Automovile;
-var Bus = /** @class */ (function () {
+var Bus = (function () {
     function Bus() {
         this.plate = 123;
     }

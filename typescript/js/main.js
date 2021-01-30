@@ -129,7 +129,7 @@ personName = undefined;
 console.log(typeof personName);
 personName = 'Xavier';
 console.log(typeof personName);
-var Car = /** @class */ (function () {
+var Car = (function () {
     function Car(name, year, model, color, doors) {
         console.log('Creando la nueva instancia de la clase Car');
         this.name = name;
@@ -157,7 +157,7 @@ function cycle() {
     console.log('cycle');
     throw new Error('Existe un error');
 }
-var Vehicle = /** @class */ (function () {
+var Vehicle = (function () {
     function Vehicle(type) {
         this.type = type;
     }
@@ -170,7 +170,7 @@ var Vehicle = /** @class */ (function () {
     };
     return Vehicle;
 }());
-var Motorcycle = /** @class */ (function (_super) {
+var Motorcycle = (function (_super) {
     __extends(Motorcycle, _super);
     function Motorcycle(type, cc) {
         var _this = _super.call(this, type) || this;
@@ -180,7 +180,7 @@ var Motorcycle = /** @class */ (function (_super) {
     }
     return Motorcycle;
 }(Vehicle));
-var TypeProduct = /** @class */ (function () {
+var TypeProduct = (function () {
     function TypeProduct(_type) {
         this._type = _type;
     }
@@ -196,7 +196,7 @@ var TypeProduct = /** @class */ (function () {
     });
     return TypeProduct;
 }());
-var Product = /** @class */ (function (_super) {
+var Product = (function (_super) {
     __extends(Product, _super);
     function Product(_price) {
         var _this = _super.call(this, 'Celphone') || this;
@@ -220,7 +220,7 @@ var Product = /** @class */ (function (_super) {
     });
     return Product;
 }(TypeProduct));
-var Tablet = /** @class */ (function (_super) {
+var Tablet = (function (_super) {
     __extends(Tablet, _super);
     function Tablet(brand, model, type) {
         var _this = _super.call(this, type) || this;
@@ -240,7 +240,7 @@ var tablet = new Tablet('Samsung', 'Galaxy Tab S7', 'Tablet');
 console.log(tablet);
 var yamaha = new Motorcycle('Class yamaha', 150);
 console.log(yamaha);
-var Settings = /** @class */ (function () {
+var Settings = (function () {
     function Settings(color, logo) {
         this.color = color;
         this.logo = logo;
@@ -266,7 +266,7 @@ var bird = {
     }
 };
 console.log(bird.action());
-var BlueBird = /** @class */ (function () {
+var BlueBird = (function () {
     function BlueBird(color, type) {
         this.color = color;
         this.type = type;

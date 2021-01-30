@@ -3,6 +3,8 @@ import * as Greetings from './greetings'
 import { getUsers } from './includes/users'
 import login from './includes/login'
 
+// Esto es un comentario
+
 let greetings = 'Pruebas de Typescript'
 let firstName:string = 'Arturo'
 let lastName:string = 'López'
