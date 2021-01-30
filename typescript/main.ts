@@ -1,4 +1,5 @@
-/// <reference path="ts/greetings.ts" />
+import {Automovile, Bus} from './ts/includes/cars'
+import * as Greetings from './ts/greetings'
 
 let greetings = 'Pruebas de Typescript'
 let firstName:string = 'Arturo'
@@ -272,6 +273,20 @@ console.log(cyanBird.action())
 
 Greetings.greeting()
 
-cycle()
-
 alert("Hello world")
+
+let automovile = new Automovile()
+
+console.log(automovile)
+
+let bus = new Bus()
+
+console.log(bus)
+
+bus.doors = function () {
+    console.log('El autobus tiene 2 puertas dobles')
+}
+
+bus.doors()
+
+cycle()

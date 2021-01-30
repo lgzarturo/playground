@@ -177,3 +177,36 @@ let myCar = new Car("Figo", 2020, "TM", "Blue", 5);
       console.log(Car.type)
   }
 ```
+
+## Genericos
+
+Son plantillas que podemos usar para decirle a typescript que pueda recibir cualquier valor
+
+```typescript
+function favorite<T>(favorite_param: T) {
+  return favorite_param;
+}
+
+favorite<string>("ejemplo");
+favorite("ejemplo");
+
+favorite<number>(15);
+favorite(15);
+```
+
+Genericos con arreglos
+
+```typescript
+let data: Array<string> = ["Juan", "Diego", "Alberto"];
+```
+
+## Decoradores
+
+Funciones que podemos usar para agregarle funcionalidades a clases, metodos o propiedades.
+
+```typescript
+@mydecorator
+function functionOne() {
+//... logic
+}
+```
