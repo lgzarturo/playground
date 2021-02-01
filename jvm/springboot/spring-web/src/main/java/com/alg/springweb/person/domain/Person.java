@@ -1,11 +1,10 @@
 package com.alg.springweb.person.domain;
 
+import com.alg.springweb.friend.domain.Friend;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @NoArgsConstructor
@@ -18,4 +17,7 @@ public class Person {
 	private final Long id = null;
 	@NonNull
 	private String name;
+	@JsonBackReference // prevent infinity loop
+	@ManyToOne
+	private Friend friend;  // only in back reference
 }

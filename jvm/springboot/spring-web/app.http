@@ -15,8 +15,18 @@ POST localhost:8080/api/friends
 Content-Type: application/json
 
 {
-  "firstName": "Arturo",
-  "lastName": "López"
+  "first-name": "Arturo",
+  "last-name": "López",
+  "age": 38,
+  "address": {
+    "street": "Residencial One",
+    "city": "Cancún"
+  },
+  "people": [{
+    "name": "Elon Musk"
+  },{
+    "name": "Steve Jobs"
+  }]
 }
 
 ###
@@ -27,9 +37,10 @@ PUT localhost:8080/api/friends
 Content-Type: application/json
 
 {
-  "id": 2,
-  "firstName": "Arturo",
-  "lastName": "López Gómez"
+  "id": 1,
+  "first-name": "Arturo",
+  "last-name": "López Gómez",
+  "age": 38
 }
 
 ###
@@ -49,3 +60,6 @@ GET localhost:8080/api/friends/search
 
 ###
 GET localhost:8080/people
+
+###
+GET localhost:8080/api/people/8/friend
