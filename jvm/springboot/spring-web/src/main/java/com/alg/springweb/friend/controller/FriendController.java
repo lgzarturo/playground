@@ -1,8 +1,13 @@
 package com.alg.springweb.friend.controller;
 
+import com.alg.springweb.common.ErrorMessage;
 import com.alg.springweb.friend.domain.Friend;
 import com.alg.springweb.friend.service.FriendService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.ValidationException;
 
 @RestController
 public class FriendController {
@@ -19,7 +24,11 @@ public class FriendController {
 
     @PostMapping("/api/friends")
     Friend create(@RequestBody Friend friend) {
-        return friendService.save(friend);
+        if (friend.getFirstName() != null && friend.getLastName() != null) {
+            return friendService.save(friend);
+        } else {
+            throw new ValidationException("friend cannot be created");
+        }
     }
 
     @GetMapping("/api/friends/{id}")
@@ -28,8 +37,12 @@ public class FriendController {
     }
 
     @PutMapping("/api/friends")
-    Friend update(@RequestBody Friend friend) {
-        return friendService.save(friend);
+    ResponseEntity<Friend> update(@RequestBody Friend friend) {
+        if (friendService.findById(friend.getId()).isPresent()) {
+            return new ResponseEntity<>(friendService.save(friend), HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(friend, HttpStatus.BAD_REQUEST);
+        }
     }
 
     @DeleteMapping("/api/friends/{id}")
@@ -51,5 +64,4 @@ public class FriendController {
             return friendService.findAll();
         }
     }
-
 }
