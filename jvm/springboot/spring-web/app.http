@@ -36,4 +36,16 @@ Content-Type: application/json
 DELETE localhost:8080/api/friends/1
 
 ###
+GET localhost:8080/api/friends/search?first=Arturo&last=Gómez
+
+###
+GET localhost:8080/api/friends/search?first=Arturo
+
+###
+GET localhost:8080/api/friends/search?last=López
+
+###
+GET localhost:8080/api/friends/search
+
+###
 GET localhost:8080/people

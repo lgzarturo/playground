@@ -37,4 +37,19 @@ public class FriendController {
         friendService.deleteById(id);
     }
 
+    @GetMapping("/api/friends/search")
+    Iterable<Friend> findByQuery(
+            @RequestParam(value = "first", required = false) String firstName,
+            @RequestParam(value = "last", required = false) String lastName) {
+        if (firstName != null && lastName != null) {
+            return friendService.findByFirstNameAndLastName(firstName, lastName);
+        } if (firstName != null) {
+            return friendService.findByFirstName(firstName);
+        } if (lastName != null) {
+            return friendService.findByLastName(lastName);
+        } else {
+            return friendService.findAll();
+        }
+    }
+
 }
