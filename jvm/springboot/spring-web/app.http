@@ -8,4 +8,32 @@ GET localhost:8080/api/people
 GET localhost:8080/api/short_urls
 
 ###
+GET localhost:8080/api/friends
+
+###
+POST localhost:8080/api/friends
+Content-Type: application/json
+
+{
+  "firstName": "Arturo",
+  "lastName": "López"
+}
+
+###
+GET localhost:8080/api/friends/1
+
+###
+PUT localhost:8080/api/friends
+Content-Type: application/json
+
+{
+  "id": 2,
+  "firstName": "Arturo",
+  "lastName": "López Gómez"
+}
+
+###
+DELETE localhost:8080/api/friends/1
+
+###
 GET localhost:8080/people
