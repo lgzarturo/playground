@@ -10,10 +10,12 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @RequiredArgsConstructor
-@Entity
+@Entity(name = "people")
 public class Person {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	@Setter(AccessLevel.NONE) private final Long id = null;
-	@NonNull private String name;
+	@Setter(AccessLevel.NONE)
+	private final Long id = null;
+	@NonNull
+	private String name;
 }

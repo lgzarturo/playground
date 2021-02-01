@@ -1,0 +1,11 @@
+###
+GET localhost:8080/api/users
+
+###
+GET localhost:8080/api/people
+
+###
+GET localhost:8080/api/short_urls
+
+###
+GET localhost:8080/people
