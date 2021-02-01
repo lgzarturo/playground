@@ -1,13 +1,18 @@
 package com.alg.springweb.friend.controller;
 
-import com.alg.springweb.common.ErrorMessage;
+import com.alg.springweb.common.FieldErrorMessage;
 import com.alg.springweb.friend.domain.Friend;
 import com.alg.springweb.friend.service.FriendService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ValidationException;
+import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 public class FriendController {
@@ -23,12 +28,8 @@ public class FriendController {
     }
 
     @PostMapping("/api/friends")
-    Friend create(@RequestBody Friend friend) {
-        if (friend.getFirstName() != null && friend.getLastName() != null) {
-            return friendService.save(friend);
-        } else {
-            throw new ValidationException("friend cannot be created");
-        }
+    Friend create(@Valid @RequestBody final Friend friend) {
+        return friendService.save(friend);
     }
 
     @GetMapping("/api/friends/{id}")
@@ -63,5 +64,16 @@ public class FriendController {
         } else {
             return friendService.findAll();
         }
+    }
+
+    // Validation
+
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    List<FieldErrorMessage> methodArgumentNotValidException(MethodArgumentNotValidException e) {
+        List<FieldError> fieldErrors = e.getBindingResult().getFieldErrors();
+        return fieldErrors.stream()
+                .map(fieldError -> new FieldErrorMessage(fieldError.getField(), fieldError.getDefaultMessage()))
+                .collect(Collectors.toList());
     }
 }

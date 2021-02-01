@@ -7,22 +7,24 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import java.util.List;
 
 @Data
 @NoArgsConstructor
-@RequiredArgsConstructor
+@AllArgsConstructor
 @Entity(name = "friends")
 public class Friend {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter(AccessLevel.NONE)
     private Long id = null;
-    @NonNull
     @JsonProperty("first-name")
+    @NotBlank
     private String firstName;
-    @NonNull
     @JsonProperty("last-name")
+    @NotEmpty
     private String lastName;
     private int age;
     @JsonIgnore

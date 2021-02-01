@@ -14,7 +14,9 @@ GET localhost:8080/api/friends
 POST localhost:8080/api/friends
 Content-Type: application/json
 
-{}
+{
+
+}
 
 ###
 POST localhost:8080/api/friends
