@@ -9,6 +9,7 @@ import org.springframework.web.client.RestTemplate;
 import java.util.Objects;
 
 public class SystemTests {
+
     @Test
     public void testCreateReadDelete() {
         RestTemplate restTemplate = new RestTemplate();
@@ -20,4 +21,5 @@ public class SystemTests {
         restTemplate.delete(url + "/" + Objects.requireNonNull(entity.getBody()).getId());
         Assertions.assertThat(restTemplate.getForObject(url, Friend[].class)).isEmpty();
     }
+
 }

@@ -11,6 +11,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class FriendControllerTest {
+
     @Autowired
     FriendController friendController;
 
@@ -23,4 +24,5 @@ class FriendControllerTest {
         friendController.delete(friendResult.getId());
         Assertions.assertThat(friendController.list()).isEmpty();
     }
+
 }
