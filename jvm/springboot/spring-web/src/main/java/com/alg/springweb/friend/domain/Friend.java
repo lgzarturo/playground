@@ -35,4 +35,9 @@ public class Friend {
     @JsonBackReference // prevent infinity loop
     @OneToMany(mappedBy = "friend", cascade = CascadeType.ALL) // back reference
     List<Person> people;
+
+    public Friend(@NotBlank String firstName, @NotEmpty String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }
