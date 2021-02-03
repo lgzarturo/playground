@@ -3,7 +3,9 @@ package com.alg.springweb;
 import com.alg.springweb.friend.domain.Friend;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Objects;
@@ -20,6 +22,17 @@ public class SystemTests {
         Assertions.assertThat(friends).extracting(Friend::getFirstName).containsOnly("Arturo");
         restTemplate.delete(url + "/" + Objects.requireNonNull(entity.getBody()).getId());
         Assertions.assertThat(restTemplate.getForObject(url, Friend[].class)).isEmpty();
+    }
+
+    @Test
+    public void testErrorHandlingReturnsBadRequest() {
+        RestTemplate restTemplate = new RestTemplate();
+        String url = "http://localhost:8080/api/wrong";
+        try {
+            restTemplate.getForEntity(url, String.class);
+        } catch (HttpClientErrorException e) {
+            org.junit.jupiter.api.Assertions.assertEquals(HttpStatus.BAD_REQUEST, e.getStatusCode());
+        }
     }
 
 }
