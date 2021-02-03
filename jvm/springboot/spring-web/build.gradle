@@ -26,7 +26,8 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-
+	// https://mvnrepository.com/artifact/org.junit.platform/junit-platform-runner
+	testCompile group: 'org.junit.platform', name: 'junit-platform-runner', version: '1.7.0'
 	// https://mvnrepository.com/artifact/javax.validation/validation-api
 	compile group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 }
