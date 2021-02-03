@@ -1,6 +1,5 @@
 package com.alg.springweb.friend.domain;
 
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;

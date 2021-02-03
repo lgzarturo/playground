@@ -1,6 +1,5 @@
 package com.alg.springweb.user.domain;
 
-
 import com.alg.springweb.shorturl.domain.ShortUrl;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
