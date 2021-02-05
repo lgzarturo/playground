@@ -9,16 +9,14 @@ import org.springframework.util.Assert;
 
 @SpringBootTest
 class SpringWebApplicationTests {
-
 	@Autowired
-	FriendController friendController;
+	private FriendController friendController;
 	@Autowired
-	PersonController personController;
+	private PersonController personController;
 
 	@Test
 	void contextLoads() {
 		Assert.notNull(friendController, "friendController is null");
 		Assert.notNull(personController, "personController is null");
 	}
-
 }
