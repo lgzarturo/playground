@@ -71,3 +71,38 @@ GET localhost:8080/people
 
 ###
 GET localhost:8080/api/people/8/friend
+
+###
+GET localhost:8080/api/heroes
+
+###
+POST localhost:8080/api/heroes
+Content-Type: application/json
+
+{
+  "name": "Clark Kent",
+  "alias": "SuperMan",
+  "powers": [
+    "http://localhost:8080/api/powers/2",
+    "http://localhost:8080/api/powers/3"
+  ]
+}
+
+###
+GET localhost:8080/api/villains
+
+###
+GET localhost:8080/api/powers
+
+###
+POST localhost:8080/api/powers
+Content-Type: application/json
+
+{
+  "name": "Bullet Prof",
+  "level": 100,
+  "hero": "http://localhost:8080/api/heroes/5"
+}
+
+###
+GET http://localhost:8080/api/heroes/5/powers
