@@ -3,6 +3,7 @@ package com.alg.springweb.flight;
 import com.alg.springweb.flight.service.FlightService;
 import org.assertj.core.api.Assertions;
 import org.junit.Before;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,30 +18,27 @@ public class TransactionalTest {
     @Autowired
     private FlightService flightService;
 
-    @Before
-    public void setUp() {
-        flightRepository.deleteAll();
-    }
-
-    @Test
-    public void shouldNotRollBackWhenTheresNoTransaction() {
-        try {
-            flightService.saveFlight(new Flight());
-        } catch (Exception e) {
-            // Do nothing
-        } finally {
-            Assertions.assertThat(flightRepository.findAll()).isNotEmpty();
-        }
-    }
-
     @Test
     public void shouldNotRollBackWhenTheresIsATransaction() {
+        flightRepository.deleteAll();
         try {
             flightService.saveFlightTransactional(new Flight());
         } catch (Exception e) {
             // Do nothing
         } finally {
             Assertions.assertThat(flightRepository.findAll()).isEmpty();
+        }
+    }
+
+    @Test
+    public void shouldNotRollBackWhenTheresNoTransaction() {
+        flightRepository.deleteAll();
+        try {
+            flightService.saveFlight(new Flight());
+        } catch (Exception e) {
+            // Do nothing
+        } finally {
+            Assertions.assertThat(flightRepository.findAll()).isNotEmpty();
         }
     }
 }
