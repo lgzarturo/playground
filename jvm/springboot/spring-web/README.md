@@ -86,3 +86,62 @@ application.properties
 spring.datasource.url=jdbc:h2:~/customers;IFEXISTS=TRUE;CIPHER=AES
 spring.datasource.password=dbFilePassword Password01
 ```
+
+## Iniciar H2 como servidor de base de datos
+
+Ejecutar el servicio 
+
+```shell
+java -cp h2*.jar org.h2.tools.Server -ifNotExists
+```
+
+Modificar la url del data source en el archivo de properties
+```properties
+spring.datasource.url=jdbc:h2:tcp://localhost/~/{database_name}
+```
+
+## Backup
+
+Ejecutar en la terminal
+
+```shell
+java -cp h2*.jar org.h2.tools.Script -url jdbc:h2:~/{database_name} -user {username} -password {password} -script {backupfile}.zip -options compression zip
+```
+
+## Restore
+
+Ejecutar en la terminal, debe estar iniciado el servidor de h2
+
+```shell
+java -cp h2*.jar org.h2.tools.RunScript -url jdbc:h2:~/{database_name} -user {username} -password {password} -script {backupfile}.zip -options compression zip
+```
+
+## Native fulltext search
+
+Accedemos a la base de datos y es necesario crear los alias e indices para activar la funcionalidad de fulltext search
+
+```sql
+-- Creamos el alias de la tabla
+CREATE ALIAS IF NOT EXISTS FT_INIT FOR "org.h2.fulltext.FullText.init";
+
+-- Llamamos el alias
+CALL FT_INIT();
+
+-- Creamos el vinculo entre el alias y la tabla, este indice se sincroniza en tiempo real con los valores que se almacenan en la tabla vinculada.
+CALL FT_CREATE_INDEX('PUBLIC', '{table_name}', NULL);
+
+-- Busquedas
+SELECT * FROM FT_SEARCH('{text_to_search}', 0, 0)
+```
+
+## Seguridad
+
+```shell
+java -cp h2*.jar org.h2.tools.Server
+
+# Parametros
+-webSSL -> Activa https en la consola.
+-webAllowOthers -> Permite el acceso remoto a la consola.
+-tcpAlloOthers -> Permite el acceso al servidor TCP
+```
+
