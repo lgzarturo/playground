@@ -1,0 +1,5 @@
+.vscode/
+node_modules/
+*.log
+data/*.txt
+.env

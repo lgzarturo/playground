@@ -1,32 +1,31 @@
 body {
-    margin: 0;
-    padding: 0;
-    background-color: rgb(22, 22, 22);
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    font-weight: 1.5em;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(22, 22, 22);
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 1.5em;
 }
 
 h1 {
-    font-size: 2.2em;
-    font-family: 'Stick', sans-serif;
+  font-size: 2.2em;
+  font-family: 'Stick', sans-serif;
 }
 
 h2 {
-    margin-top: 2em;
-    font-family: 'Stick', sans-serif;
+  margin-top: 2em;
+  font-family: 'Stick', sans-serif;
 }
 
 .content {
-    text-align: center;
+  text-align: center;
 }
 
 .hashtag {
-    background-color: chartreuse;
-    font-size: smaller;
-    padding: 5px 10px;
-    color: darkgreen;
-    border-radius: 10px;
+  background-color: chartreuse;
+  font-size: smaller;
+  padding: 5px 10px;
+  color: darkgreen;
+  border-radius: 10px;
 }
-

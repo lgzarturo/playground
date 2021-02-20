@@ -2,16 +2,20 @@ var n = Math.random()
 
 console.log(n)
 
-/* Retorna numeros aleatorios entre el 1 y el 6 */
+/* Retorna números aleatorios entre el 1 y el 6 */
 n = n * 6
 n = Math.floor(n) + 1
 
 console.log(n)
 
+/* Obtener un número aleatorio */
 function random(top) {
   return Math.floor(Math.random() * top) + 1
 }
 
+console.log(random(10))
+
+/* Generar un número grande de forma aleatoria */
 function randomBigNumber() {
   var number = ''
   for (var i = 0; i < 16; i++) {
@@ -21,9 +25,6 @@ function randomBigNumber() {
 }
 
 console.log(`Numero grande aleatorio ${randomBigNumber()}`)
-
-// TODO: review this code.
-console.log(random(10))
 
 function bmi(weight, height) {
   return Math.round(weight / (height * height))
@@ -65,6 +66,7 @@ console.log(leapYear2(2000))
 console.log(leapYear2(1982))
 console.log(leapYear2(1752))
 
+/* Ejercicio de fizz buzz */
 var output = []
 var count = 1
 function fizzBuzz() {
@@ -90,6 +92,7 @@ for (var i = 0; i < 100; i++) {
 }
 console.log(output)
 
+/** Ejercicio de números en la secuencia fibonacci */
 function fibonacci(n) {
   if (n === 0) {
     return []
