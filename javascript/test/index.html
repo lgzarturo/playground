@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="https://gaviana.com/suites_files/jquery.min.js"></script>
+</head>
+<body>
+    <button onclick="loadBooker(this)">Resevar</button> 
+    <script>
+        //Load booker function
+        function loadBooker(element) {
+            //load script
+            let s = document.createElement('script');
+            s.type = 'text/javascript';
+            s.src = 'https://assets.revenatium.com/gaviana/es/1.1.230/bundle.js';
+            document.getElementsByTagName("body")[0].appendChild(s);
+            //hide button
+            document.getElementsByClassName('cotizador')[0].classList.add('bg');
+            let mutation = new MutationObserver(function(mutations){
+                for(m of mutations) {
+                    if(document.getElementsByClassName('booker-submit')[0]) {
+                        let btn_con = document.getElementsByClassName('booker-submit')[0];
+                        for(b of btn_con.childNodes) {
+                            if(b.tagName == "BUTTON") {
+                                b.setAttribute('onclick',"return gtag_report_conversion('https://gaviana.revenatium.com/#/habitaciones')");
+                            }
+                        }mutation.disconnect();return;
+                    }
+                }
+            });
+            mutation.observe(document.getElementsByClassName('cotizador')[0], {
+                attributes: true,characterData: true,childList: true,subtree: true,attributeOldValue: true,characterDataOldValue: true
+            });
+        }
+
+        function gtag_report_conversion(url) { 
+            var callback = function () { 
+                if (typeof(url) != 'undefined') { window.location = url; }             
+            }; 
+            console.log("Evento de gtag")
+            //gtag('event', 'conversion', { 'send_to': 'AW-561681479/AtcxCKiMyuUBEMeo6osC', 'event_callback': callback }); 
+            return false; 
+        }
+    </script> 
+    <script>  </script>  
+    
+    <div class="cotizador" style="border: 1px solid red;">
+        <div class="itm-booker itm-booker-horizontal"></div>
+    </div>
+</body>
+</html>
