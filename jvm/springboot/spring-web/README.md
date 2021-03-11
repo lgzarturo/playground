@@ -10,6 +10,8 @@ Prácticas con spring web desarrolladas en base al libro Spring Boot: Up and Run
 - http://localhost:8080/actuator/metrics/jvm.memory.used, acceder a cada métrica.
 - http://localhost:8080/actuator/health, estado de la aplicación.
 - http://localhost:8080/actuator/beans
+- http://localhost:8080/actuator/mappings
+- http://localhost:8080/actuator/trace
 
 ## Common user endpoints 
 
