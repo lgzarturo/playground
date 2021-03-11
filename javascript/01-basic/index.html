@@ -24,6 +24,18 @@
       <h2 id="result"></h2>
     </div>
     <script>
+      const orders = [
+        {title: 'pizza', description: 'peperoni', total: 79},
+        {title: 'pizza-nueva', description: 'peperoni y queso', total: 109},
+        {title: 'tacos', description: 'pastor', total: 59},
+        {title: 'pasta', description: 'con albondiga', total: 90},
+        {title: 'pizza-familiar', description: 'peperoni', total: 149}
+      ]
+      const totalPizza = orders
+        .filter(order => order.title.includes('pizza'))
+        .map(order => order.total)
+        .reduce((added, total) => added + total, 0)
+      console.log(`El total de las pizzas es de ${totalPizza}`)
       console.log('Inyectando código en el documento HTML.')
     </script>
     <script src="app.js"></script>

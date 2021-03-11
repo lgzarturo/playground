@@ -20,5 +20,5 @@
 Instala eslint y prettier para mantener un estándar en el código y generar una guía de estilo de programación.
 
 ```bash
-$ npm i -g eslint prettier
+npm i -g eslint prettier
 ```
