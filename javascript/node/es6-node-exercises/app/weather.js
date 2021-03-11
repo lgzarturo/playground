@@ -4,7 +4,7 @@ const debug = require('debug')('app')
 const logger = require('../config/logger')
 const _ = require('lodash')
 
-let address = async (city) => {
+const address = async (city) => {
   logger.info(`Obteniendo el clima de la ciudad: ${city}`)
   const response = await axios.get(
     'https://devru-latitude-longitude-find-v1.p.rapidapi.com/latlon.php',
@@ -33,7 +33,7 @@ let address = async (city) => {
   }
 }
 
-let weather = async (lat, lon) => {
+const weather = async (lat, lon) => {
   const response = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
     baseURL: '',
     useQueryString: true,

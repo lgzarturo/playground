@@ -1,8 +1,33 @@
 {
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": "./node_modules/standard/eslintrc.json",
   "parserOptions": {
-    "ecmaVersion": 6
+    "ecmaVersion": 12
   },
   "rules": {
-    "semi": ["error", "always"]
+    "semi": ["error", "never"],
+    "indent": ["error", 2],
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "ignore",
+        "objects": "ignore",
+        "imports": "ignore",
+        "exports": "never",
+        "functions": "ignore"
+      }
+    ]
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 const debug = require('debug')('app')
 const colors = require('colors')
 const { listTable, createMultiplyTable } = require('./app/multiply')
@@ -8,7 +9,7 @@ const vargs = require('./config/yargs').vargs
 
 debug('Comandos %o', vargs)
 
-let command = vargs._[0]
+const command = vargs._[0]
 
 debug('Comando seleccionado %o', command)
 
@@ -32,7 +33,7 @@ switch (command) {
   case 'weather':
     logger.info('Clima de la ciudad')
     getWeather(vargs.city)
-      .then((res) => logger.success(`Datos`, { data: res }))
+      .then((res) => logger.success('Datos', { data: res }))
       .catch((err) => logger.error(err))
     break
   default:

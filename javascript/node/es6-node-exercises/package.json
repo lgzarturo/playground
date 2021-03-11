@@ -1,12 +1,11 @@
 {
   "name": "es6-node-exercises",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "lint": "eslint .",
     "dev": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "ArturoLG <lgzarturo@gmail.com>",
@@ -19,11 +18,12 @@
     "express": "4.17.1",
     "lodash": "4.17.19",
     "supports-color": "7.1.0",
-    "winston": "3.2.1",
+    "winston": "3.3.3",
     "yargs": "15.3.1"
   },
   "devDependencies": {
-    "nodemon": "2.0.4",
+    "nodemon": "2.0.7",
+    "standard": "16.0.3",
     "prettier-plugin-packagejson": "2.2.5"
   }
 }

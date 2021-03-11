@@ -5,7 +5,7 @@ const express = require('express')
 const app = express()
 
 app.get('/', (req, res) => {
-  let data = {
+  const data = {
     nombre: 'Arturo',
     edad: 38,
     saludo: 'Hola Arturo',
