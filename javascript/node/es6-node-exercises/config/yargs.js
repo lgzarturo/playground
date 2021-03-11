@@ -6,15 +6,15 @@ const options = {
   limit: {
     alias: 'l',
     default: 10,
-  }
+  },
 }
 
 const weather_options = {
   city: {
     alias: 'c',
     desc: 'Dirección de la ciudad para obtener el clima',
-    demand: true
-  }
+    demand: true,
+  },
 }
 
 const vargs = require('yargs')

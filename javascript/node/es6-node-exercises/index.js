@@ -9,13 +9,14 @@ app.get('/', (req, res) => {
     nombre: 'Arturo',
     edad: 38,
     saludo: 'Hola Arturo',
-    url: req.url
+    url: req.url,
   }
   debug(data)
   res.send(data)
 })
 
-
 app.listen(process.env.PORT, () => {
-  logger.success(`Escuchando el puerto ${process.env.PORT}`, {host: `http://localhost:${process.env.PORT}`})
+  logger.success(`Escuchando el puerto ${process.env.PORT}`, {
+    host: `http://localhost:${process.env.PORT}`,
+  })
 })

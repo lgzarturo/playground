@@ -2,7 +2,7 @@
 
 Prácticas y ejercicios con Node JS
 
-Modulos requeridos
+## Módulos requeridos
 
 - colors
 - nodemon

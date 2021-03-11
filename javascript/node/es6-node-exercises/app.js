@@ -32,7 +32,7 @@ switch (command) {
   case 'weather':
     logger.info('Clima de la ciudad')
     getWeather(vargs.city)
-      .then((res) => logger.success(`Datos`, {data:res}))
+      .then((res) => logger.success(`Datos`, { data: res }))
       .catch((err) => logger.error(err))
     break
   default:
