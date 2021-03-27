@@ -29,3 +29,15 @@ h2 {
   color: darkgreen;
   border-radius: 10px;
 }
+
+#Nuevo {
+  background-color: greenyellow;
+  height: 100px;
+  color: orangered;
+  padding: 20px;
+}
+
+#Header {
+  background-color: orange;
+  padding: 10px;
+}

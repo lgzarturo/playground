@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <div id="Header">
+      <h1>Header</h1>
+    </div>
     <div class="content">
       <h1>Curso de JavaScript</h1>
       <a href="https://arthurolg.com" target="_blank">arthurolg.com</a>
@@ -22,6 +25,7 @@
       <h2 id="name"></h2>
       <button id="calculate">Calcular</button>
       <h2 id="result"></h2>
+      <div id="renderResult"></div>
     </div>
     <script>
       const orders = [
@@ -31,12 +35,50 @@
         { title: 'pasta', description: 'con albóndiga', total: 90 },
         { title: 'pizza-familiar', description: 'peperoni', total: 149 },
       ]
+
+      function render(orders) {
+        const html = `
+          <div>
+            <h1>Factura</h1>
+            <ul>
+              ${orders.map((order) => `<li>${order.title} -> ${order.description}</li>`).join('')}
+            </ul>
+            <h4>
+              El total es:
+              ${orders.reduce((total, order) => total + order.total, 0)}
+            </h4>
+          </div>
+        `
+        document.getElementById('renderResult').innerHTML = html
+      }
+
+      function argumentAreRequired(argumentName) {
+        throw new Error(`Falta el parámetro: ${argumentName}`)
+      }
+
+      /** Agregando valores por default en las variables */
+      function addDiv(
+        target = document.body,
+        firstName = argumentAreRequired('firstName'),
+        lastName = argumentAreRequired('lastName'),
+        fullName = `${firstName} ${lastName}`
+      ) {
+        const newDivElement = document.createElement('div')
+        newDivElement.id = 'Nuevo'
+        newDivElement.innerText = fullName
+        target.appendChild(newDivElement)
+      }
+
+      addDiv(document.querySelector('#Header'), 'Arturo', 'López')
+      addDiv(undefined, 'Arturo', 'Gómez')
+
       const totalPizza = orders
         .filter((order) => order.title.includes('pizza'))
         .map((order) => order.total)
         .reduce((added, total) => added + total, 0)
       console.log(`El total de las pizzas es de ${totalPizza}`)
       console.log('Inyectando código en el documento HTML.')
+      render(orders)
     </script>
     <script src="app.js"></script>
   </body>

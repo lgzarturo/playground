@@ -1,0 +1,15 @@
+{
+  "name": "01-basic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "devDependencies": {
+    "nodemon": "2.0.7",
+    "prettier": "2.2.1",
+    "prettier-plugin-packagejson": "2.2.5",
+    "standard": "16.0.3"
+  }
+}
