@@ -239,6 +239,33 @@
       }
       map.forEach((entry, key) => console.log(key, entry))
       console.log([...map])
+
+      const bag = new Set(['strawberries', 'coco'])
+      bag
+        .add('lemon')
+        .add('apple')
+        .add('banana')
+        .add('orange')
+        .add('lemon')
+      bag
+        .delete('lemon')
+      bag
+        .add('pineapple')
+
+      console.log(bag)
+      console.log('pineapple', bag.has('pineapple'))
+      console.log('lemon', bag.has('lemon'))
+
+      for (const fruit of bag) {
+        console.log(fruit)
+      }
+
+      const fruitArray = [...bag]
+      fruitArray.push('pineapple')
+      console.log(fruitArray)
+
+      const newFruitsSet = new Set([...bag].map((fruit, i) => `${i+1} - ${fruit}`))
+      console.log(newFruitsSet)
     </script>
     <script src="app.js"></script>
   </body>
