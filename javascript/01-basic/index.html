@@ -53,6 +53,32 @@
       const [ rick, flag, affiliation={ name: 'Suicide Squad' } ] = getFirstNameAndLastName()
       console.log(rick, flag, affiliation)
 
+      const personData = {
+        fullName: 'Clark Kent',
+        age: 33,
+        information: {
+          profession: 'Reportero',
+          powers: [
+            'superhuman breath',
+            'superhuman strength',
+            'highly durable body',
+            'X-ray vision',
+          ]
+        }
+      }
+
+      let { fullName, age } = personData
+      const { information: { profession, powers: [ firstPower ] } } = personData
+      age++
+      console.log(`${fullName} tiene ${age} años.`)
+      console.log(profession, firstPower)
+
+      function training({ fullName, information: { powers: [ firstPower ]} }) {
+        console.log(`${fullName} tiene el super poder de ${firstPower}`)
+      }
+
+      training(personData)
+
       const orders = [
         { title: 'pizza', description: 'peperoni', total: 79 },
         { title: 'pizza-nueva', description: 'peperoni y queso', total: 109 },
