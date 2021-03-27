@@ -284,6 +284,20 @@
       console.log(buyBook)
       buyBook.read()
 
+      const specialist = { name: 'Juan', year: 36 }
+      const engineer = {
+        profession: 'ingeniero',
+        specialty: 'fullstack',
+        salary: 1000,
+        currency: 'USD'
+      }
+      const skills = {
+        soft: ['read', 'write'],
+        hard: ['java', 'script']
+      }
+      const employee = Object.assign({}, specialist, engineer, skills)
+      console.log(specialist)
+      console.log(employee)
     </script>
     <script src="app.js"></script>
   </body>
