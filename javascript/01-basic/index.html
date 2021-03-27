@@ -28,6 +28,31 @@
       <div id="renderResult"></div>
     </div>
     <script>
+      const person = {
+        name: 'Clark',
+        lastName: 'Kent'
+      }
+      const { name, lastName } = person
+      console.log(name, lastName)
+
+      const people = [
+        { name: 'Luisa', lastName: 'Lane' },
+        { name: 'Diana', lastName: 'Prince' },
+        { name: 'Hal', lastName: 'Jordan' },
+        { name: 'Lex', lastName: 'Luthor' },
+      ]
+
+      const [ luisa, diana ] = people
+      console.log(luisa)
+      console.log(diana)
+
+      function getFirstNameAndLastName() {
+        return ['Rick', 'Flag']
+      }
+
+      const [ rick, flag, affiliation={ name: 'Suicide Squad' } ] = getFirstNameAndLastName()
+      console.log(rick, flag, affiliation)
+
       const orders = [
         { title: 'pizza', description: 'peperoni', total: 79 },
         { title: 'pizza-nueva', description: 'peperoni y queso', total: 109 },
