@@ -266,6 +266,24 @@
 
       const newFruitsSet = new Set([...bag].map((fruit, i) => `${i+1} - ${fruit}`))
       console.log(newFruitsSet)
+
+      const author = 'Juan Rulfo'
+      const activity = 'Writer'
+      const book = '100 viajes divertidos'
+      const editorial = 'Booker Lee'
+      const releaseYear = 2021
+      const buyBook = {
+        author,
+        activity,
+        book,
+        [`${editorial} - ${book} - ${releaseYear}`]: book,
+        read () {
+          console.log('reading...')
+        }
+      }
+      console.log(buyBook)
+      buyBook.read()
+
     </script>
     <script src="app.js"></script>
   </body>
