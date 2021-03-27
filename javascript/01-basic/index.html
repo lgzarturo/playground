@@ -36,6 +36,11 @@
         { title: 'pizza-familiar', description: 'peperoni', total: 149 },
       ]
 
+      const moreOrders = [
+        { title: 'refresco de fresa', description: 'sin azúcar', total: 20 },
+        { title: 'torta de jamón', description: 'con queso', total: 60 }
+      ]
+
       function render(orders) {
         const html = `
           <div>
@@ -71,6 +76,34 @@
 
       addDiv(document.querySelector('#Header'), 'Arturo', 'López')
       addDiv(undefined, 'Arturo', 'Gómez')
+
+      const numbers = [ 12, 40, 500, 5, 300, 200 ]
+      console.log(Math.max.apply(Math, numbers))
+      console.log(Math.min(...numbers))
+
+      console.log([
+        ...orders,
+        { title: 'tamal de rajas', description: 'con atole', total: 40 },
+        ...moreOrders
+      ])
+
+      function sellTickets() {
+        console.log(arguments)
+        const price = arguments[0]
+        const clients = Array.prototype.slice.call(arguments, 1)
+        clients.forEach(client => {
+          console.log(`${client} sell ticker for: ${price}`)
+        })
+      }
+
+      function buyTickets(price, ...clients) {
+        clients.forEach(client => {
+          console.log(`${client} buy ticket to: ${price}`)
+        })
+      }
+
+      sellTickets(100, 'Arturo', 'Daniela', 'Gustavo', 'Karina')
+      buyTickets(100, 'Arturo', 'Daniela', 'Gustavo', 'Karina')
 
       const totalPizza = orders
         .filter((order) => order.title.includes('pizza'))
