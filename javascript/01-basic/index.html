@@ -27,7 +27,49 @@
       <h2 id="result"></h2>
       <div id="renderResult"></div>
     </div>
+
+    <ul>
+      <li class="items">1</li>
+      <li class="items">2</li>
+      <li class="items">3</li>
+      <li class="items">4</li>
+      <li class="items">5</li>
+      <li class="items">6</li>
+    </ul>
+
+    <ul>
+      <li class="items2">1</li>
+      <li class="items2">2</li>
+      <li class="items2">3</li>
+      <li class="items2">4</li>
+      <li class="items2">5</li>
+      <li class="items2">6</li>
+    </ul>
     <script>
+      const animals = ['dog', 'cat', 'lion', 'cow', 'fish']
+
+      for (const animal of animals) {
+        if (animal === 'cow') {
+          break
+        }
+        console.log(animal)
+      }
+
+      for (const char of 'Hello Clark') {
+        console.log(char)
+      }
+
+      const colors = ['red', 'green', 'blue', 'orange', 'magenta', 'grey']
+      document.querySelectorAll('li.items').forEach((element, i) => {
+        element.style.backgroundColor = colors[i]
+      })
+
+      let index = 0
+      for (const element of document.querySelectorAll('li.items2')) {
+        element.style.color = colors[index]
+        index++
+      }
+
       const person = {
         name: 'Clark',
         lastName: 'Kent'
@@ -163,6 +205,40 @@
       console.log(`El total de las pizzas es de ${totalPizza}`)
       console.log('Inyectando código en el documento HTML.')
       render(orders)
+
+      const equip = {
+        10: { name: 'Lionel Messi', goals: 10 },
+        7: { name: 'Cristiano Ronaldo', goals: 8 },
+        9: { name: 'Luis Suarez', goals: 6 },
+      }
+      console.log(Object.keys(equip))
+
+      const map = new Map([
+        [10, { name: 'Lionel Messi', goals: 10 }],
+        [7, { name: 'Cristiano Ronaldo', goals: 8 }],
+        [9, { name: 'Luis Suarez', goals: 6 }]
+      ])
+
+      map
+        .set(11, { name: 'James Rodriguez', goals: 7})
+        .set(16, { name: 'Juan Arango', goals: 4})
+
+      console.log(map, map.size)
+      /** Iterar sobre llaves */
+      for (const number of map.keys()) {
+        console.log(number)
+        console.log(map.get(number))
+      }
+      /** Iterar sobre valores */
+      for (const player of map.values()) {
+        console.log(player)
+      }
+      /** Iterar sobre los elementos del map */
+      for (const [number, player] of map.entries()) {
+        console.log(player, number)
+      }
+      map.forEach((entry, key) => console.log(key, entry))
+      console.log([...map])
     </script>
     <script src="app.js"></script>
   </body>
