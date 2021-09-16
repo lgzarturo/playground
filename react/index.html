@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const message = 'Hello world lgzarturo';
+
+      function App() {
+        const [characters, setCharacters] = React.useState([]);
+
+        function fetchCharacters() {
+          fetch('https://rickandmortyapi.com/api/character?page=1')
+            .then(response => response.json())
+            .then(data => setCharacters(data.results));
+        }
+
+        return (
+          <div>
+            <button onClick={fetchCharacters}>Fetch Characters</button>
+            <ul>
+              {characters.map(character => (
+                <li key={character.name}>{character.name}</li>
+              ))}
+            </ul>
+            <hr />
+            <MyFirstComponent />
+            <Button text="Login" message="Please access to account"/>
+            <Button text="Register" message="Lets get you sign up"/>
+            <Button text="Contact" message="I grad to serve you"/>
+            <ButtonHello />
+            <ButtonGoodbye />
+            <InputGoodbye />
+            <hr />
+            <InputHello />
+          </div>
+        );
+      }
+
+      function MyFirstComponent() {
+        return (
+          <h1>
+            {1+2}.- I am a react component, {message}
+          </h1>
+        );
+      }
+
+      function Button(props) {
+      return <button onClick={() => alert(props.message)}>{props.text}</button>;
+      }
+
+      function ButtonHello(props) {
+        const [message, setMessage] = React.useState('Hello world!');
+        return <Button text="Greetings" message={message} />;
+      }
+
+      function ButtonGoodbye(props) {
+        const [message, setMessage] = React.useState('Bye bye!!!');
+        return (
+          <div>
+            <button onClick={() => setMessage('Yeah bye bye to the world!!!')}>Goodbye</button>
+            <p>{message}</p>
+          </div>
+        );
+      }
+
+      function InputHello(props) {
+        const [value, setValue] = React.useState('');
+        const [message, setMessage] = React.useState('Hello there?');
+        function updateMessage(event) {
+          setMessage(value);
+        }
+        return (
+          <div>
+            <input type="text" value={value} onChange={e => setValue(e.target.value)} />
+            <button onClick={updateMessage} id="update">Update message</button>
+            <p>{message}</p>
+          </div>
+        );
+      }
+
+      function InputGoodbye(props) {
+        const [message, setMessage] = React.useState('Hello there?');
+        function handleChange(event) {
+          setMessage(event.target.value);
+        }
+        return (
+          <div>
+            <input type="text" onChange={handleChange} />
+            <p>{message}</p>
+          </div>
+        );
+      }
+
+      ReactDOM.render(
+        <App />,
+        document.getElementById('root')
+      );
+    </script>
+  </body>
+</html>
