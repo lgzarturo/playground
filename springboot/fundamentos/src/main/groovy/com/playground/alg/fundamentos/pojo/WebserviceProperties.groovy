@@ -10,7 +10,7 @@ class WebserviceProperties {
     String apiKey
     String secret
     String url
-    
+
     @Override
     String toString() {
         return "WebserviceProperties{ " +

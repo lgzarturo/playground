@@ -5,6 +5,8 @@ import com.playground.alg.fundamentos.bean.BeanWithPropertiesDependency
 import com.playground.alg.fundamentos.bean.UnBeanDependency
 import com.playground.alg.fundamentos.component.ComponentDependency
 import com.playground.alg.fundamentos.pojo.WebserviceProperties
+import org.apache.commons.logging.Log
+import org.apache.commons.logging.LogFactory
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
@@ -12,6 +14,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
 class FundamentosApplication implements CommandLineRunner {
+
+    private Log log = LogFactory.getLog(this.class)
 
     private UnBeanDependency unBeanDependency
     private ComponentDependency componentDependency
@@ -46,5 +50,6 @@ class FundamentosApplication implements CommandLineRunner {
         beanWithOperationDependency.printWithDependency()
         println(beanWithPropertiesDependency.function())
         println(webserviceProperties.toString())
+        log.error("Este es un error en la aplicación")
     }
 }
