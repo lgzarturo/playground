@@ -1,6 +1,6 @@
 package com.playground.alg.fundamentos.bean
 
-class CustomBean implements UnBean{
+class CustomBeanImplement implements UnBeanDependency{
     @Override
     void printAction() {
         println("Realizamos una acción con el bean")

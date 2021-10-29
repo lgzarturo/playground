@@ -1,5 +1,5 @@
 package com.playground.alg.fundamentos.bean
 
-interface UnBean {
+interface UnBeanDependency {
     void printAction()
 }
