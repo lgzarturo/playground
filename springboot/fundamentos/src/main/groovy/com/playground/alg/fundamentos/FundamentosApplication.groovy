@@ -1,6 +1,7 @@
 package com.playground.alg.fundamentos
 
 import com.playground.alg.fundamentos.bean.BeanWithOperationDependency
+import com.playground.alg.fundamentos.bean.BeanWithPropertiesDependency
 import com.playground.alg.fundamentos.bean.UnBeanDependency
 import com.playground.alg.fundamentos.component.ComponentDependency
 import org.springframework.beans.factory.annotation.Qualifier
@@ -14,16 +15,20 @@ class FundamentosApplication implements CommandLineRunner {
     private UnBeanDependency unBeanDependency
     private ComponentDependency componentDependency
     private BeanWithOperationDependency beanWithOperationDependency
+    private BeanWithPropertiesDependency beanWithPropertiesDependency
+
     /**
      * @Qualifier indica el nombre de la dependencia que se quiere inyectar
      * @param componentDependency
      */
     FundamentosApplication(@Qualifier("component2Implement") ComponentDependency componentDependency,
                            UnBeanDependency unBeanDependency,
-                           BeanWithOperationDependency beanWithOperationDependency) {
+                           BeanWithOperationDependency beanWithOperationDependency,
+                           BeanWithPropertiesDependency beanWithPropertiesDependency) {
         this.componentDependency = componentDependency
         this.unBeanDependency = unBeanDependency
         this.beanWithOperationDependency = beanWithOperationDependency
+        this.beanWithPropertiesDependency = beanWithPropertiesDependency
     }
 
     static void main(String[] args) {
@@ -35,5 +40,6 @@ class FundamentosApplication implements CommandLineRunner {
         componentDependency.greetings()
         unBeanDependency.printAction()
         beanWithOperationDependency.printWithDependency()
+        println(beanWithPropertiesDependency.function())
     }
 }
