@@ -10,16 +10,17 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 @SpringBootApplication
 class FundamentosApplication implements CommandLineRunner {
 
-    private UnBeanDependency unBean
+    private UnBeanDependency unBeanDependency
     private ComponentDependency componentDependency
 
     /**
      * @Qualifier indica el nombre de la dependencia que se quiere inyectar
      * @param componentDependency
      */
-    FundamentosApplication(@Qualifier("component2Implement") ComponentDependency componentDependency, UnBeanDependency unBean) {
+    FundamentosApplication(@Qualifier("component2Implement") ComponentDependency componentDependency,
+                           UnBeanDependency unBeanDependency) {
         this.componentDependency = componentDependency
-        this.unBean = unBean
+        this.unBeanDependency = unBeanDependency
     }
 
     static void main(String[] args) {
@@ -29,6 +30,6 @@ class FundamentosApplication implements CommandLineRunner {
     @Override
     void run(String... args) throws Exception {
         componentDependency.greetings()
-        unBean.printAction()
+        unBeanDependency.printAction()
     }
 }
