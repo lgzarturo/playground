@@ -4,6 +4,7 @@ import com.playground.alg.fundamentos.bean.BeanWithOperationDependency
 import com.playground.alg.fundamentos.bean.BeanWithPropertiesDependency
 import com.playground.alg.fundamentos.bean.UnBeanDependency
 import com.playground.alg.fundamentos.component.ComponentDependency
+import com.playground.alg.fundamentos.pojo.WebserviceProperties
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
@@ -16,6 +17,7 @@ class FundamentosApplication implements CommandLineRunner {
     private ComponentDependency componentDependency
     private BeanWithOperationDependency beanWithOperationDependency
     private BeanWithPropertiesDependency beanWithPropertiesDependency
+    private WebserviceProperties webserviceProperties
 
     /**
      * @Qualifier indica el nombre de la dependencia que se quiere inyectar
@@ -24,11 +26,13 @@ class FundamentosApplication implements CommandLineRunner {
     FundamentosApplication(@Qualifier("component2Implement") ComponentDependency componentDependency,
                            UnBeanDependency unBeanDependency,
                            BeanWithOperationDependency beanWithOperationDependency,
-                           BeanWithPropertiesDependency beanWithPropertiesDependency) {
+                           BeanWithPropertiesDependency beanWithPropertiesDependency,
+                           WebserviceProperties webserviceProperties) {
         this.componentDependency = componentDependency
         this.unBeanDependency = unBeanDependency
         this.beanWithOperationDependency = beanWithOperationDependency
         this.beanWithPropertiesDependency = beanWithPropertiesDependency
+        this.webserviceProperties = webserviceProperties
     }
 
     static void main(String[] args) {
@@ -41,5 +45,6 @@ class FundamentosApplication implements CommandLineRunner {
         unBeanDependency.printAction()
         beanWithOperationDependency.printWithDependency()
         println(beanWithPropertiesDependency.function())
+        println(webserviceProperties.toString())
     }
 }
