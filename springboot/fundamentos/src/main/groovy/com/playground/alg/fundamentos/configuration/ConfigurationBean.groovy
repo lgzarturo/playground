@@ -6,8 +6,11 @@ import com.playground.alg.fundamentos.bean.Custom2BeanImplement
 import com.playground.alg.fundamentos.bean.OperationDependency
 import com.playground.alg.fundamentos.bean.OperationImplement
 import com.playground.alg.fundamentos.bean.UnBeanDependency
+import org.springframework.boot.jdbc.DataSourceBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+
+import javax.sql.DataSource
 
 @Configuration
 class ConfigurationBean {
@@ -25,4 +28,14 @@ class ConfigurationBean {
     BeanWithOperationDependency beanOperationWithDependency(OperationDependency operationDependency) {
         return new BeanWithOperationImplement(operationDependency)
     }
+
+   @Bean
+    DataSource dataSource() {
+       DataSourceBuilder dataSourceBuilder = DataSourceBuilder.create()
+       dataSourceBuilder.driverClassName("org,h2.Driver")
+       dataSourceBuilder.url("jdbc:h2:mem:testdb")
+       dataSourceBuilder.username("sa")
+       dataSourceBuilder.password("")
+       dataSourceBuilder.build()
+   }
 }
