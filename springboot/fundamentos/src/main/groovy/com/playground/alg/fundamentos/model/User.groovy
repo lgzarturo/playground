@@ -29,4 +29,16 @@ class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonManagedReference
     List<Post> posts = []
+
+
+    @Override
+    String toString() {
+        return "User{" +
+            "id=" + id +
+            ", username='" + username + '\'' +
+            ", email='" + email + '\'' +
+            ", password='" + password + '\'' +
+            ", birthDate=" + birthDate +
+            '}'
+    }
 }

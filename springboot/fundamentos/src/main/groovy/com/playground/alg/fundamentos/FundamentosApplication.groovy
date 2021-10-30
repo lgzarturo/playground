@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.data.domain.Sort
 
 import java.time.LocalDate
 
@@ -56,6 +57,7 @@ class FundamentosApplication implements CommandLineRunner {
         saveUsers()
         getInformationFromUser("lgzarturo_6@gmail.com")
         getInformationFromUser("lgzarturo_99@gmail.com")
+        getAllUsers()
     }
 
     private void saveUsers() {
@@ -78,6 +80,11 @@ class FundamentosApplication implements CommandLineRunner {
         } else {
             log.error("No se pudo localizar al usuario")
         }
+    }
+
+    private getAllUsers() {
+        userRepository.findAndSort("lgz", Sort.by("id").descending())
+            .stream().forEach(log::info)
     }
 
     private void dependencyExamples() {
