@@ -54,6 +54,8 @@ class FundamentosApplication implements CommandLineRunner {
     void run(String... args) throws Exception {
         dependencyExamples()
         saveUsers()
+        getInformationFromUser("lgzarturo_6@gmail.com")
+        getInformationFromUser("lgzarturo_99@gmail.com")
     }
 
     private void saveUsers() {
@@ -67,6 +69,15 @@ class FundamentosApplication implements CommandLineRunner {
             )
         }
         users.forEach(userRepository::save)
+    }
+
+    private getInformationFromUser(String username) {
+        def user = userRepository.findByEmailString(username)
+        if (user.isPresent()){
+            log.info("El usuario es: ${username} : ${user.get()}")
+        } else {
+            log.error("No se pudo localizar al usuario")
+        }
     }
 
     private void dependencyExamples() {
