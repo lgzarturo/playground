@@ -19,6 +19,7 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-devtools'
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'com.h2database:h2:1.4.200'
+    implementation 'joda-time:joda-time:2.10.13'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

@@ -35,3 +35,5 @@ out/
 
 ### VS Code ###
 .vscode/
+Thumbs.db
+.DS_Store

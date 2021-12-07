@@ -9,13 +9,15 @@ import com.playground.alg.fundamentos.pojo.WebserviceProperties
 import com.playground.alg.fundamentos.repository.UserRepository
 import org.apache.commons.logging.Log
 import org.apache.commons.logging.LogFactory
+import org.joda.time.Days
+import org.joda.time.DurationFieldType
+import org.joda.time.LocalDate
+import org.joda.time.Period
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.data.domain.Sort
-
-import java.time.LocalDate
 
 @SpringBootApplication
 class FundamentosApplication implements CommandLineRunner {
@@ -53,11 +55,14 @@ class FundamentosApplication implements CommandLineRunner {
 
     @Override
     void run(String... args) throws Exception {
-        dependencyExamples()
+        getDaysBetweenDates()
+
+        /*dependencyExamples()
         saveUsers()
         getInformationFromUser("lgzarturo_6@gmail.com")
         getInformationFromUser("lgzarturo_99@gmail.com")
         getAllUsers()
+        getOneUser()*/
     }
 
     private void saveUsers() {
@@ -87,6 +92,11 @@ class FundamentosApplication implements CommandLineRunner {
             .stream().forEach(log::info)
     }
 
+    private getOneUser() {
+        log.info("Obteniendo un solo usuario")
+        userRepository.findByUsername("lgzarturo_1").stream().forEach(log::info)
+    }
+
     private void dependencyExamples() {
         componentDependency.greetings()
         unBeanDependency.printAction()
@@ -94,5 +104,19 @@ class FundamentosApplication implements CommandLineRunner {
         println(beanWithPropertiesDependency.function())
         println(webserviceProperties.toString())
         log.error("Este es un error en la aplicación")
+    }
+
+    private void getDaysBetweenDates() {
+        def checkin = new LocalDate(2021, 12, 24)
+        def checkout = new LocalDate(2021, 12, 27)
+        def days = Days.daysBetween(checkin, checkout).days
+        def periodDays = Period.fieldDifference(checkin, checkout).get(DurationFieldType.days())
+        def period = new Period(checkin, checkout)
+        log.info("Days 24-27 between dates: ${days} ${periodDays} ${period.days}")
+        checkout = new LocalDate(2021, 12, 28)
+        days = Days.daysBetween(checkin, checkout).days
+        periodDays = Period.fieldDifference(checkin, checkout).get(DurationFieldType.days())
+        period = new Period(checkin, checkout)
+        log.info("Days 24-28 between dates: ${days} ${periodDays} ${period.days}")
     }
 }
