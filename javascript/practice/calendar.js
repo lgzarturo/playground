@@ -1,9 +1,12 @@
 let events = []
+let arr = []
 
 const eventName = document.querySelector('#event')
 const eventDate = document.querySelector('#date')
 const eventsContainer = document.querySelector('#events')
 const form = document.querySelector('#form')
+
+load()
 
 form.addEventListener('submit', e => {
   e.preventDefault()
@@ -26,6 +29,7 @@ function addEvent () {
   }
 
   events.unshift(newEvent)
+  save(events)
   eventName.value = ''
   renderEvents()
 }
@@ -66,6 +70,22 @@ function renderEvents () {
 
 function deleteEvent (id) {
   events = events.filter(event => event.id !== id)
+  save(events)
 }
 
-function save() {}
+function save (data) {
+  localStorage.setItem('events', JSON.stringify(data))
+}
+
+function load () {
+  const data = localStorage.getItem('events')
+  if (data) {
+    try {
+      arr = JSON.parse(data)
+    } catch (err) {
+      arr = []
+    }
+    events = arr ? [...arr] : []
+    renderEvents()
+  }
+}
