@@ -1,4 +1,4 @@
-var n = Math.random()
+let n = Math.random()
 
 console.log(n)
 
@@ -9,16 +9,16 @@ n = Math.floor(n) + 1
 console.log(n)
 
 /* Obtener un número aleatorio */
-function random(top) {
+function random (top) {
   return Math.floor(Math.random() * top) + 1
 }
 
 console.log(random(10))
 
 /* Generar un número grande de forma aleatoria */
-function randomBigNumber() {
-  var number = ''
-  for (var i = 0; i < 16; i++) {
+function randomBigNumber () {
+  let number = ''
+  for (let i = 0; i < 16; i++) {
     number += `${random(9) - 1}`
   }
   return number
@@ -26,12 +26,12 @@ function randomBigNumber() {
 
 console.log(`Numero grande aleatorio ${randomBigNumber()}`)
 
-function bmi(weight, height) {
+function bmi (weight, height) {
   return Math.round(weight / (height * height))
 }
 console.log(bmi(84, 1.73))
 
-function leapYear(year) {
+function leapYear (year) {
   if (year % 4 === 0) {
     if (year % 100 === 0) {
       if (year % 400 == 0) {
@@ -47,7 +47,7 @@ function leapYear(year) {
   }
 }
 
-function leapYear2(year) {
+function leapYear2 (year) {
   if (year % 4 !== 0) {
     return false
   }
@@ -67,10 +67,10 @@ console.log(leapYear2(1982))
 console.log(leapYear2(1752))
 
 /* Ejercicio de fizz buzz */
-var output = []
-var count = 1
-function fizzBuzz() {
-  var result = ''
+let output = []
+let count = 1
+function fizzBuzz () {
+  let result = ''
   if (count % 3 === 0) {
     result += 'Fizz'
   }
@@ -93,7 +93,7 @@ for (var i = 0; i < 100; i++) {
 console.log(output)
 
 /** Ejercicio de números en la secuencia fibonacci */
-function fibonacci(n) {
+function fibonacci (n) {
   if (n === 0) {
     return []
   }
@@ -104,8 +104,8 @@ function fibonacci(n) {
     return [0, 1]
   }
 
-  var output = [0, 1]
-  for (var i = 2; i < n; i++) {
+  let output = [0, 1]
+  for (let i = 2; i < n; i++) {
     output.push(output[output.length - 2] + output[output.length - 1])
   }
   return output
