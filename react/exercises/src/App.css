@@ -12,3 +12,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.tooltip {
+  position: absolute;
+  background-color: black;
+  color: whitesmoke;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.tooltip-text {
+  text-decoration: underline;
+}
