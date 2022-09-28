@@ -7,7 +7,7 @@ function ListView ({ elements, funcFilterItems }) {
             <input type="text" id="filter" onChange={(event) => funcFilterItems(event.target.value)} />
             <ul>
             {
-                elements.map((name) => <li key={name}>{name}</li>)
+                    elements.map((name, index) => name && <li key={index}>{name}</li>)
             }
             </ul>
         </div>

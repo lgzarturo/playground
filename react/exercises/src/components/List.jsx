@@ -12,7 +12,8 @@ function List () {
     }
 
     function filterItemsBySearchPattern (pattern) {
-        const filterItems = frameworks.filter(item => item.toLowerCase().includes(pattern.toLowerCase()))
+        const filterItems = frameworks
+            .map(item => item.toLowerCase().includes(pattern.toLowerCase()) ? item : null)
         return filterItems
     }
 
