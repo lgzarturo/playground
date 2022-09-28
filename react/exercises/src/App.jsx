@@ -1,6 +1,7 @@
 import './App.css'
 import Countdown from './components/Countdown'
 import Counter from './components/Counter'
+import List from './components/List'
 import PresentationCard from './components/PresentationCard'
 
 function App () {
@@ -10,6 +11,7 @@ function App () {
             <Countdown />
             <PresentationCard />
             <Counter />
+            <List />
         </div>
     )
 }
