@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import SearchContext from '../context/SearchContext'
 import frameworks from './items'
 
 import ListView from './ListView'
@@ -18,9 +19,9 @@ function List () {
     }
 
     return (
-        <div>
-            <ListView elements={items} funcFilterItems={filterItems} />
-        </div>
+        <SearchContext.Provider value={{funcFilterItems: filterItems}}>
+            <ListView elements={items} />
+        </SearchContext.Provider>
     )
 }
 

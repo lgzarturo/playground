@@ -1,13 +1,14 @@
+import SearchInput from '../forms/SearchInput'
 import './ListView.css'
 
-function ListView ({ elements, funcFilterItems }) {
+function ListView ({ elements }) {
     console.log(elements)
     return (
         <div>
-            <input type="text" id="filter" onChange={(event) => funcFilterItems(event.target.value)} />
+            <SearchInput />
             <ul>
             {
-                    elements.map((name, index) => name && <li key={index}>{name}</li>)
+                elements.map((name, index) => name && <li key={index}>{name}</li>)
             }
             </ul>
         </div>
