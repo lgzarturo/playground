@@ -1,11 +1,83 @@
+.notes-app {
+  width: min(100%, 600px);
+  margin: 0 auto;
+}
+
+.note {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  margin: 0 0 1rem;
+  padding: 1rem;
+  color: #222;
+}
+
+.form {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  color: #444;
+  gap: 1em;
+}
+
+.form label {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: #888;
+}
+
+.form input,
+.form textarea {
+  padding: 5px 3px;
+  font-size: 1.2rem;
+}
+
+.form textarea {
+  min-height: 6rem;
+}
+
+.form > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form [type='submit'] {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #a9d1fc;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form [type='submit']:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+.form .alert-error {
+  font-size: 0.8rem;
+  margin: 0;
+  border-radius: 5px;
+  border: 1px solid red;
+  background-color: rgb(248, 149, 149);
+  color: rgb(125, 2, 2);
+  padding: 6px;
+}
+
 .avatar {
   width: 320px;
 }
 
 .App {
   color: white;
-  width: 100vw;
-  height: 100vh;
   background-color: #282c23;
   display: flex;
   flex-direction: column;

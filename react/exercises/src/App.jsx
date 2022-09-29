@@ -2,9 +2,11 @@ import './App.css'
 import Countdown from './components/Countdown'
 import Counter from './components/Counter'
 import List from './components/List'
+import NotesList from './components/notes/NotesList'
 import PresentationCard from './components/PresentationCard'
 import TooltipText from './components/TooltipText'
 import { ItemsProvider } from './context/ItemsContext'
+import { NotesProvider } from './context/NotesContext'
 import { SearchProvider } from './context/SearchContext'
 import AppForm from './forms/AppForm'
 
@@ -12,6 +14,9 @@ function App () {
     return (
         <div className="App">
             <h1>Hola mundo</h1>
+            <NotesProvider>
+                <NotesList />
+            </NotesProvider>
             <Countdown />
             <PresentationCard />
             <Counter />
