@@ -4,6 +4,8 @@ import Counter from './components/Counter'
 import List from './components/List'
 import PresentationCard from './components/PresentationCard'
 import TooltipText from './components/TooltipText'
+import { ItemsProvider } from './context/ItemsContext'
+import { SearchProvider } from './context/SearchContext'
 import AppForm from './forms/AppForm'
 
 function App () {
@@ -13,7 +15,11 @@ function App () {
             <Countdown />
             <PresentationCard />
             <Counter />
-            <List />
+            <SearchProvider>
+                <ItemsProvider>
+                    <List />
+                </ItemsProvider>
+            </SearchProvider>
             <p><TooltipText tooltip={"Lorem ipsum dolor"}>Lorem ipsum dolor</TooltipText> sit amet consectetur adipisicing elit. Culpa officiis in eius veritatis minus, expedita fugiat hic voluptatum quasi pariatur ipsa necessitatibus vel placeat temporibus. Commodi dolore hic officia qui!</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit praesentium atque aspernatur numquam <TooltipText tooltip={"obcaecati perferendis"}>obcaecati perferendis</TooltipText> ullam ipsum error fugiat distinctio, eum veritatis, voluptatibus esse repellendus possimus quibusdam voluptates neque quas.</p>
             <AppForm />

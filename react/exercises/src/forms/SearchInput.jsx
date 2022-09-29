@@ -1,10 +1,10 @@
 import { useContext } from "react"
-import SearchContext from "../context/SearchContext"
+import { SearchContext } from "../context/SearchContext"
 
 function SearchInput () {
-    const {funcFilterItems} = useContext(SearchContext)
+    const {setSearch} = useContext(SearchContext)
     return (
-        <input type="text" id="filter" onChange={(event) => funcFilterItems(event.target.value)} />
+        <input type="text" id="filter" onChange={(event) => setSearch(event.target.value)} />
     )
 }
 

@@ -1,8 +1,10 @@
+import { useContext } from 'react'
+import { ItemsContext } from '../context/ItemsContext'
 import SearchInput from '../forms/SearchInput'
 import './ListView.css'
 
-function ListView ({ elements }) {
-    console.log(elements)
+function ListView () {
+    const elements = useContext(ItemsContext)
     return (
         <div>
             <SearchInput />
