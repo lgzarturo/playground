@@ -11,7 +11,7 @@
   "author": "ArturoLG <lgzarturo@gmail.com>",
   "license": "ISC",
   "dependencies": {
-    "axios": "0.19.2",
+    "axios": "1.6.3",
     "colors": "1.4.0",
     "debug": "4.1.1",
     "dotenv": "8.2.0",
