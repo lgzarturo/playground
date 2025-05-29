@@ -17,7 +17,7 @@ moviepy==0.2.3.2
 numpy==1.22.0
 pandas==1.0.5
 pathtools==0.1.2
-Pillow==9.0.0
+Pillow==10.2.0
 py-applescript==1.0.2
 pycairo==1.19.1
 PyGObject==3.38.0
