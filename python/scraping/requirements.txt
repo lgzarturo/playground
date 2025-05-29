@@ -26,7 +26,7 @@ python-dateutil==2.8.1
 python-decouple==3.3
 python-nmap==0.6.1
 pytz==2020.1
-requests==2.24.0
+requests==2.32.0
 requests-file==1.5.1
 selenium==3.141.0
 six==1.15.0
